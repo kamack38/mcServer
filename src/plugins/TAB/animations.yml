@@ -1,147 +1,144 @@
-#usage: %animation:NAME%
-animations:
-  MyAnimation1:
-    #in MILLISECONDS
-    change-interval: 100
-    texts:
-      - "&d-&3--------------"
-      - "&3-&d-&3-------------"
-      - "&3--&d-&3------------"
-      - "&3---&d-&3-----------"
-      - "&3----&d-&3----------"
-      - "&3-----&d-&3---------"
-      - "&3------&d-&3--------"
-      - "&3-------&d-&3-------"
-      - "&3--------&d-&3------"
-      - "&3---------&d-&3-----"
-      - "&3----------&d-&3----"
-      - "&3-----------&d-&3---"
-      - "&3------------&d-&3--"
-      - "&3-------------&d-&3-"
-      - "&3--------------&d-"
-      - "&3-------------&d-&3-"
-      - "&3------------&d-&3--"
-      - "&3-----------&d-&3---"
-      - "&3----------&d-&3----"
-      - "&3---------&d-&3-----"
-      - "&3--------&d-&3------"
-      - "&3-------&d-&3-------"
-      - "&3------&d-&3--------"
-      - "&3-----&d-&3---------"
-      - "&3----&d-&3----------"
-      - "&3---&d-&3-----------"
-      - "&3--&d-&3------------"
-      - "&3-&d-&3-------------"
-      - "&d-&3--------------"
-  ServerName:
-    change-interval: 300
-    texts:
-      - "&c&lServerName"
-      - "&c&n&lServerName"
-      - "&b&lServerName"
-      - "&b&l&nServerName"
-      - "&e&lServerName"
-      - "&e&n&lServerName"
-  web:
-    change-interval: 200
-    texts:
-      - "&ekamack38.github.io"
-      - "&ekamack38.github.io"
-      - "&ekamack38.github.io"
-      - "&ekamack38.github.io"
-      - "&ekamack38.github.io"
-      - "&ekamack38.github.io"
-      - "&6k&eamack38.github.io"
-      - "&ek&6a&emack38.github.io"
-      - "&eka&6m&eack38.github.io"
-      - "&ekam&6a&eck38.github.io"
-      - "&ekama&6c&ek38.github.io"
-      - "&ekamac&6k&e38.github.io"
-      - "&ekamack&63&e8.github.io"
-      - "&ekamack3&68&e.github.io"
-      - "&ekamack38.&6g&eithub.io"
-      - "&ekamack38.g&6i&ethub.io"
-      - "&ekamack38.gi&6t&ehub.io"
-      - "&ekamack38.git&6h&eub.io"
-      - "&ekamack38.gith&6u&eb.io"
-      - "&ekamack38.githu&6b&e.io"
-      - "&ekamack38.github&6.&eio"
-      - "&ekamack38.github.&6i&eo"
-      - "&ekamack38.github.i&6o"
-      - "&ekamack38.github.io"
-      - "&ekamack38.github.io"
-      - "&6kamack38.github.io"
-      - "&ekamack38.github.io"
-      - "&6kamack38.github.io"
-      - "&ekamack38.github.io"
-  vote:
-    change-interval: 1000
-    texts:
-      - "&avote.domain.com"
-      - "&a&nvote.domain.com"
-      - "&5vote.domain.com"
-      - "&5&nvote.domain.com"
-  Welcome:
-    change-interval: 400
-    texts:
-      - "&7&lW_"
-      - "&7&lW_"
-      - "&7&lWi_"
-      - "&7&lWit_"
-      - "&7&lWita_"
-      - "&7&lWitaj_"
-      - "&7&lWitaj_"
-      - "&7&lWitaj_"
-      - "&7&lWitaj_"
-      - "&7&lWita_"
-      - "&7&lWit_"
-      - "&7&lWi_"
-      - "&7&lW_"
-      - "&7&lW_"
-  time:
-    change-interval: 900
-    texts:
-      - "&7Godzina &b%time%"
-      - "&7> Godzina &b%time% &7<"
-      - "&7>> Godzina &b%time% &7<<"
-      - "&7>>> Godzina &b%time% &7<<<"
-      - "&7Data &b%date%"
-      - "&7> Data &b%date% &7<"
-      - "&7>> Data &b%date% &7<<"
-      - "&7>>> Data &b%date% &7<<<"
-  ping-tps:
-    change-interval: 5000
-    texts:
-      - "&aPing: &2&n%ping%&r &ams"
-      - "&bTPS: &3&n%tps%"
-  admin_prefix:
-    change-interval: 1000
-    texts:
-      - "&6&lAdmin &e"
-      - "&6&lAdmin &e"
-      - "&9&lAdmin &e"
-      - "&9&lAdmin &e"
-      - "&4&lAdmin &e"
-      - "&4&lAdmin &e"
-      - "&3&lAdmin &e"
-      - "&3&lAdmin &e"
-      - "&2&lAdmin &e"
-      - "&2&lAdmin &e"
-      - "&d&lAdmin &e"
-      - "&d&lAdmin &e"
-      - "&f&lAdmin &e"
-      - "&f&lAdmi &e"
-      - "&f&lAdm &e"
-      - "&f&lAd &e"
-      - "&f&lA &e"
-      - "&f&lAd &e"
-      - "&f&lAdm &e"
-      - "&f&lAdmi &e"
-      - "&f&lAdmin &e"
-  barcolors:
-    change-interval: 1000
-    texts:
-      - "RED"
-      - "BLUE"
-      - "GREEN"
-      - "YELLOW"
+MyAnimation1:
+  change-interval: 100
+  texts:
+  - '&d-&3--------------'
+  - '&3-&d-&3-------------'
+  - '&3--&d-&3------------'
+  - '&3---&d-&3-----------'
+  - '&3----&d-&3----------'
+  - '&3-----&d-&3---------'
+  - '&3------&d-&3--------'
+  - '&3-------&d-&3-------'
+  - '&3--------&d-&3------'
+  - '&3---------&d-&3-----'
+  - '&3----------&d-&3----'
+  - '&3-----------&d-&3---'
+  - '&3------------&d-&3--'
+  - '&3-------------&d-&3-'
+  - '&3--------------&d-'
+  - '&3-------------&d-&3-'
+  - '&3------------&d-&3--'
+  - '&3-----------&d-&3---'
+  - '&3----------&d-&3----'
+  - '&3---------&d-&3-----'
+  - '&3--------&d-&3------'
+  - '&3-------&d-&3-------'
+  - '&3------&d-&3--------'
+  - '&3-----&d-&3---------'
+  - '&3----&d-&3----------'
+  - '&3---&d-&3-----------'
+  - '&3--&d-&3------------'
+  - '&3-&d-&3-------------'
+  - '&d-&3--------------'
+ServerName:
+  change-interval: 300
+  texts:
+  - '&c&lServerName'
+  - '&c&n&lServerName'
+  - '&b&lServerName'
+  - '&b&l&nServerName'
+  - '&e&lServerName'
+  - '&e&n&lServerName'
+web:
+  change-interval: 200
+  texts:
+  - '&ekamack38.github.io'
+  - '&ekamack38.github.io'
+  - '&ekamack38.github.io'
+  - '&ekamack38.github.io'
+  - '&ekamack38.github.io'
+  - '&ekamack38.github.io'
+  - '&6k&eamack38.github.io'
+  - '&ek&6a&emack38.github.io'
+  - '&eka&6m&eack38.github.io'
+  - '&ekam&6a&eck38.github.io'
+  - '&ekama&6c&ek38.github.io'
+  - '&ekamac&6k&e38.github.io'
+  - '&ekamack&63&e8.github.io'
+  - '&ekamack3&68&e.github.io'
+  - '&ekamack38.&6g&eithub.io'
+  - '&ekamack38.g&6i&ethub.io'
+  - '&ekamack38.gi&6t&ehub.io'
+  - '&ekamack38.git&6h&eub.io'
+  - '&ekamack38.gith&6u&eb.io'
+  - '&ekamack38.githu&6b&e.io'
+  - '&ekamack38.github&6.&eio'
+  - '&ekamack38.github.&6i&eo'
+  - '&ekamack38.github.i&6o'
+  - '&ekamack38.github.io'
+  - '&ekamack38.github.io'
+  - '&6kamack38.github.io'
+  - '&ekamack38.github.io'
+  - '&6kamack38.github.io'
+  - '&ekamack38.github.io'
+vote:
+  change-interval: 1000
+  texts:
+  - '&avote.domain.com'
+  - '&a&nvote.domain.com'
+  - '&5vote.domain.com'
+  - '&5&nvote.domain.com'
+Welcome:
+  change-interval: 400
+  texts:
+  - '&7&lW_'
+  - '&7&lW_'
+  - '&7&lWi_'
+  - '&7&lWit_'
+  - '&7&lWita_'
+  - '&7&lWitaj_'
+  - '&7&lWitaj_'
+  - '&7&lWitaj_'
+  - '&7&lWitaj_'
+  - '&7&lWita_'
+  - '&7&lWit_'
+  - '&7&lWi_'
+  - '&7&lW_'
+  - '&7&lW_'
+time:
+  change-interval: 900
+  texts:
+  - '&7Godzina &b%time%'
+  - '&7> Godzina &b%time% &7<'
+  - '&7>> Godzina &b%time% &7<<'
+  - '&7>>> Godzina &b%time% &7<<<'
+  - '&7Data &b%date%'
+  - '&7> Data &b%date% &7<'
+  - '&7>> Data &b%date% &7<<'
+  - '&7>>> Data &b%date% &7<<<'
+ping-tps:
+  change-interval: 5000
+  texts:
+  - '&aPing: &2&n%ping%&r &ams'
+  - '&bTPS: &3&n%tps%'
+admin_prefix:
+  change-interval: 1000
+  texts:
+  - '&6&lAdmin &e'
+  - '&6&lAdmin &e'
+  - '&9&lAdmin &e'
+  - '&9&lAdmin &e'
+  - '&4&lAdmin &e'
+  - '&4&lAdmin &e'
+  - '&3&lAdmin &e'
+  - '&3&lAdmin &e'
+  - '&2&lAdmin &e'
+  - '&2&lAdmin &e'
+  - '&d&lAdmin &e'
+  - '&d&lAdmin &e'
+  - '&f&lAdmin &e'
+  - '&f&lAdmi &e'
+  - '&f&lAdm &e'
+  - '&f&lAd &e'
+  - '&f&lA &e'
+  - '&f&lAd &e'
+  - '&f&lAdm &e'
+  - '&f&lAdmi &e'
+  - '&f&lAdmin &e'
+barcolors:
+  change-interval: 1000
+  texts:
+  - RED
+  - BLUE
+  - GREEN
+  - YELLOW
