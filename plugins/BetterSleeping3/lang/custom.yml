@@ -1,0 +1,19 @@
+# For documentation, check out https://github.com/Nuytemans-Dieter/BetterSleeping/tree/v3.0.0/src/main/resources
+bed_enter_message: Dobrej nocy, <user>! (<num_sleeping>/<needed_sleeping>)
+bed_enter_broadcast: <player> kłądzie się do łóżka, [<num_sleeping>.one player is.<num_sleeping>
+  players are] sleeping now. <remaining_sleeping> [<remaining_sleeping>.sleeper.sleepers]
+  needed.
+skipping_canceled: Ktoś wsatł z łóżka przez co noc nie zostanie pominięta! <remaining_sleeping>
+  więcej śpiących graczy [<remaining_sleeping>.player.players] wymaganych!
+enough_sleeping: Wystarczająca ilość graczy śpi, noc za chwilę się skończy.
+morning_message: Dzień Dobry, <user>. Miłego dnia!
+sleep_spam: Musisz poczekać <time> więcej [<time>.second.seconds] zanim będziesz mógł
+  ponownie położyć się spać!
+sleep_possible_soon: ''
+sleep_possible_now: ''
+buff_received: Czujes się wypoczęty i otrzymałeś [<var>.a buff.<var> buffs].
+debuff_received: Nie spałeś i czujesz się zmęczony, otrzymałeś [<var>.a debuff.<var>
+  debuffs].
+no_permission: '&cNie masz wystarczających uprawnień, by użyć <var>!'
+message_reloaded: '&2Restart ukończony!'
+bypass_message: '&cJesteś pomijany, więc nie musisz spać, <user>.'

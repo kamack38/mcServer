@@ -1,0 +1,8 @@
+&6Witaj, {PLAYER}&6!
+&6Napisz &c/help&6 żeby sprawdzić listę komend.
+&6Napisz &c/list&6 żeby sprawdzić kto jeszcze jest online.
+&6Napisz &c/regulamin&6 żeby sprawdzić zasady panujące na serwerze.
+&6Napisz &c/graves&6 żeby sprawdzić listę swoich nagrobków.
+&6Napisz &c/bs status&6 żeby informacje o spaniu.
+&6Napisz &c/helpop <wiadomość>&6 jeśli napotkasz jakieś problemy podczas rozgrywki.
+&6Graczy online:&c {ONLINE} &6- Czas świata:&c {WORLDTIME24}

@@ -1,0 +1,24 @@
+&5&l    Postanowienia Ogólne
+&41.1 &3Nieprzestrzeganie regulaminu wiąże się z otrzymaniem kary.
+&41.2 &3Nieznajomość regulaminu nie zwalnia z jego przestrzegania.
+&41.3 &3Administracja ma pełne prawa do zmieniania regulaminu bez wcześniejszego powiadomienia użytkowników o zmianie.
+&41.4 &3Wchodząc na serwer akceptujesz regulamin.
+&41.5 &3Administracja zawsze ma rację.
+&41.6 &3Jeśli Administracja nie ma racji patrz punkt powyżej.
+&41.7 &3Administracja zastrzega Sobie prawo do interpretacji regulaminu
+&41.8 &3W przypadku niezrozumienia regulaminu należy skontaktować się z administracją, która musi przesłać odpowiedź w przeciągu 14 dni roboczych.
+&41.9 &3Regulamin jest własnością tego serwera i zabrania się jego kopiowania.
+&41.10 &3Jeżeli nałożona na użytkownika kara nie poskutkowała i użytkownik nadal łamie regulamin, zostanie nałożona na niego dodatkowa kara.
+&5&l    Postanowienia Dodatkowe
+&42.0 &3 Na serwerze zakazuje się :
+&4 •&3 Spamowania, floodowania, trollowania i griefingu.
+&4 •&3 Nadmiernego przeklinania.
+&4 •&3 Prowokowania do kłótni.
+&4 •&3 Wykorzystywania, wprowadzania w błąd, oszukiwania i szantażowania innych użytkowników
+&4 •&3 Obrażania graczy, administracji i serwera
+&4 •&3 Reklamowania serwerów Minecraft, stron www, serwerów Discord itp. bez zgody administracji
+&4 •&3 Wykorzystywania możliwych błędów na serwerze (należy je natychmiast zgłosić)
+&4 •&3 Poruszania tematów wulgarnych/erotycznych/religijnych/rasistowskich itp.
+&4 •&3 Podszywania się pod graczy lub administrację (ban) 
+&4 •&3 Wysyłania linków lub plików zawierających treści wulgarne/rasistowskie/pornograficzne/religijne itp.
+&4 •&3 Przeszkadzania administracji
