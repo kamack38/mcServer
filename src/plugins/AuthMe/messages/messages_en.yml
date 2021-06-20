@@ -6,7 +6,7 @@
 # Registration
 registration:
   register_request: '&3Zarejstruj się komendą: /register <hasło> <PowtórzHasło>'
-  command_usage: '&Sposób użycia: /register <hasło> <PowtórzHasło>'
+  command_usage: '&6Sposób użycia: &3/register <hasło> <PowtórzHasło>'
   reg_only: '&4Only registered users can join the server! Please visit http://example.com to register yourself!'
   kicked_admin_registered: 'Administrator zarejstrował ciebie; proszę zaloguj się ponownie.'
   success: '&2Poprawnie zarejstrowano!'
@@ -23,7 +23,7 @@ password:
 
 # Login
 login:
-  command_usage: '&Użycie: /login <hasło>'
+  command_usage: '&6Poprawne użycie: &3/login <hasło>'
   wrong_password: '&cBłędne hasło!'
   success: '&2Zalogowano poprawnie!'
   login_request: '&cProszę, zaloguj się za pomocą komendy: /login <hasło>'

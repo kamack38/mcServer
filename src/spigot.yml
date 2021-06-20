@@ -30,9 +30,9 @@ config-version: 12
 messages:
   outdated-client: Outdated client! Please use {0}
   outdated-server: Outdated server! I'm still on {0}
-  restart: Server is restarting
-  server-full: The server is full!
-  unknown-command: Unknown command. Type "/help" for help.
+  restart: Serwer jest w trakcie restartu!
+  server-full: Serwer jest pełny!
+  unknown-command: Nieznana komenda. &6Napisz &b/help &6by otrzymać pomoc.
   whitelist: You are not whitelisted on this server!
 players:
   disable-saving: false

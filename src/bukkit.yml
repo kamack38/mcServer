@@ -23,7 +23,7 @@ settings:
   permissions-file: permissions.yml
   plugin-profiling: false
   query-plugins: false
-  shutdown-message: Server closed
+  shutdown-message: Serwer został wyłączony
   update-folder: update
   warn-on-overload: false
 spawn-limits:
