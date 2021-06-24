@@ -70,3 +70,6 @@ HELP_PLAYER: |2-
 HELP_SR_APPLY_SKIN: Re-apply the skin for target user.
 HELP_SR_CreateCustom: Name & create a custom skin
 SUCCESS_CREATE_SKIN: '&2Skin %skin has been created!'
+Completions_Skin: <Skin>
+Completions_SkinName: <SkinName>
+Completions_SkinUrl: <SkinUrl>
