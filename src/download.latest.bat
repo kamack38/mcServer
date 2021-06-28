@@ -1,4 +1,4 @@
-curl "https://purpur.pl3x.net/api/v1/purpur/1.16.5/latest/download" -o purpur.jar
+curl "https://purpur.pl3x.net/api/v1/purpur/1.17/latest/download" -o purpur.jar
 curl "https://github.com/MilkBowl/Vault/releases/latest/download/Vault.jar" -L -o plugins/Vault.jar
 curl "https://github.com/SkinsRestorer/SkinsRestorerX/releases/latest/download/SkinsRestorer.jar" -L -o plugins/SkinsRestorer.jar
 explorer.exe https://essentialsx.net/downloads.html
