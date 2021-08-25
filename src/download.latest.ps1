@@ -1,14 +1,50 @@
 # Download purpur
 curl "https://api.pl3x.net/v2/purpur/1.17.1/latest/download" -o purpur.jar
 
-# Download Vault
-curl "https://github.com/MilkBowl/Vault/releases/latest/download/Vault.jar" -L -o plugins/Vault.jar
+# Download latest MilkBowl/Vault release from github
+$repo = "MilkBowl/Vault"
+$releases = "https://api.github.com/repos/$repo/releases"
 
-# Download SkinsRestorer
-curl "https://github.com/SkinsRestorer/SkinsRestorerX/releases/latest/download/SkinsRestorer.jar" -L -o plugins/SkinsRestorer.jar
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+$tag = (Invoke-WebRequest -Uri $releases -UseBasicParsing | ConvertFrom-Json)[0].tag_name
 
-# Download BetterSleeping
-curl "https://github.com/Nuytemans-Dieter/BetterSleeping/releases/latest/download/BetterSleeping.jar" -L -o plugins/SkinsRestorer.jar
+$file = "Vault.jar"
+$download = "https://github.com/$repo/releases/download/$tag/$file"
+$name = $file.Split(".")[0]
+$jar = "plugins\$name-$tag.jar"
+
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+Invoke-WebRequest $download -Out $jar
+
+# Download latest SkinsRestorer/SkinsRestorerX release from github
+$repo = "SkinsRestorer/SkinsRestorerX"
+$releases = "https://api.github.com/repos/$repo/releases"
+
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+$tag = (Invoke-WebRequest -Uri $releases -UseBasicParsing | ConvertFrom-Json)[0].tag_name
+
+$file = "SkinsRestorer.jar"
+$download = "https://github.com/$repo/releases/download/$tag/$file"
+$name = $file.Split(".")[0]
+$jar = "plugins\$name-$tag.jar"
+
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+Invoke-WebRequest $download -Out $jar
+
+# Download latest Nuytemans-Dieter/BetterSleeping release from github
+$repo = "Nuytemans-Dieter/BetterSleeping"
+$releases = "https://api.github.com/repos/$repo/releases"
+
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+$tag = (Invoke-WebRequest -Uri $releases -UseBasicParsing | ConvertFrom-Json)[0].tag_name
+
+$file = "BetterSleeping.jar"
+$download = "https://github.com/$repo/releases/download/$tag/$file"
+$name = $file.Split(".")[0]
+$jar = "plugins\$name-$tag.jar"
+
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+Invoke-WebRequest $download -Out $jar
 
 # Download latest NEZNAMY/TAB release from github
 $repo = "NEZNAMY/TAB"
@@ -20,7 +56,7 @@ $tag = (Invoke-WebRequest -Uri $releases -UseBasicParsing | ConvertFrom-Json)[0]
 $file = "TAB.v$tag.jar"
 $download = "https://github.com/$repo/releases/download/$tag/$file"
 $name = $file.Split(".")[0]
-$jar = "plugins\$name.v$tag.jar"
+$jar = "plugins\$name-$tag.jar"
 
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 Invoke-WebRequest $download -Out $jar
