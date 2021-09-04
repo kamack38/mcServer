@@ -9,7 +9,7 @@
 # Wiki: https://github.com/pl3xgaming/Purpur/wiki 
 
 verbose: false
-config-version: 13
+config-version: 21
 settings:
   use-alternate-keepalive: true
   dont-send-useless-entity-packets: true
@@ -19,16 +19,71 @@ settings:
   server-mod-name: Purpur
   disable-give-dropping: false
   seed:
-    dungeon: -1
-    end-spike: -1
-  timings:
-    url: https://timings.pl3x.net
+    feature:
+      bamboo: -1
+      basalt_columns: -1
+      basalt_pillar: -1
+      block_pile: -1
+      blue_ice: -1
+      bonus_chest: -1
+      chorus_plant: -1
+      coral_claw: -1
+      coral_mushroom: -1
+      coral_tree: -1
+      decorated: -1
+      delta_feature: -1
+      disk: -1
+      dripstone_cluster: -1
+      end_island: -1
+      flower: -1
+      forest_rock: -1
+      fossil: -1
+      glow_lichen: -1
+      glowstone_blob: -1
+      growing_plant: -1
+      huge_brown_mushroom: -1
+      huge_fungus: -1
+      huge_red_mushroom: -1
+      ice_patch: -1
+      ice_spike: -1
+      iceberg: -1
+      kelp: -1
+      lake: -1
+      large_dripstone: -1
+      nether_forest_vegetation: -1
+      netherrack_replace_blobs: -1
+      ore: -1
+      random_boolean_selector: -1
+      random_patch: -1
+      random_selector: -1
+      replace_single_block: -1
+      root_system: -1
+      scattered_ore: -1
+      sea_pickle: -1
+      seagrass: -1
+      simple_block: -1
+      simple_random_selector: -1
+      small_dripstone: -1
+      tree: -1
+      twisting_vines: -1
+      underwater_magma: -1
+      vegetation_patch: -1
+      waterlogged_vegetation_patch: -1
+      weeping_vines: -1
+      monster_room: -1
+      end_spike: -1
+      geode: -1
+    structure:
+      buried_treasure: -1
+      mineshaft: -1
+      stronghold: -1
+  timings: {}
   blocks:
     disable-note-block-updates: false
     disable-chorus-plant-updates: false
     disable-mushroom-updates: false
     barrel:
-      six-rows: false
+      rows: 3
     ender_chest:
       six-rows: false
       use-permissions-for-rows: false
@@ -38,6 +93,10 @@ settings:
       cumulative-cost: true
     beehive:
       max-bees-inside: 3
+    lightning_rod:
+      range: 128
+    bed:
+      fix-spigot-5988: false
   enchantment:
     allow-infinity-on-crossbow: false
     allow-unsafe-enchants: false
@@ -46,10 +105,15 @@ settings:
     enderman:
       short-height: false
   logger:
+    suppress-unrecognized-recipe-errors: false
     suppress-init-legacy-material-errors: false
     suppress-ignored-advancement-warnings: false
     hex-color-support-in-console: true
   messages:
+    dont-run-with-scissors: <red><italic>Don't run with scissors!
+    uptime-command-output: <green>Server uptime is <uptime>
+    sleep-skipping-night: default
+    sleeping-players-percent: default
     credits-command-output: §a%s has been shown the end credits
     unverified-username: default
     afk-broadcast-away: §e§o%s is now AFK
@@ -63,6 +127,36 @@ settings:
     hide-hidden-players-from-entity-selector: false
     gamemode:
       requires-specific-permission: false
+    tpsbar:
+      title: <gray>TPS<yellow>:</yellow> <tps> MSPT<yellow>:</yellow> <mspt> Ping<yellow>:</yellow>
+        <ping>ms
+      overlay: NOTCHED_20
+      fill-mode: MSPT
+      tick-interval: 20
+      progress-color:
+        good: GREEN
+        medium: YELLOW
+        low: RED
+      text-color:
+        good: <gradient:#55ff55:#00aa00><text></gradient>
+        medium: <gradient:#ffff55:#ffaa00><text></gradient>
+        low: <gradient:#ff5555:#aa0000><text></gradient>
+    compass:
+      title: 'S  ·  ◈  ·  ◈  ·  ◈  ·  SW  ·  ◈  ·  ◈  ·  ◈  ·  W  ·  ◈  ·  ◈  ·  ◈  ·  NW  ·  ◈  ·  ◈  ·  ◈  ·  N  ·  ◈  ·  ◈  ·  ◈  ·  NE  ·  ◈  ·  ◈  ·  ◈  ·  E  ·  ◈  ·  ◈  ·  ◈  ·  SE  ·  ◈  ·  ◈  ·  ◈  ·  S  ·  ◈  ·  ◈  ·  ◈  ·  SW  ·  ◈  ·  ◈  ·  ◈  ·  W  ·  ◈  ·  ◈  ·  ◈  ·  NW  ·  ◈  ·  ◈  ·  ◈  ·  N  ·  ◈  ·  ◈  ·  ◈  ·  NE  ·  ◈  ·  ◈  ·  ◈  ·  E  ·  ◈  ·  ◈  ·  ◈  ·  SE  ·  ◈  ·  ◈  ·  ◈  ·  '
+      overlay: PROGRESS
+      progress-color: BLUE
+      percent: 1.0
+      tick-interval: 5
+    uptime:
+      format: <days><hours><minutes><seconds>
+      day: '%02d day, '
+      days: '%02d days, '
+      hour: '%02d hour, '
+      hours: '%02d hours, '
+      minute: '%02d minute, and '
+      minutes: '%02d minutes, and '
+      second: '%02d second'
+      seconds: '%02d seconds'
   advancement: {}
   broadcasts:
     advancement:
@@ -72,6 +166,10 @@ settings:
 world-settings:
   default:
     gameplay-mechanics:
+      projectiles-bypass-mob-griefing: false
+      mobs-ignore-rails: false
+      rain-stops-after-sleep: true
+      thunder-stops-after-sleep: true
       tick-fluids: true
       shovel-turns-block-to-grass-path:
       - minecraft:grass_block
@@ -108,6 +206,12 @@ world-settings:
           cooldown: 20
           creative-cooldown: 20
           endermite-spawn-chance: 0.05000000074505806
+        glow_berries:
+          eat-glow-duration: 0
+        shulker_box:
+          drop-contents-when-destroyed: true
+        compass:
+          holding-shows-bossbar: false
       armorstand:
         place-with-arms-visible: false
         set-name-visible-when-placing-with-custom-name: false
@@ -120,6 +224,9 @@ world-settings:
         daytime: 12000
         nighttime: 12000
       player:
+        burp-when-full: false
+        ridable-in-water: false
+        shift-right-click-repairs-mending-points: 0
         sleep-ignore-nearby-mobs: false
         can-skip-night: true
         critical-damage-multiplier: 1.5
@@ -134,6 +241,7 @@ world-settings:
           tick-nearby-entities: true
           count-as-sleeping: false
           update-tab-list: false
+          mobs-target: true
         exp-dropped-on-death:
           equation: expLevel * 7
           maximum: 100
@@ -143,6 +251,11 @@ world-settings:
           ambient: false
           show-particles: false
           show-icon: true
+        armor-click-equip:
+          allow-hot-swapping: false
+          creative-makes-copy: true
+        curse-of-binding:
+          remove-with-weakness: false
       infinity-bow:
         works-without-arrows: false
         normal-arrows: true
@@ -174,6 +287,7 @@ world-settings:
         wandering-traders: default
         village-sieges: default
       elytra:
+        kinetic-damage: true
         damage-per-second: 1
         damage-multiplied-by-speed: 0.0
         ignore-unbreaking: false
@@ -181,10 +295,11 @@ world-settings:
           firework: 0
           trident: 0
       silk-touch:
+        minimal-level: 1
         enabled: false
-        spawner-name: Spawner
+        spawner-name: <reset><reset>Spawner
         spawner-lore:
-        - Spawns a {mob}
+        - <reset><reset>Spawns a <mob>
         tools:
         - minecraft:iron_pickaxe
         - minecraft:golden_pickaxe
@@ -246,7 +361,7 @@ world-settings:
         only-players-trample: false
         feather-fall-distance-affects-trampling: false
       furnace:
-        infinite-fuel: false
+        use-lava-from-underneath: false
       kelp:
         max-growth-age: 25
       lava:
@@ -313,6 +428,7 @@ world-settings:
       slab:
         break-individual-slabs-when-sneaking: false
       sponge:
+        absorbs-lava: false
         absorption:
           area: 64
           radius: 6
@@ -325,6 +441,40 @@ world-settings:
       magma-block:
         damage-when-sneaking: false
         damage-with-frost-walker: false
+      flowering_azalea:
+        growth-chance: 0.0
+      observer:
+        disable-clock: false
+      azalea:
+        growth-chance: 0.0
+      cave_vines:
+        growth-modifier: 0.1
+        max-growth-age: 25
+      cactus:
+        breaks-from-solid-neighbors: true
+      powder_snow:
+        bypass-mob-griefing: false
+      conduit:
+        effect-distance: 16
+        valid-ring-blocks:
+        - minecraft:prismarine
+        - minecraft:prismarine_bricks
+        - minecraft:sea_lantern
+        - minecraft:dark_prismarine
+        mob-damage:
+          distance: 8.0
+          damage-amount: 4.0
+      cauldron:
+        fill-chances:
+          rain: 0.05000000074505806
+          powder-snow: 0.10000000149011612
+      budding_amethyst:
+        silk-touch: false
+      big_dripleaf:
+        tilt-delay:
+          UNSTABLE: 10
+          FULL: 100
+          PARTIAL: 10
     ridable-settings:
       babies-are-ridable: true
       untamed-tamables-are-ridable: true
@@ -418,6 +568,7 @@ world-settings:
         attributes:
           max_health: 3.0
       cow:
+        naturally-aggressive-to-players-chance: 0.0
         ridable: false
         ridable-in-water: false
         feed-mushrooms-for-mooshroom: 0
@@ -425,6 +576,7 @@ world-settings:
         attributes:
           max_health: 10.0
       creeper:
+        bypass-mob-griefing: false
         explode-when-killed: false
         health-impacts-explosion: false
         ridable: false
@@ -434,6 +586,7 @@ world-settings:
         attributes:
           max_health: 20.0
       dolphin:
+        naturally-aggressive-to-players-chance: 0.0
         ridable: false
         disable-treasure-searching: false
         spit:
@@ -456,6 +609,7 @@ world-settings:
             min: 0.175
             max: 0.175
       drowned:
+        can-break-doors: false
         ridable: false
         ridable-in-water: false
         jockey:
@@ -479,7 +633,9 @@ world-settings:
         attributes:
           max_health: 200.0
       enderman:
-        aggressive-towards-spawned-endermites: false
+        aggressive-towards-endermites: true
+        aggressive-towards-endermites-only-spawned-by-player-thrown-ender-pearls: false
+        ignore-projectiles: false
         ignore-players-wearing-dragon-head: false
         disable-player-stare-aggression: false
         takes-damage-from-water: true
@@ -538,6 +694,7 @@ world-settings:
         attributes:
           max_health: 40.0
       horse:
+        stand-with-rider: true
         ridable-in-water: false
         breeding-delay-ticks: 6000
         attributes:
@@ -590,6 +747,7 @@ world-settings:
             min: 0.175
             max: 0.175
       trader_llama:
+        breeding-delay-ticks: 6000
         ridable: false
         ridable-in-water: false
         attributes:
@@ -653,6 +811,7 @@ world-settings:
         attributes:
           max_health: 10.0
       piglin:
+        bypass-mob-griefing: false
         portal-spawn-modifier: 2000
         ridable: false
         ridable-in-water: false
@@ -712,10 +871,17 @@ world-settings:
         attributes:
           max_health: 8.0
       shulker:
+        change-color-with-dye: false
         ridable: false
         ridable-in-water: false
         attributes:
           max_health: 30.0
+        spawn-from-bullet:
+          base-chance: 1.0
+          require-open-lid: true
+          nearby-range: 8.0
+          nearby-equation: (nearby - 1) / 5.0
+          random-color: false
       silverfish:
         ridable: false
         ridable-in-water: false
@@ -842,6 +1008,7 @@ world-settings:
         attributes:
           max_health: 26.0
       wither:
+        play-spawn-sound: true
         explosion-radius: 1.0
         can-ride-vehicles: false
         ridable: false
@@ -920,3 +1087,188 @@ world-settings:
         attributes:
           max_health: 20.0
           spawn_reinforcements: 0.1
+        curing_time:
+          min: 3600
+          max: 6000
+      axolotl:
+        ridable: false
+        breeding-delay-ticks: 6000
+        attributes:
+          max_health: 14.0
+      glow_squid:
+        ridable: false
+        can-fly: false
+        attributes:
+          max_health: 10.0
+      goat:
+        ridable: false
+        ridable-in-water: false
+        breeding-delay-ticks: 6000
+        attributes:
+          max_health: 10.0
+    seed:
+      random-populator-seed: false
+    tools:
+      axe:
+        strippables:
+          minecraft:birch_wood:
+            into: minecraft:stripped_birch_wood
+            drops: {}
+          minecraft:birch_log:
+            into: minecraft:stripped_birch_log
+            drops: {}
+          minecraft:jungle_wood:
+            into: minecraft:stripped_jungle_wood
+            drops: {}
+          minecraft:acacia_wood:
+            into: minecraft:stripped_acacia_wood
+            drops: {}
+          minecraft:dark_oak_log:
+            into: minecraft:stripped_dark_oak_log
+            drops: {}
+          minecraft:oak_wood:
+            into: minecraft:stripped_oak_wood
+            drops: {}
+          minecraft:spruce_wood:
+            into: minecraft:stripped_spruce_wood
+            drops: {}
+          minecraft:crimson_hyphae:
+            into: minecraft:stripped_crimson_hyphae
+            drops: {}
+          minecraft:warped_hyphae:
+            into: minecraft:stripped_warped_hyphae
+            drops: {}
+          minecraft:crimson_stem:
+            into: minecraft:stripped_crimson_stem
+            drops: {}
+          minecraft:warped_stem:
+            into: minecraft:stripped_warped_stem
+            drops: {}
+          minecraft:spruce_log:
+            into: minecraft:stripped_spruce_log
+            drops: {}
+          minecraft:oak_log:
+            into: minecraft:stripped_oak_log
+            drops: {}
+          minecraft:jungle_log:
+            into: minecraft:stripped_jungle_log
+            drops: {}
+          minecraft:dark_oak_wood:
+            into: minecraft:stripped_dark_oak_wood
+            drops: {}
+          minecraft:acacia_log:
+            into: minecraft:stripped_acacia_log
+            drops: {}
+        waxables:
+          minecraft:waxed_weathered_cut_copper_stairs:
+            into: minecraft:weathered_cut_copper_stairs
+            drops: {}
+          minecraft:waxed_exposed_cut_copper_slab:
+            into: minecraft:exposed_cut_copper_slab
+            drops: {}
+          minecraft:waxed_cut_copper_slab:
+            into: minecraft:cut_copper_slab
+            drops: {}
+          minecraft:waxed_copper_block:
+            into: minecraft:copper_block
+            drops: {}
+          minecraft:waxed_oxidized_copper:
+            into: minecraft:oxidized_copper
+            drops: {}
+          minecraft:waxed_weathered_copper:
+            into: minecraft:weathered_copper
+            drops: {}
+          minecraft:waxed_oxidized_cut_copper:
+            into: minecraft:oxidized_cut_copper
+            drops: {}
+          minecraft:waxed_weathered_cut_copper:
+            into: minecraft:weathered_cut_copper
+            drops: {}
+          minecraft:waxed_exposed_cut_copper_stairs:
+            into: minecraft:exposed_cut_copper_stairs
+            drops: {}
+          minecraft:waxed_oxidized_cut_copper_slab:
+            into: minecraft:oxidized_cut_copper_slab
+            drops: {}
+          minecraft:waxed_weathered_cut_copper_slab:
+            into: minecraft:weathered_cut_copper_slab
+            drops: {}
+          minecraft:waxed_exposed_copper:
+            into: minecraft:exposed_copper
+            drops: {}
+          minecraft:waxed_cut_copper_stairs:
+            into: minecraft:cut_copper_stairs
+            drops: {}
+          minecraft:waxed_cut_copper:
+            into: minecraft:cut_copper
+            drops: {}
+          minecraft:waxed_exposed_cut_copper:
+            into: minecraft:exposed_cut_copper
+            drops: {}
+          minecraft:waxed_oxidized_cut_copper_stairs:
+            into: minecraft:oxidized_cut_copper_stairs
+            drops: {}
+        weatherables:
+          minecraft:weathered_cut_copper_stairs:
+            into: minecraft:exposed_cut_copper_stairs
+            drops: {}
+          minecraft:exposed_copper:
+            into: minecraft:copper_block
+            drops: {}
+          minecraft:oxidized_cut_copper:
+            into: minecraft:weathered_cut_copper
+            drops: {}
+          minecraft:exposed_cut_copper:
+            into: minecraft:cut_copper
+            drops: {}
+          minecraft:weathered_copper:
+            into: minecraft:exposed_copper
+            drops: {}
+          minecraft:exposed_cut_copper_stairs:
+            into: minecraft:cut_copper_stairs
+            drops: {}
+          minecraft:oxidized_copper:
+            into: minecraft:weathered_copper
+            drops: {}
+          minecraft:oxidized_cut_copper_stairs:
+            into: minecraft:weathered_cut_copper_stairs
+            drops: {}
+          minecraft:exposed_cut_copper_slab:
+            into: minecraft:cut_copper_slab
+            drops: {}
+          minecraft:weathered_cut_copper:
+            into: minecraft:exposed_cut_copper
+            drops: {}
+          minecraft:oxidized_cut_copper_slab:
+            into: minecraft:weathered_cut_copper_slab
+            drops: {}
+          minecraft:weathered_cut_copper_slab:
+            into: minecraft:exposed_cut_copper_slab
+            drops: {}
+      hoe:
+        tillables:
+          minecraft:grass_block:
+            drops: {}
+            into: minecraft:farmland
+            condition: air_above
+          minecraft:dirt:
+            drops: {}
+            into: minecraft:farmland
+            condition: air_above
+          minecraft:rooted_dirt:
+            drops:
+              minecraft:hanging_roots: 1.0
+            into: minecraft:dirt
+            condition: always
+          minecraft:dirt_path:
+            drops: {}
+            into: minecraft:farmland
+            condition: air_above
+          minecraft:coarse_dirt:
+            drops: {}
+            into: minecraft:dirt
+            condition: air_above
+    hunger:
+      starvation-damage: 1.0
+timings:
+  url: https://timings.pl3x.net

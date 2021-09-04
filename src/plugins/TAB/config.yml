@@ -157,3 +157,4 @@ invisible-nametags: false
 use-bukkit-permissions-manager: false
 ping-spoof:
   enabled: false
+debug: false

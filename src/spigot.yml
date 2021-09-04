@@ -32,11 +32,12 @@ messages:
   outdated-server: Outdated server! I'm still on {0}
   restart: Serwer jest w trakcie restartu!
   server-full: Serwer jest pełny!
-  unknown-command: Nieznana komenda. &6Napisz &b/help &6by otrzymać pomoc.
+  unknown-command: '&cNieznana komenda. &6Napisz &b/help &6by otrzymać pomoc.'
   whitelist: You are not whitelisted on this server!
 players:
   disable-saving: false
 settings:
+  log-named-deaths: true
   attribute:
     attackDamage:
       max: 2048.0
