@@ -88,7 +88,7 @@ morning_message: "&6Dzień dobry &2<user>. &6Miłego dnia!"
 sleep_spam: "&cMusisz poczekać jeszcze &3<time> [<time>.sekundę.sekund] &czanim będziesz mógł ponownie iść spać."
 
 # This message is sent one minute before players can go to bed due to nighttime (disabled by default)
-sleep_possible_soon: "Za niedługo nastanie noc, więc nie zapominaj o śnie."
+sleep_possible_soon: "&6Za niedługo nastanie noc, więc nie zapominaj o śnie."
 
 # This message is sent when sleeping is possible due to a thunderstorm or nighttime (disabled by default)
 sleep_possible_now: "&6Noc się zaczęła! &cO tej godzinie już wszystkie dzieci śpią!"
@@ -170,9 +170,9 @@ command_status_footer: "&3---==<>==---"
 # Shown when performing /bs4 buffs
 command_buffs_header: "&3--=={BetterSleeping4 Buffs}==--"
 command_buffs_nobuffs: "&cNie ma żadnych włączonych buffów!"
-command_buffs_buffs: "Gdy się prześpisz, otrzymasz:"
+command_buffs_buffs: "&6Gdy się prześpisz, otrzymasz:"
 command_buffs_separator: "&3---===---"
 command_buffs_nodebuffs: "&cNie ma żadnych włączonych debuffów!"
 command_buffs_bypassed: "Jesteś pomijany, więc nigdy nie otzrymasz buffów"
-command_buffs_debuffs: "Jeśli się nie prześpisz, otrzymasz:"
+command_buffs_debuffs: "&cJeśli się nie prześpisz, otrzymasz:"
 command_buffs_footer: "&3---==<>==---"
