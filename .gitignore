@@ -49,7 +49,6 @@ world*
 /src/plugins/LuckPerms/translations
 /src/plugins/SkinsRestorer/Skins
 /src/plugins/SkinsRestorer/Players
-/src/plugins/SkinsRestorer/command-messages.properties
 /src/plugins/Essentials/usermap.csv
 /src/plugins/Essentials/upgrades-done.yml
 /src/plugins/Essentials/worth.yml
