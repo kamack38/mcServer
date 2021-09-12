@@ -271,29 +271,36 @@ world-settings:
       - NORMAL
       - HARD
     anti-xray:
-      max-block-height: 64
-      enabled: false
+      enabled: true
       engine-mode: 1
+      chunk-edge-mode: 2
       max-chunk-section-index: 3
+      max-block-height: 64
       update-radius: 2
       lava-obscures: false
       use-permission: false
       hidden-blocks:
-      - gold_ore
-      - iron_ore
-      - coal_ore
-      - lapis_ore
-      - mossy_cobblestone
-      - obsidian
       - chest
+      - coal_ore
+      - deepslate_coal_ore
+      - copper_ore
+      - deepslate_copper_ore
       - diamond_ore
-      - redstone_ore
-      - clay
+      - deepslate_diamond_ore
       - emerald_ore
-      - ender_chest
+      - deepslate_emerald_ore
+      - gold_ore
+      - deepslate_gold_ore
+      - iron_ore
+      - deepslate_iron_ore
+      - lapis_ore
+      - deepslate_lapis_ore
+      - redstone_ore
+      - deepslate_redstone_ore
       replacement-blocks:
       - stone
       - oak_planks
+      - deepslate
     viewdistances:
       no-tick-view-distance: 8
     squid-spawn-height:
@@ -323,3 +330,15 @@ world-settings:
         wither-skeleton: true
     feature-seeds:
       generate-random-seeds-for-all: false
+world_nether:
+    anti-xray:
+      max-chunk-section-index: 7
+      max-block-height: 128
+      hidden-blocks:
+      - ancient_debris
+      - nether_gold_ore
+      - nether_quartz_ore
+# world_the_end: needs to be changed if your world is named differently.
+world_the_end:
+   anti-xray:
+     enabled: false

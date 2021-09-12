@@ -9,7 +9,7 @@
 # Wiki: https://github.com/pl3xgaming/Purpur/wiki 
 
 verbose: false
-config-version: 21
+config-version: 22
 settings:
   use-alternate-keepalive: true
   dont-send-useless-entity-packets: true
@@ -344,6 +344,7 @@ world-settings:
       anvil:
         allow-colors: false
       bed:
+        explode-on-villager-sleep: false
         explode: true
         explosion-power: 5.0
         explosion-fire: true
@@ -568,13 +569,15 @@ world-settings:
         attributes:
           max_health: 3.0
       cow:
-        naturally-aggressive-to-players-chance: 0.0
         ridable: false
         ridable-in-water: false
         feed-mushrooms-for-mooshroom: 0
         breeding-delay-ticks: 6000
         attributes:
           max_health: 10.0
+        naturally-aggressive-to-players:
+          damage: 2.0
+          chance: 0.0
       creeper:
         bypass-mob-griefing: false
         explode-when-killed: false
@@ -694,6 +697,7 @@ world-settings:
         attributes:
           max_health: 40.0
       horse:
+        tempted-by-gold: false
         stand-with-rider: true
         ridable-in-water: false
         breeding-delay-ticks: 6000
@@ -732,6 +736,7 @@ world-settings:
         attributes:
           max_health: 100.0
       llama:
+        tempted-by-hay: false
         join-caravans: true
         ridable: false
         ridable-in-water: false
