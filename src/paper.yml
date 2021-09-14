@@ -331,14 +331,13 @@ world-settings:
     feature-seeds:
       generate-random-seeds-for-all: false
 world_nether:
-    anti-xray:
-      max-chunk-section-index: 7
-      max-block-height: 128
-      hidden-blocks:
-      - ancient_debris
-      - nether_gold_ore
-      - nether_quartz_ore
-# world_the_end: needs to be changed if your world is named differently.
+  anti-xray:
+    max-chunk-section-index: 7
+    max-block-height: 128
+    hidden-blocks:
+    - ancient_debris
+    - nether_gold_ore
+    - nether_quartz_ore
 world_the_end:
-   anti-xray:
-     enabled: false
+  anti-xray:
+    enabled: false
