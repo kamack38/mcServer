@@ -338,6 +338,9 @@ world-settings:
         throwable-potion: 1.0
         trident: 1.0
         snowball: 1.0
+      halloween:
+        force: false
+        head-chance: 0.25
     blocks:
       no-random-tick: []
       no-tick: []
@@ -504,6 +507,7 @@ world-settings:
         attributes:
           max_health: 20.0
       cat:
+        default-collar-color: RED
         ridable: false
         ridable-in-water: false
         spawn-delay: 1200

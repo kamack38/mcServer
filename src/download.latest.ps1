@@ -1,3 +1,7 @@
+# Delete Old plugins
+rm .\purpur.jar
+rm .\plugins\*.jar
+
 # Download purpur
 curl "https://api.pl3x.net/v2/purpur/1.17.1/latest/download" -o purpur.jar
 
@@ -95,8 +99,14 @@ $link = $link.href
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 Invoke-WebRequest "https://ci.ender.zone/job/EssentialsX/lastSuccessfulBuild/artifact/jars/$link" -Out plugins\$link
 
+# Download WorldEdit
+Invoke-WebRequest "https://dev.bukkit.org/projects/worldedit/files/latest" -Out plugins\WorldEdit.jar
+
+# Download WorldGuard
+Invoke-WebRequest "https://dev.bukkit.org/projects/worldguard/files/latest" -Out plugins\WorldGuard.jar
+
+# Download PlayerHeads
+Invoke-WebRequest "https://dev.bukkit.org/projects/player-heads/files/latest" -Out plugins\PlayerHeads.jar
+
 explorer.exe https://www.spigotmc.org/resources/graves.74208/
 explorer.exe https://www.spigotmc.org/resources/chunky.81534/
-explorer.exe https://dev.bukkit.org/projects/worldedit/files/latest
-explorer.exe https://dev.bukkit.org/projects/worldguard/files/latest
-explorer.exe https://dev.bukkit.org/projects/player-heads/files/latest
