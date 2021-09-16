@@ -38,6 +38,8 @@ $embedArray.Add($embedObject)
 
 $payload = [PSCustomObject]@{
     embeds = $embedArray
+    username = 'iPlay Poland'
+    avatar_url = 'https://i.imgur.com/MNLox2O.png'
 }
 
 Invoke-RestMethod -Uri $hookUrl -Method Post -Body ($payload | ConvertTo-Json -Depth 4) -ContentType 'application/json; charset=utf-16'
@@ -65,6 +67,8 @@ $embedArray.Add($embedObject)
 
 $payload = [PSCustomObject]@{
     embeds = $embedArray
+    username = 'iPlay Poland'
+    avatar_url = 'https://i.imgur.com/MNLox2O.png'
 }
 
 Invoke-RestMethod -Uri $hookUrl -Method Post -Body ($payload | ConvertTo-Json -Depth 4) -ContentType 'application/json; charset=utf-16'
