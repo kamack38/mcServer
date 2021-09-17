@@ -6,10 +6,10 @@ continue-on-restart: false
 tasks:
   world:
     cancelled: true
-    radius: 1000
-    x-center: 0
-    z-center: 0
+    radius: 10000.0
+    x-center: 0.0
+    z-center: 0.0
     iterator: concentric
     shape: square
-    count: 4175
-    time: 55698
+    count: 145751
+    time: 951104
