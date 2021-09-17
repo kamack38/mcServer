@@ -56,3 +56,5 @@ world*
 /src/plugins/Essentials/upgrades-done.yml
 /src/plugins/Essentials/worth.yml
 /src/plugins/DiscordSRV
+src/plugins/AuthMe/messages/help_pl.yml
+src/plugins/AuthMe/messages/messages_pl.yml
