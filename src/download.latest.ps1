@@ -108,5 +108,8 @@ Invoke-WebRequest "https://dev.bukkit.org/projects/worldguard/files/latest" -Out
 # Download PlayerHeads
 Invoke-WebRequest "https://dev.bukkit.org/projects/player-heads/files/latest" -Out plugins\PlayerHeads.jar
 
+# Download CoreProtect
+Invoke-WebRequest "https://dev.bukkit.org/projects/coreprotect/files/latest" -Out plugins\CoreProtect.jar
+
 explorer.exe https://www.spigotmc.org/resources/graves.74208/
 explorer.exe https://www.spigotmc.org/resources/chunky.81534/
