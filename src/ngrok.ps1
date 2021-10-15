@@ -2,7 +2,13 @@ $response = Invoke-RestMethod -Uri "http://localhost:4040/api/tunnels" -Method '
 $ip = $response.tunnels.public_url
 $ip = $ip.substring(6) 
 
-function Send-StartMessage {
+function Send-WebhookMessage {
+
+    param (
+        $title,
+        $description,
+        $color
+    )
     $time = get-date -UFormat "%Y-%m-%dT%T"
     $authorObject = [PSCustomObject]@{
         name = 'Server'
@@ -20,10 +26,9 @@ function Send-StartMessage {
     }
 
     $embedObject = [PSCustomObject]@{
-        title = 'Serwer został włączony 🟢'
-        description = "Serwer został włączony. **Połącz** się z nim już teraz:
-        ``$ip``"
-        color = '1092143'
+        title = $title
+        description = $description
+        color = $color
         author = $authorObject
 
         footer = $footerObject
@@ -40,41 +45,14 @@ function Send-StartMessage {
         username = 'iPlay Poland'
         avatar_url = 'https://i.imgur.com/MNLox2O.png'
     }
-    Invoke-RestMethod -Uri $Env:hook_url -Method Post -Body ($payload | ConvertTo-Json -Depth 4) -ContentType 'application/json; charset=utf-16'; if($?) {Write-Host "Start Message Sent" -Foreground Green }
-}
-
-function Send-CloseMessage {
-    $time = get-date -UFormat "%Y-%m-%dT%T"
-
-    $embedObject = [PSCustomObject]@{
-        title = 'Serwer wyłączony 🔴'
-        description = "Serwer o IP: ``$ip`` został wyłączony.
-        Zapraszamy ponownie później"
-        color = '15413831'
-        author = $authorObject
-
-        footer = $footerObject
-
-        timestamp = $time
-        image = $imageObject
-    }
-
-    [System.Collections.ArrayList]$embedArray = @()
-    $embedArray.Add($embedObject)
-
-    $payload = [PSCustomObject]@{
-        embeds = $embedArray
-        username = 'iPlay Poland'
-        avatar_url = 'https://i.imgur.com/MNLox2O.png'
-    }
-    Invoke-RestMethod -Uri $Env:hook_url -Method Post -Body ($payload | ConvertTo-Json -Depth 4) -ContentType 'application/json; charset=utf-16'; if($?) {Write-Host "Stop Message Sent" -Foreground Red}
+    Invoke-RestMethod -Uri $Env:hook_url -Method Post -Body ($payload | ConvertTo-Json -Depth 4) -ContentType 'application/json; charset=utf-16'; if($?) {Write-Host "Message Sent" -Foreground Green }
 }
 
 if (Test-Path $PSScriptRoot/update_vars.ps1) { . $PSScriptRoot/update_vars.ps1}
 else {Write-Host "Vars file not found! Skipping.." -Foreground Yellow; java -Xmx4096M -Xms4096M -jar purpur.jar nogui; exit}
 
-Send-StartMessage
+Send-WebhookMessage 'Serwer został włączony 🟢' "Serwer został włączony. **Połącz** się z nim już teraz: ``$ip``" '1092143'
 
 java -Xmx4096M -Xms4096M -jar purpur.jar nogui
 
-Send-CloseMessage
+Send-WebhookMessage 'Serwer wyłączony 🔴' "Serwer o IP: ``$ip`` został wyłączony. Zapraszamy ponownie później :)" '15413831'
