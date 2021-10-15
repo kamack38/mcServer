@@ -14,6 +14,7 @@ use-display-name-in-quit-message: false
 verbose: false
 config-version: 22
 settings:
+  log-player-ip-addresses: true
   lag-compensate-block-breaking: true
   send-full-pos-for-hard-colliding-entities: true
   load-permissions-yml-before-plugins: true
@@ -122,6 +123,7 @@ timings:
   url: https://timings.pl3x.net
 world-settings:
   default:
+    split-overstacked-loot: true
     show-sign-click-command-failure-msgs-to-player: false
     allow-player-cramming-damage: false
     map-item-frame-cursor-update-interval: 10
@@ -271,7 +273,7 @@ world-settings:
       - NORMAL
       - HARD
     anti-xray:
-      enabled: true
+      enabled: false
       engine-mode: 1
       chunk-edge-mode: 2
       max-chunk-section-index: 3
@@ -332,6 +334,7 @@ world-settings:
       generate-random-seeds-for-all: false
 world_nether:
   anti-xray:
+    enabled: false
     max-chunk-section-index: 7
     max-block-height: 128
     hidden-blocks:
