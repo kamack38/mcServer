@@ -59,4 +59,8 @@ world*
 /src/plugins/DiscordSRV
 src/plugins/AuthMe/messages/help_pl.yml
 src/plugins/AuthMe/messages/messages_pl.yml
+src/plugins/CoreProtect/language.yml
 database.db
+data.db
+.language
+.license
