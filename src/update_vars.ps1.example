@@ -1,4 +1,4 @@
 # Set your variables here
 # Then rename this file to update_vars.ps1
 
-$Env:hook_url = '' # Paste here your hook url
+$Env:hook_url = '' # Paste your hook url here
