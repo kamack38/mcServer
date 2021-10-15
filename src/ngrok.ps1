@@ -2,7 +2,7 @@ $response = Invoke-RestMethod -Uri "http://localhost:4040/api/tunnels" -Method '
 $ip = $response.tunnels.public_url
 $ip = $ip.substring(6) 
 
-$hookUrl = (Get-Content .\token.env | Select-Object -first 1)
+if (Test-Path $PSScriptRoot/update_vars.ps1) { . $PSScriptRoot/update_vars.ps1 }
 $time = get-date -UFormat "%Y-%m-%dT%T"
 
 $authorObject = [PSCustomObject]@{
@@ -42,7 +42,7 @@ $payload = [PSCustomObject]@{
     avatar_url = 'https://i.imgur.com/MNLox2O.png'
 }
 
-Invoke-RestMethod -Uri $hookUrl -Method Post -Body ($payload | ConvertTo-Json -Depth 4) -ContentType 'application/json; charset=utf-16'
+Invoke-RestMethod -Uri $Env:hook_url -Method Post -Body ($payload | ConvertTo-Json -Depth 4) -ContentType 'application/json; charset=utf-16'
 Write-Host "Start Message Sent" -Foreground Green 
 
 java -Xmx4096M -Xms4096M -jar purpur.jar nogui
@@ -71,5 +71,5 @@ $payload = [PSCustomObject]@{
     avatar_url = 'https://i.imgur.com/MNLox2O.png'
 }
 
-Invoke-RestMethod -Uri $hookUrl -Method Post -Body ($payload | ConvertTo-Json -Depth 4) -ContentType 'application/json; charset=utf-16'
+Invoke-RestMethod -Uri $Env:hook_url -Method Post -Body ($payload | ConvertTo-Json -Depth 4) -ContentType 'application/json; charset=utf-16'
 Write-Host "Stop Message Sent" -Foreground Red 

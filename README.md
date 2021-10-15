@@ -65,10 +65,11 @@ Jeśli chcesz grać w trybie lokalnym uruchom plik [`run.bat`](./src/run.bat).
 ./ngrok tcp -region eu 25565
 ```
 
-3. Jeśli chcesz by ip twojego serwera wysłało się na Discord automatycznie:
+3. Jeśli chcesz by ip twojego serwera wysyłało się na Discord automatycznie:
     - Utwórz webhook
-    - Umieść jego link w pliku `token.env.example`
+    - Umieść jego link w pliku `update_vars.ps1`
     - Zmień nazwę pliku na `token.env`.
+
 4. Uruchom plik `ngrok.ps1`
 
 ## Przypisy
