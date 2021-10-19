@@ -80,7 +80,7 @@ settings:
     basic: # Token name, you can define multiple tokens.
       material: SUNFLOWER # https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Material.html
       name: "Grave Token" # Grave token name.
-      craft: true # Can players craft this grave token.
+      craft: false # Can players craft this grave token.
       lore: # Grave token lore.
         - "&7Keep this in your inventory and"
         - "&7when you die a grave will be"
@@ -177,7 +177,7 @@ settings:
       ########
       # Should a grave drop it's contents when destroyed for the following reasons.
       drop:
-        timeout: false # When a grave times out drop everything in it. If false it gets destroyed.
+        timeout: true # When a grave times out drop everything in it. If false it gets destroyed.
         explode: true # When a grave explodes drop everything in it. If false it gets destroyed.
         break: true # When a grave is broken drop everything in it. If false it gets destroyed.
 
@@ -222,7 +222,7 @@ settings:
       ##############
       # Protection options, protect graves from players, this does not protect from explosions, look for grave: explode: to disable this.
       protection:
-        enabled: false # Enable the grave protection feature.
+        enabled: true # Enable the grave protection feature.
         time: 600 # Seconds, 300 = 5 minutes. Set to -1 to always stay locked.
         open:
           owner: true # Can the owner open the owners grave.
@@ -262,7 +262,7 @@ settings:
       ###########
       respawn:
         compass: true # Should entities be given a compass to their last grave when they respawn. (Only works for players)
-        compass-time: 30 # How long should the entity be given a compass on respawn after the grave was first created.
+        compass-time: 10 # How long should the entity be given a compass on respawn after the grave was first created.
         function: "none" # Should we run a function after respawning, you can use menu and list among the other functions.
 
       ############
@@ -312,7 +312,7 @@ settings:
         spawn-owner: false # Should a grave spawn a zombie when it is looted by its owner.
         spawn-other: true # Should a grave spawn a zombie if it is looted by another player.
         only-break: false # Should a zombie only spawn if the player broke the grave not open it.
-        explode: false # Should a grave spawn a zombie if it is blown up, this only works if the grave can be blown up.
+        explode: true # Should a grave spawn a zombie if it is blown up, this only works if the grave can be blown up.
         owner-head: true # Will the zombie have the owners head on.
         health: 30 # How much health the zombie has.
         pickup: false # Can the zombie pickup dropped items.
@@ -414,20 +414,27 @@ settings:
                   - "&3Miejsce śmierci: &f&b%world%, &4%x%&6x &4%y%&6y &4%z%&6z"
                   - "&5Pozostało: &f%time_alive_remaining_formatted%"
 
-              1:
-                material: "ENDER_PEARL"
-                function: "teleportation"
-                name: "Teleport"
-                lore:
-                  - "Teleport to your grave"
+              # 1:
+              #   material: "ENDER_PEARL"
+              #   function: "teleportation"
+              #   name: "Teleport"
+              #   lore:
+              #     - "Teleport to your grave"
 
-              #2: # Toggle protection on and off, you can uncomment this if you want.
-              #  material: "TRIPWIRE_HOOK"
-              #  function: "protection"
-              #  name: "Toggle Protection %state_protection%"
+              1: # Toggle protection on and off, you can uncomment this if you want.
+               material: "TRIPWIRE_HOOK"
+               function: "protection"
+               name: "Toggle Protection %state_protection%"
+               lore:
+                 - "Toggle grave protection"
+
+              # 3: # Toggle protection on and off, you can uncomment this if you want.
+              #  material: "EMERALD_ORE"
+              #  function: "virtual"
+              #  name: "Virtual Loot"
               #  lore:
-              #    - "Toggle grave protection"
-
+              #    - "loot"
+              
       ###########
       # Command #
       ###########
@@ -567,20 +574,20 @@ settings:
         prefix: "&c☠ &8» &r"
         loot: "&7Nagrobek złupiony!"
         experience: "Złupiono &7%level% &rpoziomów z nagrobka."
-        empty: "Nie posiadasz żadnych nagrobków."
+        empty: "&7Nie posiadasz żadnych nagrobków."
         death: "&7Masz nagrobek na &4%x%&6x, &4%y%&6y, &4%z%&6z&7, który zniknie za &4%time_alive_remaining_formatted%&7!"
-        ignore: "7Nagrobek nie został stworzony, ponieważ umarłeś w &7%name%&r."
+        ignore: "&7Nagrobek nie został stworzony, ponieważ umarłeś w &6%name%&r."
         max: "&7Nagrobek nie został utworzony! Masz ich zbyt wiele!"
         failure: "&7Nie udało się postawić nagrobka! Przedmioty zostały wyrzucone na ziemię."
         no-money: "You don't have enough money, you need &7%teleport_cost%&r."
         no-token: "A grave was not created because you didn't have a grave token."
         give-token: "You were given a Grave Token."
-        distance: "You are &7%distance% &rblocks away."
-        distance-world: "Can't measure distance, wrong world."
+        distance: "&7Twój nagrobek znajduje się &6%distance% &7bloki/ów dalej."
+        distance-world: "&4Nie można zmierzyć odległości, zły świat!"
         teleport: "You teleported to your grave."
         teleport-top: "Grave is in an unsafe location, you have been teleported nearby."
         teleport-failure: "&7Teleport failed! Teleport location is unsafe!"
-        teleport-disabled: "Grave teleportation is disabled."
+        teleport-disabled: "&4Teleportacja do nagrobków jest wyłączona."
         build-denied: "&7Nagrobek nie został utworzony, ponieważ nie możesz tam budować!"
         distance-virtual: "&cZnajdujesz się zbyt daleko, żeby wirtualnie otworzyć ten nagrobek."
         permission-denied: "&7Brak uprawnień!"
@@ -588,34 +595,34 @@ settings:
         region-create-deny: "&cNagrobek nie został utworzony&7, ponieważ tworzenie nagrobków, zostało zablokowane w tym regionie."
         region-teleport-deny: "Grave teleportation is disabled in this region."
         death-reason: # https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/entity/EntityDamageEvent.DamageCause.html
-          ENTITY_ATTACK: "Attacked"
-          ENTITY_SWEEP_ATTACK: "Sweep Attacked"
+          ENTITY_ATTACK: "Zaatakowany"
+          ENTITY_SWEEP_ATTACK: "Zaatakowany"
           PROJECTILE: "Projectile Struck"
           SUFFOCATION: "Suffocated"
-          FALL: "Fell"
-          FIRE: "Burned"
-          FIRE_TICK: "Burned"
-          MELTING: "Melted"
-          LAVA: "Burned"
-          DROWNING: "Drowned"
-          BLOCK_EXPLOSION: "Exploded"
-          ENTITY_EXPLOSION: "Exploded"
+          FALL: "Upadek"
+          FIRE: "Spalenie"
+          FIRE_TICK: "Spalenie"
+          MELTING: "Roztopienie"
+          LAVA: "Spłonięcie"
+          DROWNING: "Utonięcie"
+          BLOCK_EXPLOSION: "Wybuchnięcie"
+          ENTITY_EXPLOSION: "Creeper! Aw mann..."
           VOID: "Voided"
           LIGHTNING: "Zeus"
           SUICIDE: "Samobójstwo"
           STARVATION: "Zagłodzenie"
-          POISON: "Poisoned"
+          POISON: "Zatrucie"
           MAGIC: "Magic Missile"
           WITHER: "Withered Away"
-          FALLING_BLOCK: "Crushed"
+          FALLING_BLOCK: "Zgnieciony"
           THORNS: "Thorned"
-          DRAGON_BREATH: "Dragon Breath"
+          DRAGON_BREATH: "Oddech Smoka"
           CUSTOM: "Dark Magic"
-          FLY_INTO_WALL: "Highspeed Splat"
+          FLY_INTO_WALL: "Szybki Lot"
           HOT_FLOOR: "Burned Feet"
-          CRAMMING: "Crushed"
+          CRAMMING: "Przytulenie"
           DRYOUT: "Suffocated"
-          FREEZE: "Froze"
+          FREEZE: "Zamrożenie"
 
       ########
       # Time #
