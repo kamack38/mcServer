@@ -12,7 +12,7 @@
 
 use-display-name-in-quit-message: false
 verbose: false
-config-version: 22
+config-version: 23
 settings:
   log-player-ip-addresses: true
   lag-compensate-block-breaking: true
@@ -82,7 +82,7 @@ settings:
     target-player-chunk-send-rate: 100.0
     global-max-chunk-send-rate: -1.0
     enable-frustum-priority: false
-    global-max-chunk-load-rate: 300.0
+    global-max-chunk-load-rate: -1.0
     player-max-concurrent-loads: 4.0
     global-max-concurrent-loads: 500.0
   packet-limiter:
