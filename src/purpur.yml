@@ -1179,6 +1179,8 @@ world-settings:
         curing_time:
           min: 3600
           max: 6000
+        cure:
+          enabled: true
       axolotl:
         takes-damage-from-water: false
         ridable: false

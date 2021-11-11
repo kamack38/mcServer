@@ -1,6 +1,6 @@
 # Delete Old plugins
-rm .\purpur.jar
-rm .\plugins\*.jar
+Remove-Item .\purpur.jar
+Remove-Item .\plugins\*.jar
 
 # Download purpur
 curl "https://api.pl3x.net/v2/purpur/1.17.1/latest/download" -o purpur.jar

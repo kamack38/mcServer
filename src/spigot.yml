@@ -63,6 +63,7 @@ stats:
   forced-stats: {}
 world-settings:
   default:
+    thunder-chance: 100000
     arrow-despawn-rate: 300
     dragon-death-sound-radius: 0
     enable-zombie-pigmen-portal-spawns: true
