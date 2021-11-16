@@ -111,5 +111,7 @@ Invoke-WebRequest "https://dev.bukkit.org/projects/player-heads/files/latest" -O
 # Download CoreProtect
 Invoke-WebRequest "https://dev.bukkit.org/projects/coreprotect/files/latest" -Out plugins\CoreProtect.jar
 
-explorer.exe https://www.spigotmc.org/resources/graves.74208/
+# Download graves
+Invoke-WebRequest "https://repo.ranull.com/maven/ranull/com/ranull/Graves/DEV/Graves-DEV.jar" -Out plugins\Graves.jar
+
 explorer.exe https://www.spigotmc.org/resources/chunky.81534/
