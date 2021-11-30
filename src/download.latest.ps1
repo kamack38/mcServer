@@ -99,6 +99,12 @@ $link = $link.href
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 Invoke-WebRequest "https://ci.ender.zone/job/EssentialsX/lastSuccessfulBuild/artifact/jars/$link" -Out plugins\$link
 
+# Download Chunky
+$link = (Invoke-WebRequest –Uri "https://ci.codemc.io/view/Author/job/pop4959/job/Chunky/lastSuccessfulBuild/artifact/bukkit/build/libs/").Links | Where-Object href -Match "^Chunky-.*" | Select-Object -first 1
+$link = $link.href
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+Invoke-WebRequest "https://ci.codemc.io/view/Author/job/pop4959/job/Chunky/lastSuccessfulBuild/artifact/bukkit/build/libs/" -Out plugins\$link
+
 # Download WorldEdit
 Invoke-WebRequest "https://dev.bukkit.org/projects/worldedit/files/latest" -Out plugins\WorldEdit.jar
 
@@ -113,5 +119,3 @@ Invoke-WebRequest "https://dev.bukkit.org/projects/coreprotect/files/latest" -Ou
 
 # Download graves
 Invoke-WebRequest "https://repo.ranull.com/maven/ranull/com/ranull/Graves/DEV/Graves-DEV.jar" -Out plugins\Graves.jar
-
-explorer.exe https://www.spigotmc.org/resources/chunky.81534/
