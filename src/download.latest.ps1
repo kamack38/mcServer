@@ -88,19 +88,19 @@ $download = (Invoke-WebRequest -Uri "https://metadata.luckperms.net/data/downloa
 Invoke-WebRequest $download.downloads.bukkit -Out plugins\LuckPerms-Bukkit.jar
 
 # Download EssenstialsX
-$link = (Invoke-WebRequest –Uri "https://ci.ender.zone/job/EssentialsX/lastSuccessfulBuild/artifact/jars/").Links | Where-Object href -Match "^EssentialsX-.*" | Select-Object -first 1
+$link = (Invoke-WebRequest -Uri "https://ci.ender.zone/job/EssentialsX/lastSuccessfulBuild/artifact/jars/").Links | Where-Object href -Match "^EssentialsX-.*" | Select-Object -first 1
 $link = $link.href
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 Invoke-WebRequest "https://ci.ender.zone/job/EssentialsX/lastSuccessfulBuild/artifact/jars/$link" -Out plugins\$link
 
 # Download EssenstialsXChat
-$link = (Invoke-WebRequest –Uri "https://ci.ender.zone/job/EssentialsX/lastSuccessfulBuild/artifact/jars/").Links | Where-Object href -Match "^EssentialsXChat-.*" | Select-Object -first 1
+$link = (Invoke-WebRequest -Uri "https://ci.ender.zone/job/EssentialsX/lastSuccessfulBuild/artifact/jars/").Links | Where-Object href -Match "^EssentialsXChat-.*" | Select-Object -first 1
 $link = $link.href
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 Invoke-WebRequest "https://ci.ender.zone/job/EssentialsX/lastSuccessfulBuild/artifact/jars/$link" -Out plugins\$link
 
 # Download Chunky
-$link = (Invoke-WebRequest –Uri "https://ci.codemc.io/view/Author/job/pop4959/job/Chunky/lastSuccessfulBuild/artifact/bukkit/build/libs/").Links | Where-Object href -Match "^Chunky-.*" | Select-Object -first 1
+$link = (Invoke-WebRequest -Uri "https://ci.codemc.io/view/Author/job/pop4959/job/Chunky/lastSuccessfulBuild/artifact/bukkit/build/libs/").Links | Where-Object href -Match "^Chunky-.*" | Select-Object -first 1
 $link = $link.href
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 Invoke-WebRequest "https://ci.codemc.io/view/Author/job/pop4959/job/Chunky/lastSuccessfulBuild/artifact/bukkit/build/libs/" -Out plugins\$link
