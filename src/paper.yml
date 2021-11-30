@@ -12,7 +12,7 @@
 
 use-display-name-in-quit-message: false
 verbose: false
-config-version: 23
+config-version: 24
 settings:
   log-player-ip-addresses: true
   lag-compensate-block-breaking: true
@@ -232,8 +232,27 @@ world-settings:
       MinimumTicks: 100
       MaximumTicks: 600
     despawn-ranges:
-      soft: 28
-      hard: 48
+      monster:
+        soft: 28
+        hard: 48
+      creature:
+        soft: 28
+        hard: 48
+      ambient:
+        soft: 28
+        hard: 48
+      underground_water_creature:
+        soft: 28
+        hard: 48
+      water_creature:
+        soft: 28
+        hard: 48
+      water_ambient:
+        soft: 28
+        hard: 48
+      misc:
+        soft: 28
+        hard: 48
     frosted-ice:
       enabled: true
       delay:
@@ -312,10 +331,11 @@ world-settings:
     unsupported-settings:
       fix-invulnerable-end-crystal-exploit: true
     spawn-limits:
-      monsters: -1
-      animals: -1
-      water-animals: -1
-      water-ambient: -1
+      monster: -1
+      creature: -1
+      underground_water_creature: -1
+      water_creature: -1
+      water_ambient: -1
       ambient: -1
     tick-rates:
       sensor:
