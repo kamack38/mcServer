@@ -2,6 +2,9 @@
 Remove-Item .\purpur.jar
 Remove-Item .\plugins\*.jar
 
+# Speed up download
+$ProgressPreference = 'SilentlyContinue'
+
 # Download purpur
 curl "https://api.pl3x.net/v2/purpur/1.17.1/latest/download" -o purpur.jar
 
