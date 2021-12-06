@@ -8,80 +8,34 @@ $ProgressPreference = 'SilentlyContinue'
 # Download purpur
 curl "https://api.purpurmc.org/v2/purpur/1.17.1/latest/download" -o purpur.jar
 
-# Download latest MilkBowl/Vault release from github
-$repo = "MilkBowl/Vault"
-$releases = "https://api.github.com/repos/$repo/releases"
+function Get-LatestGitHubRelease($repo, $file) {
+    $releases = "https://api.github.com/repos/$repo/releases"
 
-[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-$tag = (Invoke-WebRequest -Uri $releases -UseBasicParsing | ConvertFrom-Json)[0].tag_name
+    [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+    $tag = (Invoke-WebRequest -Uri $releases -UseBasicParsing | ConvertFrom-Json)[0].tag_name
 
-$file = "Vault.jar"
-$download = "https://github.com/$repo/releases/download/$tag/$file"
-$name = $file.Split(".")[0]
-$jar = "plugins\$name-$tag.jar"
+    $file = $file.Replace('$tag', "$tag")
 
-[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-Invoke-WebRequest $download -Out $jar
+    $download = "https://github.com/$repo/releases/download/$tag/$file"
+    $name = $file.Split(".")[0]
+    $jar = "plugins\$name-$tag.jar"
+    [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+    Invoke-WebRequest $download -Out $jar
+}
+# # Download latest MilkBowl/Vault release from github
+Get-LatestGitHubRelease "MilkBowl/Vault" "Vault.jar"
 
-# Download latest SkinsRestorer/SkinsRestorerX release from github
-$repo = "SkinsRestorer/SkinsRestorerX"
-$releases = "https://api.github.com/repos/$repo/releases"
+# # Download latest SkinsRestorer/SkinsRestorerX release from github
+Get-LatestGitHubRelease "SkinsRestorer/SkinsRestorerX" "SkinsRestorer.jar"
 
-[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-$tag = (Invoke-WebRequest -Uri $releases -UseBasicParsing | ConvertFrom-Json)[0].tag_name
+# # Download latest Nuytemans-Dieter/BetterSleeping release from github
+Get-LatestGitHubRelease "Nuytemans-Dieter/BetterSleeping" "BetterSleeping.jar"
 
-$file = "SkinsRestorer.jar"
-$download = "https://github.com/$repo/releases/download/$tag/$file"
-$name = $file.Split(".")[0]
-$jar = "plugins\$name-$tag.jar"
-
-[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-Invoke-WebRequest $download -Out $jar
-
-# Download latest Nuytemans-Dieter/BetterSleeping release from github
-$repo = "Nuytemans-Dieter/BetterSleeping"
-$releases = "https://api.github.com/repos/$repo/releases"
-
-[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-$tag = (Invoke-WebRequest -Uri $releases -UseBasicParsing | ConvertFrom-Json)[0].tag_name
-
-$file = "BetterSleeping.jar"
-$download = "https://github.com/$repo/releases/download/$tag/$file"
-$name = $file.Split(".")[0]
-$jar = "plugins\$name-$tag.jar"
-
-[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-Invoke-WebRequest $download -Out $jar
-
-# Download latest NEZNAMY/TAB release from github
-$repo = "NEZNAMY/TAB"
-$releases = "https://api.github.com/repos/$repo/releases"
-
-[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-$tag = (Invoke-WebRequest -Uri $releases -UseBasicParsing | ConvertFrom-Json)[0].tag_name
-
-$file = "TAB.v$tag.jar"
-$download = "https://github.com/$repo/releases/download/$tag/$file"
-$name = $file.Split(".")[0]
-$jar = "plugins\$name-$tag.jar"
-
-[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-Invoke-WebRequest $download -Out $jar
+# # Download latest NEZNAMY/TAB release from github
+Get-LatestGitHubRelease "NEZNAMY/TAB" 'TAB.v$tag.jar'
 
 # Download latest AuthMe/AuthMeReloaded release from github
-$repo = "AuthMe/AuthMeReloaded"
-$releases = "https://api.github.com/repos/$repo/releases"
-
-[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-$tag = (Invoke-WebRequest -Uri $releases -UseBasicParsing | ConvertFrom-Json)[0].tag_name
-
-$file = "AuthMe-$tag.jar"
-$download = "https://github.com/$repo/releases/download/$tag/$file"
-$name = $file.Split(".")[0]
-$jar = "plugins\$name-$tag.jar"
-
-[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-Invoke-WebRequest $download -Out $jar
+Get-LatestGitHubRelease "AuthMe/AuthMeReloaded" 'AuthMe-$tag.jar'
 
 # Download latest LuckPerms
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
@@ -90,23 +44,21 @@ $download = (Invoke-WebRequest -Uri "https://metadata.luckperms.net/data/downloa
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 Invoke-WebRequest $download.downloads.bukkit -Out plugins\LuckPerms-Bukkit.jar
 
+function Get-LatestPlugin($url, $file) {
+    $link = (Invoke-WebRequest -Uri "$url").Links | Where-Object href -Match "$file" | Select-Object -first 1
+    $link = $link.href
+    [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+    Invoke-WebRequest ($url + $link) -Out plugins\$link
+}
+
 # Download EssenstialsX
-$link = (Invoke-WebRequest -Uri "https://ci.ender.zone/job/EssentialsX/lastSuccessfulBuild/artifact/jars/").Links | Where-Object href -Match "^EssentialsX-.*" | Select-Object -first 1
-$link = $link.href
-[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-Invoke-WebRequest "https://ci.ender.zone/job/EssentialsX/lastSuccessfulBuild/artifact/jars/$link" -Out plugins\$link
+Get-LatestPlugin "https://ci.ender.zone/job/EssentialsX/lastSuccessfulBuild/artifact/jars/" "^EssentialsX-.*"
 
 # Download EssenstialsXChat
-$link = (Invoke-WebRequest -Uri "https://ci.ender.zone/job/EssentialsX/lastSuccessfulBuild/artifact/jars/").Links | Where-Object href -Match "^EssentialsXChat-.*" | Select-Object -first 1
-$link = $link.href
-[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-Invoke-WebRequest "https://ci.ender.zone/job/EssentialsX/lastSuccessfulBuild/artifact/jars/$link" -Out plugins\$link
+Get-LatestPlugin "https://ci.ender.zone/job/EssentialsX/lastSuccessfulBuild/artifact/jars/" "^EssentialsXChat-.*"
 
 # Download Chunky
-$link = (Invoke-WebRequest -Uri "https://ci.codemc.io/view/Author/job/pop4959/job/Chunky/lastSuccessfulBuild/artifact/bukkit/build/libs/").Links | Where-Object href -Match "^Chunky-.*" | Select-Object -first 1
-$link = $link.href
-[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-Invoke-WebRequest "https://ci.codemc.io/view/Author/job/pop4959/job/Chunky/lastSuccessfulBuild/artifact/bukkit/build/libs/$link" -Out plugins\$link
+Get-LatestPlugin "https://ci.codemc.io/view/Author/job/pop4959/job/Chunky/lastSuccessfulBuild/artifact/bukkit/build/libs/" "^Chunky-.*"
 
 # Download WorldEdit
 Invoke-WebRequest "https://dev.bukkit.org/projects/worldedit/files/latest" -Out plugins\WorldEdit.jar
