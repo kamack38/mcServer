@@ -22,16 +22,16 @@ function Get-LatestGitHubRelease($repo, $file) {
     [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
     Invoke-WebRequest $download -Out $jar
 }
-# # Download latest MilkBowl/Vault release from github
+# Download latest MilkBowl/Vault release from github
 Get-LatestGitHubRelease "MilkBowl/Vault" "Vault.jar"
 
-# # Download latest SkinsRestorer/SkinsRestorerX release from github
+# Download latest SkinsRestorer/SkinsRestorerX release from github
 Get-LatestGitHubRelease "SkinsRestorer/SkinsRestorerX" "SkinsRestorer.jar"
 
-# # Download latest Nuytemans-Dieter/BetterSleeping release from github
+# Download latest Nuytemans-Dieter/BetterSleeping release from github
 Get-LatestGitHubRelease "Nuytemans-Dieter/BetterSleeping" "BetterSleeping.jar"
 
-# # Download latest NEZNAMY/TAB release from github
+# Download latest NEZNAMY/TAB release from github
 Get-LatestGitHubRelease "NEZNAMY/TAB" 'TAB.v$tag.jar'
 
 # Download latest AuthMe/AuthMeReloaded release from github
