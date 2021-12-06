@@ -4,7 +4,7 @@ rm -f purpur.jar
 rm -rf plugins/*.jar
 
 # Download purpur
-wget -qLO purpur.jar "https://api.pl3x.net/v2/purpur/1.17.1/latest/download"
+wget -qLO purpur.jar "https://api.purpurmc.org/v2/purpur/1.17.1/latest/download"
 
 # Download WorldEdit
 wget -qLO plugins/WorldEdit.jar "https://dev.bukkit.org/projects/worldedit/files/latest"
@@ -24,7 +24,7 @@ wget -qLO plugins/Graves.jar "https://repo.ranull.com/maven/ranull/com/ranull/Gr
 # Download latest MilkBowl/Vault release from github
 curl -s "https://api.github.com/repos/MilkBowl/Vault/releases" |
     grep browser_download_url |
-    cut -d : -f 2,3 | 
+    cut -d : -f 2,3 |
     tr -d \" |
     wget -O plugins/Vault.jar -qLi -
 
@@ -48,7 +48,7 @@ curl -s "https://api.github.com/repos/NEZNAMY/TAB/releases/latest" |
     cut -d : -f 2,3 |
     tr -d \" |
     wget -O plugins/TAB.jar -qLi -
- 
+
 # Download latest AuthMe/AuthMeReloaded release from github
 curl -s "https://api.github.com/repos/AuthMe/AuthMeReloaded/releases/latest" |
     grep browser_download_url |

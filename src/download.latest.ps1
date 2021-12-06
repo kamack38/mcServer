@@ -6,7 +6,7 @@ Remove-Item .\plugins\*.jar
 $ProgressPreference = 'SilentlyContinue'
 
 # Download purpur
-curl "https://api.pl3x.net/v2/purpur/1.17.1/latest/download" -o purpur.jar
+curl "https://api.purpurmc.org/v2/purpur/1.17.1/latest/download" -o purpur.jar
 
 # Download latest MilkBowl/Vault release from github
 $repo = "MilkBowl/Vault"
@@ -106,7 +106,7 @@ Invoke-WebRequest "https://ci.ender.zone/job/EssentialsX/lastSuccessfulBuild/art
 $link = (Invoke-WebRequest -Uri "https://ci.codemc.io/view/Author/job/pop4959/job/Chunky/lastSuccessfulBuild/artifact/bukkit/build/libs/").Links | Where-Object href -Match "^Chunky-.*" | Select-Object -first 1
 $link = $link.href
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-Invoke-WebRequest "https://ci.codemc.io/view/Author/job/pop4959/job/Chunky/lastSuccessfulBuild/artifact/bukkit/build/libs/" -Out plugins\$link
+Invoke-WebRequest "https://ci.codemc.io/view/Author/job/pop4959/job/Chunky/lastSuccessfulBuild/artifact/bukkit/build/libs/$link" -Out plugins\$link
 
 # Download WorldEdit
 Invoke-WebRequest "https://dev.bukkit.org/projects/worldedit/files/latest" -Out plugins\WorldEdit.jar
