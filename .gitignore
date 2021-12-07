@@ -64,3 +64,5 @@ database.db
 data.db
 .language
 .license
+
+*.db-*

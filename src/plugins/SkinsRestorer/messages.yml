@@ -17,10 +17,11 @@ SYNTAX_SKINURL: ' <url>'
 SYNTAX_SKINUPDATE_OTHER: ' <target>'
 SYNTAX_SKINCLEAR_OTHER: ' <target>'
 PLAYER_HAS_NO_PERMISSION_SKIN: '&4Error&8: &cNie posiadasz uprawnień do zmiany skina.'
-PLAYER_HAS_NO_PERMISSION_URL: '&4Error&8: &cNie posiadasz uprawnień do zmiany skina przez URL.'
+PLAYER_HAS_NO_PERMISSION_URL: '&4Error&8: &cNie posiadasz uprawnień do zmiany skina
+    przez URL.'
 SKIN_DISABLED: '&4Błąd&8: &cTen skin został wyłączony przez administratora.'
 SKINURL_DISALLOWED: '&4Error&8: &cTa domena nie została zatwierdzona przez administratora.'
-NOT_PREMIUM: "&4Błąd&8: &cGracz premium z takim nickiem nie istnieje."
+NOT_PREMIUM: '&4Błąd&8: &cGracz premium z takim nickiem nie istnieje.'
 INVALID_PLAYER: '&4Błąd&8: &c%player nie jest poprawną nazwą lub linkiem.'
 SKIN_COOLDOWN: '&4Błąd&8: &cMusisz odczekać &e%s &csekund(ę).'
 SKIN_CHANGE_SUCCESS: '&2Twój skin został zmieniony.'
@@ -29,15 +30,19 @@ SKIN_CLEAR_ISSUER: '&2Skin gracza %player został zresetowany.'
 MS_UPDATING_SKIN: '&2Przesyłanie skina, proszę czekać...(To może zająć trochę czasu)'
 SUCCESS_UPDATING_SKIN: '&2Twój skin został zaktualizowany.'
 SUCCESS_UPDATING_SKIN_OTHER: '&2Skin zaktualizowany dla gracza %player.'
-ERROR_UPDATING_SKIN: '&4Error&8: &Napotkaliśmy problem podczas aktualizacji skina. Proszę, spróbować ponownie później!'
-ERROR_UPDATING_URL: "&4Error&8: nie można zaaktualizować niestandardowych skinów url! \n&cZażądaj ponownie używając /skin url."
-ERROR_UPDATING_CUSTOMSKIN: '&4Error&8: &cSkin nie może zostać zaktualizowany, ponieważ jest on niestandardowy.'
+ERROR_UPDATING_SKIN: '&4Error&8: &Napotkaliśmy problem podczas aktualizacji skina.
+    Proszę, spróbować ponownie później!'
+ERROR_UPDATING_URL: "&4Error&8: nie można zaaktualizować niestandardowych skinów url!\
+    \ \n&cZażądaj ponownie używając /skin url."
+ERROR_UPDATING_CUSTOMSKIN: '&4Error&8: &cSkin nie może zostać zaktualizowany, ponieważ
+    jest on niestandardowy.'
 ERROR_INVALID_URLSKIN: "&4Error&8: &cInvalid skin url or format, \n&cTry uploading\
     \ your skin to imgur and right click 'copy image address' \n&cFor guide see: &c&oskinsrestorer.net/skinurl"
 ERROR_MS_FULL: '&4MS Error&8: &cAPI timed out while uploading your &cskin. Please
     try again later. (MineSkin)'
 ERROR_MS_GENERIC: '&4MS Error&8: &c%error%'
-GENERIC_ERROR: '&4Błąd&8: &cPodczas żądania danych skina wystąpił błąd, spróbuj ponowanie później!'
+GENERIC_ERROR: '&4Błąd&8: &cPodczas żądania danych skina wystąpił błąd, spróbuj ponowanie
+    później!'
 WAIT_A_MINUTE: '&4Błąd&8: &cOdczekaj chwilę zanim znów żądasz tego skina. (Rate Limit)'
 ERROR_NO_SKIN: '&4Error&8: &cTen gracz nie ma ustawionego żadnego skina.'
 SKINSMENU_OPEN: '&2Otwieranie zbioru skinów...'
@@ -49,11 +54,13 @@ SKINSMENU_SELECT_SKIN: '&2Wybierz ten skin'
 ADMIN_SET_SKIN: '&2Ustawiłeś skin gracza %player.'
 DATA_DROPPED: '&2Dane %playerOrSkin %targets usunięte.'
 STATUS_OK: '&2Uzyskano połączenie z API Mojang!'
-ALT_API_FAILED: '&4Błąd&8: &cAPI danych skinów jest przeciążone, spróbuj ponowanie później!'
+ALT_API_FAILED: '&4Błąd&8: &cAPI danych skinów jest przeciążone, spróbuj ponowanie
+    później!'
 MS_API_FAILED: '&4Error&8: &cMineSkin API jest przeciążone, spróbuj ponownie później!'
 NO_SKIN_DATA: '&4Błąd&8: &cNie uzyskano żanych danych! Czy ten gracz posiada skina?'
-RELOAD: "&2Pliki konfiguracyjne i językowe zostały przeładowane!"
-OUTDATED: '&4Używasz starej wersji SkinsRestorera!\n&cZaktualizuj do najnowszej wersji:\n&e-> https://skinsrestorer.net/get/latest'
+RELOAD: '&2Pliki konfiguracyjne i językowe zostały przeładowane!'
+OUTDATED: '&4Używasz starej wersji SkinsRestorera!\n&cZaktualizuj do najnowszej wersji:\n&e->
+    https://skinsrestorer.net/get/latest'
 SR_LINE: '&7&m----------------------------------------'
 HELP_PLAYER: |4-
       &2&lSkinsRestorer &7- &f&lv%ver%
@@ -71,3 +78,7 @@ CUSTOM_HELP_IF_ENABLED: |4-
        &2/skin <skinname> &7-&f Zmienia twój skin.
         &2/skin update &7-&f Aktualizuje twój skin.
         &2/skin clear &7-&f Czyści twój skin.
+HELP_SR_CREATECUSTOM: Create a custom server wide skin
+COMPLETIONS_SKIN: <Skin>
+COMPLETIONS_SKINNAME: <SkinName>
+COMPLETIONS_SKINURL: <SkinUrl>

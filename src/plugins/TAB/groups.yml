@@ -1,0 +1,8 @@
+_DEFAULT_:
+  tabprefix: ''
+  tagprefix: ''
+  tabsuffix: '%afk%'
+  tagsuffix: '%afk%'
+  customtabname: '%displayname%'
+  customtagname: '%displayname%'
+  belowname: '%health% &c❤'

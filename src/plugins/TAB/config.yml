@@ -1,131 +1,95 @@
-# Detailed explanation of all options available at https://github.com/NEZNAMY/TAB/wiki/config.yml
-
-change-nametag-prefix-suffix: true
-change-tablist-prefix-suffix: true
-enable-header-footer: true
-header:
-- '&b&ke&c&lKamack&a&lCraft&b&ks'
-- '&d&l>> %animation:Welcome%&3 &l%player%&7&l! &d&l<<'
-- '&2Graczy Online: &a%online%'
-- '&6Operatorów Online: &e%staffonline%'
-- '%animation:ping-tps%'
-- ''
-- '&7&l Używana pamięć: &e%memory-used% &8&lMB &7&l/ &6%memory-max% &8&lMB'
-- '%animation:MyAnimation1%'
-footer:
-- '%animation:MyAnimation1%'
-- '%animation:time%'
-- ''
-- '&7Sprawdź naszą stronę %animation:web%'
-yellow-number-in-tablist: '%ping%'
-group-sorting-priority-list:
-- owner
-- admin
-- mod
-- helper
-- builder
-- vip
-- premium
-- player
-- default
-Groups:
-  Owner:
-    tabprefix: '&5[&d&lOwner&5&l] &a'
-    tagprefix: '&2&lOwner &a'
-  Admin:
-    tabprefix: '&0&l[&4&lAdmin&0&l] &1'
-    tagprefix: '%animation:admin_prefix%'
-  Player:
-    tabprefix: '&0&l[&7&lPlayer&0&l] &3'
-    tagprefix: '&2&lPlayer &3'
-  example_group:
-    header:
-    - This is an example of per-group header/footer
-    footer:
-    - applied to a group
-  _OTHER_:
-    tabprefix: '%vault-prefix%'
-    tagprefix: '%vault-prefix%'
-    tabsuffix: '%afk%'
-    tagsuffix: '%afk%'
-    customtabname: '%essentialsnick%'
-    customtagname: '%essentialsnick%'
-Users:
-  _NEZNAMY_:
-    tabprefix: '&6&lTAB Author &a'
-    tagprefix: '&6&lTAB &r&a'
-    abovename: '&bOh look, 3 lines of text !'
-    belowname: '&eThere''s only one plugin out there supporting it'
-classic-vanilla-belowname:
+scoreboard-teams:
   enabled: true
+  invisible-nametags: false
+  anti-override: true
+  enable-collision: true
+  sorting-types:
+  - GROUPS:owner,admin,mod,helper,builder,vip,premium,player,default
+  - PLACEHOLDER_A_TO_Z:%player%
+  case-sensitive-sorting: true
+  disable-in-worlds:
+  - disabledworld
+  unlimited-nametag-mode:
+    enabled: true
+    use-marker-tag-for-1-8-x-clients: false
+    disable-on-boats: true
+    space-between-lines: true
+    disable-in-worlds:
+    - disabledworld
+    dynamic-lines:
+    - abovename
+    - nametag
+    - belowname
+    - another
+    static-lines:
+      myCustomLine: 0.66
+tablist-name-formatting:
+  enabled: true
+  align-tabsuffix-on-the-right: false
+  character-width-overrides: {}
+  anti-override: true
+  disable-in-worlds:
+  - disabledworld
+header-footer:
+  enabled: true
+  disable-in-worlds:
+  - disabledworld
+  header:
+  - '&b&ke&c&lKamack&a&lCraft&b&ks'
+  - '&d&l>> %animation:Welcome%&3 &l%player%&7&l! &d&l<<'
+  - '&2Graczy Online: &a%online%'
+  - '&6Operatorów Online: &e%staffonline%'
+  - '%animation:ping-tps%'
+  - ''
+  - '&7&l Używana pamięć: &e%memory-used% &8&lMB &7&l/ &6%memory-max% &8&lMB'
+  - '%animation:MyAnimation1%'
+  footer:
+  - '%animation:MyAnimation1%'
+  - '%animation:time%'
+  - ''
+  - '&7Sprawdź naszą stronę %animation:web%'
+  per-world:
+    world2-world3:
+      header:
+      - This is a shared header for
+      - world2 and world3
+    world1:
+      footer:
+      - header/footer and prefix/suffix
+      header:
+      - an example of world with custom
+yellow-number-in-tablist:
+  enabled: true
+  value: '%ping%'
+  disable-in-worlds:
+  - disabledworld
+belowname-objective:
+  enabled: false
   number: '%health%'
   text: Health
-enable-collision: true
-revert-collision-rule-in-worlds:
-- revertedworld
-do-not-move-spectators: false
-allow-spectator-bypass-permission: false
-unlimited-nametag-prefix-suffix-mode:
+  disable-in-worlds:
+  - disabledworld
+prevent-spectator-effect:
   enabled: false
-  modify-npc-names: false
-  use-marker-tag-for-1-8-x-clients: false
-  disable-on-boats: true
-per-world-settings:
-  world1:
-    header:
-    - an example of world with custom
-    footer:
-    - header/footer and prefix/suffix
-    Groups:
-      Owner:
-        tabprefix: '&0&l[&a&lOwner&0&l] &a'
-        tagprefix: '&2&lOwner &a'
-  world2-world3:
-    header:
-    - This is a shared header for
-    - world2 and world3
-placeholders:
-  afk-yes: ' &4*&4&lAFK&4*&r'
-  afk-no: ''
-  date-format: dd.MM.yyyy
-  time-format: '[HH:mm:ss / h:mm a]'
-  time-offset: 0
-  remove-strings:
-  - '[]'
-  - < >
-rank-aliases:
-  Admin: '&4&lADMIN'
-  Mod: '&b&lMOD'
-  Premium: '&6&lPREMIUM'
-  Ultra: '&b&lULTRA'
-  Legend: '&a&lLEGEND'
-  Titan: '&c&lTITAN'
-  Youtuber: '&c&lYOUTUBE'
-  _OTHER_: '&7No Rank'
-disable-features-in-worlds:
-  header-footer:
-  - disabledworld
-  tablist-names:
-  - disabledworld
-  nametag:
-  - disabledworld
-  yellow-number:
-  - disabledworld
-  bossbar:
-  - disabledworld
-  belowname:
-  - disabledworld
-placeholderapi-refresh-intervals:
-  default-refresh-interval: 100
-  server:
-    '%server_uptime%': 1000
-    '%server_tps_1_colored%': 1000
-  player:
-    '%player_health%': 200
-    '%player_ping%': 1000
-    '%vault_prefix%': 1000
-  relational:
-    '%rel_factionsuuid_relation_color%': 500
+bossbar:
+  enabled: false
+  toggle-command: /bossbar
+  remember-toggle-choice: false
+  hidden-by-default: false
+  default-bars:
+  - ServerInfo
+  bars:
+    ServerInfo:
+      style: PROGRESS
+      color: '%animation:barcolors%'
+      progress: '100'
+      text: '&fWebsite: &bwww.domain.com'
+    test:
+      display-condition: permission:tab.bossbar.test;%world%=testworld
+      style: PROGRESS
+      color: WHITE
+      progress: '100'
+      text: test
 per-world-playerlist:
   enabled: false
   allow-bypass-permission: false
@@ -139,22 +103,73 @@ per-world-playerlist:
     minigames:
     - paintball
     - bedwars
-sort-players-by-permissions: false
-fix-pet-names: false
-use-primary-group: true
+scoreboard:
+  enabled: false
+  toggle-command: /sb
+  remember-toggle-choice: false
+  hidden-by-default: false
+  use-numbers: false
+  static-number: 0
+  delay-on-join-milliseconds: 0
+  disable-in-worlds:
+  - disabledworld
+  respect-other-plugins: true
+  scoreboards:
+    admin:
+      display-condition: permission:tab.scoreboard.admin
+      if-condition-not-met: scoreboard1
+      title: Admin scoreboard
+      lines: []
+    scoreboard1:
+      title: Default
+      lines:
+      - Scoreboard for players
+    twscoreboard:
+      title: TestWorld
+      lines:
+      - This is scoreboard for everyone in testworld world
+      display-condition: '%world%=testworld'
+ping-spoof:
+  enabled: false
+fix-pet-names:
+  enabled: false
+placeholders:
+  date-format: dd.MM.yyyy
+  time-format: '[HH:mm:ss / h:mm a]'
+  time-offset: 0
+  remove-strings:
+  - '[]'
+  - < >
+placeholder-output-replacements:
+  '%essentials_vanished%':
+    'yes': '&7| Vanished'
+    'no': ''
+  '%afk%':
+    'true': ' &4*&4&lAFK&4*&r'
+    'false': ''
+conditions: {}
+placeholderapi-refresh-intervals:
+  default-refresh-interval: 100
+  server:
+    '%server_uptime%': 1000
+    '%server_tps_1_colored%': 1000
+  player:
+    '%player_health%': 200
+    '%player_ping%': 1000
+    '%vault_prefix%': 1000
+  relational:
+    '%rel_factionsuuid_relation_color%': 500
+assign-groups-by-permissions: false
 primary-group-finding-list:
 - Owner
 - Admin
 - Helper
 - default
-assign-groups-by-permissions: false
-anti-override:
-  scoreboard-teams: true
-  tablist-names: true
-  usernames: true
-  scoreboard-objectives: true
-invisible-nametags: false
-use-bukkit-permissions-manager: false
-ping-spoof:
-  enabled: false
 debug: false
+mysql:
+  enabled: false
+  host: 127.0.0.1
+  port: 3306
+  database: tab
+  username: user
+  password: password
