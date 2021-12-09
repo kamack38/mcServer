@@ -1,0 +1,21 @@
+{
+    "cSpell.words": [
+        "knockback",
+        "saferegen"
+    ],
+    "cSpell.ignorePaths": [
+        "package-lock.json",
+        "node_modules",
+        "vscode-extension",
+        ".git/objects",
+        ".vscode",
+        ".vscode-insiders",
+        "src/purpur.yml",
+        "src/paper.yml",
+        "src/bukkit.yml",
+        "src/spigot.yml",
+        "src/airplane.yml",
+        "src/server.properties",
+        "src/eula.txt"
+    ]
+}

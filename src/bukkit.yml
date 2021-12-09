@@ -23,7 +23,12 @@ settings:
   permissions-file: permissions.yml
   plugin-profiling: false
   query-plugins: false
-  shutdown-message: Serwer został wyłączony
+  shutdown-message: |
+    §4☢ §9§liPlay §a§lPoland §4☢§r
+    §1§l⚁§9§l⚂§3§l⚃§2§l⚄§a§l⚅§f§l⚅§a§l⚅§2§l⚄§3§l⚃§9§l⚂§1§l⚁§r
+    §6Serwer został wyłączony§r
+    §4♥§6Przepraszamy za utrudnienia§4♥§r
+    §1§l⚁§9§l⚂§3§l⚃§2§l⚄§a§l⚅§f§l⚅§a§l⚅§2§l⚄§3§l⚃§9§l⚂§1§l⚁§r
   update-folder: update
   warn-on-overload: false
 spawn-limits:

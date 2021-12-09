@@ -30,7 +30,14 @@ config-version: 12
 messages:
   outdated-client: Outdated client! Please use {0}
   outdated-server: Outdated server! I'm still on {0}
-  restart: Serwer jest w trakcie restartu!
+  restart: |
+    §4☢ §9§liPlay §a§lPoland §4☢§r
+    §1§l⚁§9§l⚂§3§l⚃§2§l⚄§a§l⚅§f§l⚅§a§l⚅§2§l⚄§3§l⚃§9§l⚂§1§l⚁§r
+    §6Server jest w trakcie restartu§r
+    §6Zazwyczaj zajmuje to§r
+    §6od 18 do 22 sek.§r
+    §4♥§6Przepraszamy za utrudnienia§4♥§r
+    §1§l⚁§9§l⚂§3§l⚃§2§l⚄§a§l⚅§f§l⚅§a§l⚅§2§l⚄§3§l⚃§9§l⚂§1§l⚁§r
   server-full: Serwer jest pełny!
   unknown-command: '&cNieznana komenda. &6Napisz &b/help &6by otrzymać pomoc.'
   whitelist: You are not whitelisted on this server!
