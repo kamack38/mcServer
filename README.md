@@ -86,6 +86,10 @@ java -Xmx4096M -Xms4096M -jar purpur.jar nogui
 
 > Pamiętaj, żeby znajdywać się w odpowiedniej ścieżce
 
+**Pamiętaj żeby mieć otworzony port `25565`!**
+
+> Jeśli nie wiesz jak to zrobić kliknij [tutaj](https://github.com/kamack38/mcServer/wiki/Ustawienia-Zapory-w-systemie-Windows)
+
 ### 3.2 Serwer w trybie Online
 
 1. Pobierz program [ngrok](https://ngrok.com) i dokończ wszystkie kroki instalacyjne.
