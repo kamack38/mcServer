@@ -38,7 +38,7 @@ To repozytorium zawiera wszelkie potrzebne pliki konfiguracyjne na twój serwer 
 - [Graves](https://www.spigotmc.org/resources/graves.74208/)
 - [LuckPerms](https://luckperms.net/)
 - [PlayerHeads](https://dev.bukkit.org/projects/player-heads)
-- [SkinRestorer](https://skinsrestorer.net/)
+- [SkinRestorer](https://github.com/SkinsRestorer/SkinsRestorerX)
 - [TAB](https://github.com/NEZNAMY/TAB)
 - [Vault](https://www.spigotmc.org/resources/vault.34315/)
 - [WorldEdit](https://dev.bukkit.org/projects/worldedit)
