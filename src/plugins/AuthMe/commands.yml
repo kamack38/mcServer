@@ -46,10 +46,10 @@ onFirstLogin:
     executor: PLAYER
     delay: 200
 onJoin: {}
-onLogin:
-  welcome:
-    command: 'motd'
-    executor: 'PLAYER'
+onLogin: {}
+  # welcome:
+  #   command: 'motd'
+  #   executor: 'PLAYER'
 # These commands are called whenever a logged in player uses /logout or quits.
 # The commands are not run if a player that was not logged in quits the server.
 # Note: if your server crashes, these commands won't be run, so don't rely on them to undo

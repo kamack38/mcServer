@@ -86,7 +86,7 @@ Invoke-WebRequest "https://dev.bukkit.org/projects/worldguard/files/latest" -Out
 Invoke-WebRequest "https://dev.bukkit.org/projects/player-heads/files/latest" -Out plugins\PlayerHeads.jar
 
 # Download graves
-Invoke-WebRequest "https://repo.ranull.com/maven/ranull/com/ranull/Graves/DEV/Graves-DEV.jar" -Out plugins\Graves.jar
+Invoke-WebRequest "https://repo.ranull.com/maven/ranull/com/ranull/Graves/DEV/Graves-DEV.jar" -Out "plugins\Graves-DEV.jar"
 
 $errors = $error.count
 
