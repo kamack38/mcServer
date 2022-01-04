@@ -335,7 +335,7 @@ world-settings:
       - oak_planks
       - deepslate
     viewdistances:
-      no-tick-view-distance: 8
+      no-tick-view-distance: 12
     squid-spawn-height:
       maximum: 0.0
     generator-settings:
