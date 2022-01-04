@@ -1,2 +1,2 @@
-java -Xmx4096M -Xms4096M -Dlog4j2.formatMsgNoLookups=true -jar purpur.jar nogui
+java -Xmx4096M -Xms4096M -jar purpur.jar --nogui @REM --online-mode 0
 PAUSE
