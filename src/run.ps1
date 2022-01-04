@@ -92,7 +92,7 @@ if ($nonpremium) {
 }
 else {
     Write-Host "Running premium Minecraft server..." -ForegroundColor Yellow
-    java -Xmx4096M -Xms4096M -jar purpurcls.jar --nogui
+    java -Xmx4096M -Xms4096M -jar purpur.jar --nogui
 }
 
 if ($webhook) {
