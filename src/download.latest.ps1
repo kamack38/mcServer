@@ -1,3 +1,9 @@
+param (
+    [switch]$nonpremium
+)
+
+$error.clear()
+
 # Delete Old plugins
 Remove-Item .\purpur.jar
 Remove-Item .\plugins\*.jar
@@ -42,8 +48,11 @@ $pluginsList = @(
     [pscustomobject]@{Repo = "Nuytemans-Dieter/BetterSleeping"; File = "BetterSleeping.jar"; noV = 0 }
     [pscustomobject]@{Repo = "NEZNAMY/TAB"; File = 'TAB.v$tag.jar'; noV = 0 }
     [pscustomobject]@{Repo = "PlayPro/CoreProtect"; File = 'CoreProtect-$tag.jar'; noV = 1 }
-    # [pscustomobject]@{Repo = "AuthMe/AuthMeReloaded"; File = 'AuthMe-$tag.jar'; noV = 0 }
 )
+
+if ($nonpremium) {
+    $pluginsList += [pscustomobject]@{Repo = "AuthMe/AuthMeReloaded"; File = 'AuthMe-$tag.jar'; noV = 0 }
+}
 
 foreach ($item in $pluginsList) {
     Get-LatestGitHubRelease $item.Repo $item.File $item.noV
@@ -53,9 +62,18 @@ foreach ($item in $pluginsList) {
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 $download = (Invoke-WebRequest -Uri "https://metadata.luckperms.net/data/downloads" -UseBasicParsing | ConvertFrom-Json)
 
+$file = $download.downloads.bukkit.Split('/')[-1]
+$repo = 'ci.lucko.me'
+Write-Output "Downloading $file from $repo"
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-Invoke-WebRequest $download.downloads.bukkit -Out plugins\LuckPerms-Bukkit.jar
+Invoke-WebRequest $download.downloads.bukkit -Out "plugins\$file"
 
+if ($?) {
+    Write-Host  "File $file has been successfully downloaded from $repo" -Foreground green
+}
+else {
+    Write-Host  "Error downloading $file from $repo" -Foreground red
+}
 function Get-LatestPlugin($url, $file) {
     $link = (Invoke-WebRequest -Uri "$url").Links | Where-Object href -Match "$file" | Select-Object -first 1
     $link = $link.href

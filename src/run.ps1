@@ -56,7 +56,7 @@ function Send-WebhookMessage {
 if ($ngrok) {
     if (!(Test-Connection "http://localhost:4040/api/tunnels" -Quiet)) {
         Write-Host "Ngrok server NOT running. Starting server..." -ForegroundColor Yellow
-        Start-Job -Name 'Ngrok Minecraft Server' -Scriptblock { ngrok start mcserver -log=stdout } > $null
+        Start-Job -Name 'Ngrok Minecraft Server' -Scriptblock { ngrok tcp 25565 -region eu -log=stdout } > $null
     }
     $response = Invoke-RestMethod -Uri "http://localhost:4040/api/tunnels" -Method 'Get'
     $ip = $response.tunnels.public_url

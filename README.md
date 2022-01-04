@@ -29,7 +29,7 @@ To repozytorium zawiera wszelkie potrzebne pliki konfiguracyjne na twój serwer 
 
 **Pluginy** :
 
-- [AuthMe](https://github.com/AuthMe/AuthMeReloaded)
+- [AuthMe](https://github.com/AuthMe/AuthMeReloaded) (non-premium)
 - [BetterSleeping](https://github.com/Nuytemans-Dieter/BetterSleeping)
 - [Chunky](https://www.spigotmc.org/resources/chunky.81534/)
 - [CoreProtect](https://github.com/PlayPro/CoreProtect)
@@ -74,6 +74,12 @@ wget https://github.com/kamack38/mcServer/archive/refs/heads/main.zip
 
 Żeby serwer zadziałał, należy pobrać silnik oraz pluginy. Aby tego dokonać należy uruchomić plik [`download.latest.ps1`](./src/download.latest.ps1) lub jeśli korzystasz z Linux'a [`download.latest.sh`](./src/download.latest.sh).
 
+Korzystając z Windowsa możesz dodać parametr `-nonpremium` by włączyć serwer w tym trybie:
+
+```powershell
+.\download.latest.ps1 -nonpremium
+```
+
 ### 3.1 Uruchamianie Serwera
 
 - Jeśli chcesz grać w trybie lokalnym uruchom plik [`run.bat`](./src/run.bat) lub [`run.sh`](./src/run.sh).
@@ -105,7 +111,13 @@ java -Xmx4096M -Xms4096M -jar purpur.jar nogui
    - Umieść jego link w pliku `update_vars.ps1.example`
    - Zmień nazwę pliku na `update_vars.ps1`.
 
-4. Uruchom plik `ngrok.ps1`
+4. Uruchom plik `run.ps1` z parametrem `-ngrok`
+
+Jeśli posiadasz program _ngrok_ w tzw. _PATH_ to możesz uruchomić serwer bez wcześniejszego włączania programu ngrok
+
+```powershell
+.\run.ps1 -ngrok
+```
 
 ## Przypisy
 
