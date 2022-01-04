@@ -1,10 +1,10 @@
 # This is the main configuration file for Paper.
 # As you can see, there's tons to configure. Some options may impact gameplay, so use
 # with caution, and make sure you know what each option does before configuring.
-# 
+#
 # If you need help with the configuration or have any questions related to Paper,
 # join us in our Discord or IRC channel.
-# 
+#
 # Discord: https://discord.gg/papermc
 # IRC: #paper @ irc.esper.net ( https://webchat.esper.net/?channels=paper ) 
 # Website: https://papermc.io/ 
@@ -14,6 +14,7 @@ use-display-name-in-quit-message: false
 verbose: false
 config-version: 24
 settings:
+  fix-target-selector-tag-completion: true
   log-player-ip-addresses: true
   lag-compensate-block-breaking: true
   send-full-pos-for-hard-colliding-entities: true
@@ -37,6 +38,7 @@ settings:
     enabled: false
     online-mode: false
   unsupported-settings:
+    perform-username-validation: true
     allow-headless-pistons: false
     allow-permanent-block-break-exploits: false
     allow-piston-duplication: false
@@ -120,9 +122,15 @@ timings:
   history-interval: 300
   history-length: 3600
   server-name: Unknown Server
-  url: https://timings.pl3x.net
+  url: https://timings.aikar.co/
 world-settings:
   default:
+    monster-spawn-max-light-level: -1
+    anticheat:
+      obfuscation:
+        items:
+          hide-itemmeta: false
+          hide-durability: false
     split-overstacked-loot: true
     show-sign-click-command-failure-msgs-to-player: false
     allow-player-cramming-damage: false
@@ -232,6 +240,9 @@ world-settings:
       MinimumTicks: 100
       MaximumTicks: 600
     despawn-ranges:
+      axolotls:
+        soft: 32
+        hard: 128
       monster:
         soft: 28
         hard: 48
@@ -332,6 +343,7 @@ world-settings:
     unsupported-settings:
       fix-invulnerable-end-crystal-exploit: true
     spawn-limits:
+      axolotls: -1
       monster: -1
       creature: -1
       underground_water_creature: -1

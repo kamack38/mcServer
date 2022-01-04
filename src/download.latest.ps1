@@ -7,7 +7,7 @@ $ProgressPreference = 'SilentlyContinue'
 $ErrorActionPreference = 'Continue'
 
 # Download purpur
-curl "https://api.purpurmc.org/v2/purpur/1.17.1/latest/download" -o purpur.jar
+curl "https://api.purpurmc.org/v2/purpur/1.18.1/latest/download" -o purpur.jar
 
 function Get-LatestGitHubRelease($repo, $file, $noV) {
     $releases = "https://api.github.com/repos/$repo/releases"
@@ -48,7 +48,7 @@ Get-LatestGitHubRelease "Nuytemans-Dieter/BetterSleeping" "BetterSleeping.jar" 0
 Get-LatestGitHubRelease "NEZNAMY/TAB" 'TAB.v$tag.jar' 0
 
 # Download latest AuthMe/AuthMeReloaded release from github
-Get-LatestGitHubRelease "AuthMe/AuthMeReloaded" 'AuthMe-$tag.jar' 0
+# Get-LatestGitHubRelease "AuthMe/AuthMeReloaded" 'AuthMe-$tag.jar' 0
 
 # Download latest PlayPro/CoreProtect release from github
 Get-LatestGitHubRelease "PlayPro/CoreProtect" 'CoreProtect-$tag.jar' 1
