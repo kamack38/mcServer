@@ -103,3 +103,10 @@ if ($ngrok) {
     Stop-Job -Name 'Ngrok Minecraft Server'
     Write-Host "Shuting down Ngrok server" -ForegroundColor Yellow
 }
+
+if (!$?) {
+    Write-Host ("Script has run with no errors") -ForegroundColor Green
+}
+else {
+    Write-Host ("Script has run with " + $error.count + " errors") -ForegroundColor Red
+}

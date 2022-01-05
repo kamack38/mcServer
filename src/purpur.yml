@@ -372,6 +372,7 @@ world-settings:
         apply-cursed-to-armor-slots: true
         place-anvils: false
       farmland:
+        trample-height: -1.0
         disable-trampling: false
         bypass-mob-griefing: false
         gets-moist-from-below: false
