@@ -1,9 +1,12 @@
 param (
     [switch]$nonpremium,
-    [switch]$ngrok
+    [switch]$ngrok,
+    [int]$RAM = 4
 )
 
 $error.clear()
+
+$MEM = $RAM.toString() + 'G'
 
 function Send-WebhookMessage {
 
@@ -86,13 +89,13 @@ if ($nonpremium) {
         Write-Host "AutheMe plugin isn't present. Check your plugins folder." -ForegroundColor Red
     }
     else {
-        Write-Host "Running non-premium Minecraft server..." -ForegroundColor Yellow
-        java -Xmx4096M -Xms4096M -jar purpur.jar --nogui --online-mode 0
+        Write-Host "Running non-premium Minecraft server with $RAM GB of RAM..." -ForegroundColor Yellow
+        java ('-Xmx' + $MEM) ('-Xms' + $MEM) -jar purpur.jar --nogui --online-mode 0
     }
 }
 else {
-    Write-Host "Running premium Minecraft server..." -ForegroundColor Yellow
-    java -Xmx4096M -Xms4096M -jar purpur.jar --nogui
+    Write-Host "Running premium Minecraft server with $RAM GB of RAM..." -ForegroundColor Yellow
+    java ('-Xmx' + $MEM) ('-Xms' + $MEM) -jar purpur.jar --nogui
 }
 
 if ($webhook) {
@@ -104,9 +107,10 @@ if ($ngrok) {
     Write-Host "Shuting down Ngrok server" -ForegroundColor Yellow
 }
 
-if (!$?) {
+if (!$error.count) {
     Write-Host ("Script has run with no errors") -ForegroundColor Green
 }
 else {
     Write-Host ("Script has run with " + $error.count + " errors") -ForegroundColor Red
+    Write-Output $error
 }
