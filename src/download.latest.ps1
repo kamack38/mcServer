@@ -1,5 +1,6 @@
 param (
-    [switch]$nonpremium
+    [switch]$nonpremium,
+    [switch]$nightly
 )
 
 $error.clear()
@@ -42,7 +43,7 @@ function Get-LatestGitHubRelease($repo, $file, $noV) {
     }
 }
 
-$pluginsList = @(
+$githubPluginsList = @(
     [pscustomobject]@{Repo = "MilkBowl/Vault"; File = "Vault.jar"; noV = 0 }
     [pscustomobject]@{Repo = "SkinsRestorer/SkinsRestorerX"; File = "SkinsRestorer.jar"; noV = 0 }
     [pscustomobject]@{Repo = "Nuytemans-Dieter/BetterSleeping"; File = "BetterSleeping.jar"; noV = 0 }
@@ -51,10 +52,10 @@ $pluginsList = @(
 )
 
 if ($nonpremium) {
-    $pluginsList += [pscustomobject]@{Repo = "AuthMe/AuthMeReloaded"; File = 'AuthMe-$tag.jar'; noV = 0 }
+    $githubPluginsList += [pscustomobject]@{Repo = "AuthMe/AuthMeReloaded"; File = 'AuthMe-$tag.jar'; noV = 0 }
 }
 
-foreach ($item in $pluginsList) {
+foreach ($item in $githubPluginsList) {
     Get-LatestGitHubRelease $item.Repo $item.File $item.noV
 }
 
@@ -75,29 +76,48 @@ else {
     Write-Host  "Error downloading $file from $repo" -Foreground red
 }
 function Get-LatestPlugin($url, $file) {
-    $link = (Invoke-WebRequest -Uri "$url").Links | Where-Object href -Match "$file" | Select-Object -first 1
-    $link = $link.href
+    $file = ((Invoke-WebRequest -Uri "$url").Links | Where-Object href -Match "$file" | Select-Object -first 1).href
+    $ofile = $file
+    if ($null -ne $file.Split('/')[1]) {
+        $url = ($file -split "/", -2)[0] + '/'
+        $file = $file.Split('/')[-1].Split('?')[0]
+        $ofile = ($file -split '-', -3)[0] + '.jar'
+    }
+    $domain = $url.Split('/')[2]
+    Write-Output "Downloading $file from $domain"
     [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-    Invoke-WebRequest ($url + $link) -Out plugins\$link
+    Invoke-WebRequest ($url + $file) -Out "plugins\$ofile" -ErrorAction SilentlyContinue
+    if ($?) {
+        Write-Host  "File $file has been successfully downloaded from $domain" -Foreground green
+    }
+    else {
+        Write-Host  "Error downloading $file from $domain" -Foreground red
+    }
 }
 
-# Download EssenstialsX
-Get-LatestPlugin "https://ci.ender.zone/job/EssentialsX/lastSuccessfulBuild/artifact/jars/" "^EssentialsX-.*"
+$pluginsList = @(
+    [pscustomobject]@{url = "https://ci.ender.zone/job/EssentialsX/lastSuccessfulBuild/artifact/jars/"; file = "^EssentialsX-.*" }
+    [pscustomobject]@{url = "https://ci.ender.zone/job/EssentialsX/lastSuccessfulBuild/artifact/jars/"; file = "^EssentialsXChat-.*" }
+    [pscustomobject]@{url = "https://ci.codemc.io/view/Author/job/pop4959/job/Chunky/lastSuccessfulBuild/artifact/bukkit/build/libs/"; file = "^Chunky-.*" }
+)
 
-# Download EssenstialsXChat
-Get-LatestPlugin "https://ci.ender.zone/job/EssentialsX/lastSuccessfulBuild/artifact/jars/" "^EssentialsXChat-.*"
+if ($nightly) {
+    $pluginsList += @(
+        [pscustomobject]@{url = "https://ci.meme.tips/job/PlayerHeads-5.x/lastSuccessfulBuild/artifact/target/"; file = "PlayerHeads-.*-SNAPSHOT*" }
+        # Not working
+        # [pscustomobject]@{url = "https://builds.enginehub.org/job/worldedit/last-successful?branch=master"; file = "worldedit-bukkit-*" }
+        # [pscustomobject]@{url = "https://builds.enginehub.org/job/worldguard/last-successful?branch=master"; file = "worldguard-bukkit-*" }
+    )
+}
+else {
+    Invoke-WebRequest "https://dev.bukkit.org/projects/worldedit/files/latest" -Out plugins\WorldEdit.jar
+    Invoke-WebRequest "https://dev.bukkit.org/projects/worldguard/files/latest" -Out plugins\WorldGuard.jar
+    Invoke-WebRequest "https://dev.bukkit.org/projects/player-heads/files/latest" -Out "plugins\PlayerHeads.jar"
+}
 
-# Download Chunky
-Get-LatestPlugin "https://ci.codemc.io/view/Author/job/pop4959/job/Chunky/lastSuccessfulBuild/artifact/bukkit/build/libs/" "^Chunky-.*"
-
-# Download WorldEdit
-Invoke-WebRequest "https://dev.bukkit.org/projects/worldedit/files/latest" -Out plugins\WorldEdit.jar
-
-# Download WorldGuard
-Invoke-WebRequest "https://dev.bukkit.org/projects/worldguard/files/latest" -Out plugins\WorldGuard.jar
-
-# Download PlayerHeads
-Invoke-WebRequest "https://dev.bukkit.org/projects/player-heads/files/latest" -Out plugins\PlayerHeads.jar
+foreach ($item in $pluginsList) {
+    Get-LatestPlugin $item.url $item.file
+}
 
 # Download graves
 Invoke-WebRequest "https://repo.ranull.com/maven/ranull/com/ranull/Graves/DEV/Graves-DEV.jar" -Out "plugins\Graves-DEV.jar"

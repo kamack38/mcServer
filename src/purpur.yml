@@ -238,6 +238,7 @@ world-settings:
         daytime: 12000
         nighttime: 12000
       player:
+        exp-pickup-delay-ticks: 2
         burp-when-full: false
         ridable-in-water: false
         shift-right-click-repairs-mending-points: 0

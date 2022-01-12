@@ -8,7 +8,7 @@
 
 
 # Want to add new translations or fix existing ones? Please let us know on Discord (https://discord.gg/AS46VGT) or GitHub!
-# All supported languages: https://github.com/Nuytemans-Dieter/BetterSleeping/tree/v3.0.0/src/main/resources/lang
+# All supported languages: https://github.com/Nuytemans-Dieter/BetterSleeping/tree/BetterSleeping-v4/src/main/resources/lang
 
 # CONFIGURATION GUIDE:
 
@@ -88,7 +88,7 @@ morning_message: "&6Dzień dobry &2<user>. &6Miłego dnia!"
 sleep_spam: "&cMusisz poczekać jeszcze &3<time> [<time>.sekundę.sekund] &czanim będziesz mógł ponownie iść spać."
 
 # This message is sent one minute before players can go to bed due to nighttime (disabled by default)
-sleep_possible_soon: "&6Za niedługo nastanie noc, więc nie zapominaj o śnie."
+sleep_possible_soon: "&6Niedługo nastanie noc, więc nie zapominaj o śnie."
 
 # This message is sent when sleeping is possible due to a thunderstorm or nighttime (disabled by default)
 sleep_possible_now: "&6Noc się zaczęła! &cO tej godzinie już wszystkie dzieci śpią!"
