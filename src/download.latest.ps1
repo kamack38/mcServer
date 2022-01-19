@@ -77,16 +77,14 @@ else {
 }
 function Get-LatestPlugin($url, $file) {
     $file = ((Invoke-WebRequest -Uri "$url").Links | Where-Object href -Match "$file" | Select-Object -first 1).href
-    $ofile = $file
     if ($null -ne $file.Split('/')[1]) {
         $url = ($file -split "/", -2)[0] + '/'
         $file = $file.Split('/')[-1].Split('?')[0]
-        $ofile = ($file -split '-', -3)[0] + '.jar'
     }
     $domain = $url.Split('/')[2]
     Write-Output "Downloading $file from $domain"
     [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-    Invoke-WebRequest ($url + $file) -Out "plugins\$ofile" -ErrorAction SilentlyContinue
+    Invoke-WebRequest ($url + $file) -Out "plugins\$file" -ErrorAction SilentlyContinue
     if ($?) {
         Write-Host  "File $file has been successfully downloaded from $domain" -Foreground green
     }
