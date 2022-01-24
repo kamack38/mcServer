@@ -9,7 +9,7 @@
 # Docs: https://purpurmc.org/docs 
 
 verbose: false
-config-version: 25
+config-version: 26
 settings:
   food-properties: {}
   username-valid-characters: ^[a-zA-Z0-9_.]*$
@@ -78,7 +78,6 @@ settings:
     structure:
       buried_treasure: -1
       mineshaft: -1
-      stronghold: -1
   timings: {}
   blocks:
     disable-note-block-updates: false
@@ -845,6 +844,7 @@ world-settings:
         attributes:
           max_health: 32.0
       iron_golem:
+        healing-calms-anger: false
         controllable: true
         always-drop-exp: false
         takes-damage-from-water: false
@@ -1182,6 +1182,7 @@ world-settings:
         attributes:
           max_health: 14.0
       villager:
+        minimum-demand: 0
         controllable: true
         always-drop-exp: false
         takes-damage-from-water: false
