@@ -22,48 +22,31 @@ wget -qLO plugins/CoreProtect.jar "https://dev.bukkit.org/projects/coreprotect/f
 # Download Graves
 wget -qLO plugins/Graves.jar "https://repo.ranull.com/maven/ranull/com/ranull/Graves/DEV/Graves-DEV.jar"
 
+function donwloadLatestReleases() {
+    curl -s $1 |
+        grep browser_download_url |
+        cut -d : -f 2,3 |
+        tr -d \" |
+        wget -O $2 -qLi -
+}
+
 # Download latest MilkBowl/Vault release from github
-curl -s "https://api.github.com/repos/MilkBowl/Vault/releases" |
-    grep browser_download_url |
-    cut -d : -f 2,3 |
-    tr -d \" |
-    wget -O plugins/Vault.jar -qLi -
+downloadLatestReleases "https://api.github.com/repos/MilkBowl/Vault/releases" "plugins/Vault.jar"
 
 # Download latest SkinsRestorer/SkinsRestorerX release from github
-curl -s "https://api.github.com/repos/SkinsRestorer/SkinsRestorerX/releases/latest" |
-    grep browser_download_url |
-    cut -d : -f 2,3 |
-    tr -d \" |
-    wget -O plugins/SkinsRestorerX.jar -qLi -
+downloadLatestReleases "https://api.github.com/repos/SkinsRestorer/SkinsRestorerX/releases/latest" "plugins/SkinsRestorerX.jar"
 
 # Download latest Nuytemans-Dieter/BetterSleeping release from github
-curl -s "https://api.github.com/repos/Nuytemans-Dieter/BetterSleeping/releases/latest" |
-    grep browser_download_url |
-    cut -d : -f 2,3 |
-    tr -d \" |
-    wget -O plugins/BetterSleeping.jar -qLi -
+downloadLatestReleases "https://api.github.com/repos/Nuytemans-Dieter/BetterSleeping/releases/latest" "plugins/BetterSleeping.jar"
 
 # Download latest NEZNAMY/TAB release from github
-curl -s "https://api.github.com/repos/NEZNAMY/TAB/releases/latest" |
-    grep browser_download_url |
-    cut -d : -f 2,3 |
-    tr -d \" |
-    wget -O plugins/TAB.jar -qLi -
+downloadLatestReleases "https://api.github.com/repos/NEZNAMY/TAB/releases/latest" "plugins/TAB.jar"
 
 # Download latest AuthMe/AuthMeReloaded release from github
-curl -s "https://api.github.com/repos/AuthMe/AuthMeReloaded/releases/latest" |
-    grep browser_download_url |
-    cut -d : -f 2,3 |
-    tr -d \" |
-    wget -O plugins/AuthMeReloaded.jar -qLi -
+downloadLatestReleases "https://api.github.com/repos/AuthMe/AuthMeReloaded/releases/latest" "plugins/AuthMeReloaded.jar"
 
 # Download latest LuckPerms
-curl -s "https://metadata.luckperms.net/data/downloads" |
-    grep bukkit |
-    cut -d : -f 3,4 |
-    cut -d , -f 1 |
-    tr -d \" |
-    wget -O plugins/LuckPerms.jar -qLi -
+downloadLatestReleases "https://metadata.luckperms.net/data/downloads" "plugins/LuckPerms.jar"
 
 # Download EssenstialsX
 curl -s "https://ci.ender.zone/job/EssentialsX/lastSuccessfulBuild/artifact/jars/" |

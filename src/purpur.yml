@@ -9,7 +9,7 @@
 # Docs: https://purpurmc.org/docs 
 
 verbose: false
-config-version: 26
+config-version: 27
 settings:
   food-properties: {}
   username-valid-characters: ^[a-zA-Z0-9_.]*$
@@ -1182,6 +1182,7 @@ world-settings:
         attributes:
           max_health: 14.0
       villager:
+        display-trade-item: true
         minimum-demand: 0
         controllable: true
         always-drop-exp: false
@@ -1203,7 +1204,7 @@ world-settings:
           limit: 0
         lobotomize:
           enabled: false
-          check-interval: 60
+          check-interval: 100
         attributes:
           max_health: 20.0
       wandering_trader:
