@@ -114,6 +114,7 @@ settings:
     enderman:
       short-height: false
   logger:
+    suppress-setblock-in-far-chunk-errors: false
     suppress-unrecognized-recipe-errors: false
     suppress-init-legacy-material-errors: false
     suppress-ignored-advancement-warnings: false
@@ -136,6 +137,8 @@ settings:
     ping-command-output: §a%s's ping is %sms
     cannot-ride-mob: §cYou cannot mount that mob
   command:
+    fill:
+      max-area: 32768
     hide-hidden-players-from-entity-selector: false
     gamemode:
       requires-specific-permission: false
@@ -406,6 +409,8 @@ world-settings:
         allow-colors: false
         right-click-edit: false
       spawner:
+        fix-mc-50647: false
+        fix-mc-238526: false
         deactivate-by-redstone: false
       stonecutter:
         damage: 0.0

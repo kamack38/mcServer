@@ -1,6 +1,8 @@
 #!/usr/bin/bash
 cd "$(dirname "$0")"
 
+Yellow='\033[1;33m'
+
 rm -f purpur.jar
 rm -rf plugins/*.jar
 
@@ -23,6 +25,9 @@ wget -qLO plugins/CoreProtect.jar "https://dev.bukkit.org/projects/coreprotect/f
 wget -qLO plugins/Graves.jar "https://repo.ranull.com/maven/ranull/com/ranull/Graves/DEV/Graves-DEV.jar"
 
 function donwloadLatestReleases() {
+    # Split path
+    pluginName=$(echo "${2##*/}")
+    echo -e "${Yellow}Downloading ${pluginName}..."
     curl -s $1 |
         grep browser_download_url |
         cut -d : -f 2,3 |
@@ -47,6 +52,14 @@ downloadLatestReleases "https://api.github.com/repos/AuthMe/AuthMeReloaded/relea
 
 # Download latest LuckPerms
 downloadLatestReleases "https://metadata.luckperms.net/data/downloads" "plugins/LuckPerms.jar"
+
+function downloadLatestFile() {
+    curl -s $1 |
+        grep -Po $2 |
+        head -n 1 |
+        sed "s/^/${1}/" |
+        wget -O "plugins/${3}" -qi -
+}
 
 # Download EssenstialsX
 curl -s "https://ci.ender.zone/job/EssentialsX/lastSuccessfulBuild/artifact/jars/" |
