@@ -184,6 +184,7 @@ settings:
 world-settings:
   default:
     gameplay-mechanics:
+      mob-last-hurt-by-player-time: 100
       projectiles-bypass-mob-griefing: false
       mobs-ignore-rails: false
       rain-stops-after-sleep: true
