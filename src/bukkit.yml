@@ -32,6 +32,7 @@ settings:
   update-folder: update
   warn-on-overload: false
 spawn-limits:
+  axolotls: 5
   water-underground-creature: 5
   ambient: 0
   animals: 2
@@ -39,6 +40,7 @@ spawn-limits:
   water-ambient: 0
   water-animals: 0
 ticks-per:
+  axolotl-spawns: 1
   water-underground-creature-spawns: 1
   ambient-spawns: 0
   animal-spawns: 400
