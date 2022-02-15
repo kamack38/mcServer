@@ -90,12 +90,12 @@ if ($nonpremium) {
     }
     else {
         Write-Host "Running non-premium Minecraft server with $RAM GB of RAM..." -ForegroundColor Yellow
-        java ('-Xmx' + $MEM) ('-Xms' + $MEM) -jar purpur.jar --nogui --online-mode 0
+        java ('-Xmx' + $MEM) ('-Xms' + $MEM) --add-modules=jdk.incubator.vector -jar purpur.jar --nogui --online-mode 0
     }
 }
 else {
     Write-Host "Running premium Minecraft server with $RAM GB of RAM..." -ForegroundColor Yellow
-    java ('-Xmx' + $MEM) ('-Xms' + $MEM) -jar purpur.jar --nogui
+    java ('-Xmx' + $MEM) ('-Xms' + $MEM) --add-modules=jdk.incubator.vector -jar purpur.jar --nogui
 }
 
 if ($webhook) {
