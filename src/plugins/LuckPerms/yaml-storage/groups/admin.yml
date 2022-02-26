@@ -1,0 +1,12 @@
+name: admin
+permissions:
+- essentials.ban
+- essentials.invsee
+- essentials.kick
+- essentials.mute
+- weight.4
+parents:
+- vip
+prefixes:
+- '&c[&4&lAdmin&c] ':
+    priority: 1

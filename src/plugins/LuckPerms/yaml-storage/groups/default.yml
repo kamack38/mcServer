@@ -1,0 +1,25 @@
+name: default
+permissions:
+- worldedit.*:
+    value: false
+- worldguard.*:
+    value: false
+- essentials.afk
+- essentials.back:
+    value: false
+- essentials.delhome
+- essentials.home
+- essentials.motd
+- essentials.msg
+- essentials.sethome
+- essentials.tpa
+- essentials.tpacancel
+- essentials.tpaccept
+- essentials.tpahere
+- essentials.warp
+- skinsrestorer.command:
+    value: false
+- weight.1
+prefixes:
+- '&7[&8Gracz&7] ':
+    priority: 100

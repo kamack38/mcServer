@@ -51,6 +51,8 @@ world*
 /src/plugins/Essentials/warps
 /src/plugins/LuckPerms/libs
 /src/plugins/LuckPerms/translations
+/src/plugins/LuckPerms/yaml-storage/users
+/src/plugins/LuckPerms/yaml-storage/uuidcache.txt
 /src/plugins/SkinsRestorer/Skins
 /src/plugins/SkinsRestorer/Players
 /src/plugins/Essentials/usermap.csv

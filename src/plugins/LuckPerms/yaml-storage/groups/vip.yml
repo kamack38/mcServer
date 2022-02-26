@@ -1,0 +1,13 @@
+name: vip
+permissions:
+- essentials.back
+- essentials.feed
+- essentials.hat
+- essentials.heal
+- skinsrestorer.command
+- weight.3
+parents:
+- default
+prefixes:
+- '&6[&e&lVIP&6] ':
+    priority: 100

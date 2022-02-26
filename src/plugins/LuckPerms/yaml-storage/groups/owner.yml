@@ -1,0 +1,12 @@
+name: owner
+permissions:
+- allow
+- authme
+- bettersleeping
+- bettersleeping.help.admin
+- coreprotect
+parents:
+- admin
+prefixes:
+- '&5[&d&lOWNER&5] ':
+    priority: 100
