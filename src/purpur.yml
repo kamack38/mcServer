@@ -106,6 +106,7 @@ settings:
       remove-name-and-lore: false
       ignore-curses: true
   enchantment:
+    allow-unsafe-enchant-command: false
     allow-looting-on-shears: false
     allow-infinity-on-crossbow: false
     allow-unsafe-enchants: false
@@ -120,6 +121,7 @@ settings:
     suppress-ignored-advancement-warnings: false
     hex-color-support-in-console: true
   messages:
+    tpsbar-command-output: <green>Tpsbar toggled <onoff> for <target>
     death-message:
       stonecutter: <player> has sawed themself in half
       run-with-scissors: <player> slipped and fell on their shears
