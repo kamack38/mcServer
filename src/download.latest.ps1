@@ -14,7 +14,7 @@ $ProgressPreference = 'SilentlyContinue'
 $ErrorActionPreference = 'Continue'
 
 # Download purpur
-curl "https://api.purpurmc.org/v2/purpur/1.18.1/latest/download" -o purpur.jar
+curl "https://api.purpurmc.org/v2/purpur/1.18.2/latest/download" -o purpur.jar
 
 function Get-LatestGitHubRelease($repo, $file, $noV) {
     $releases = "https://api.github.com/repos/$repo/releases"

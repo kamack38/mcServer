@@ -25,7 +25,7 @@ To repozytorium zawiera wszelkie potrzebne pliki konfiguracyjne na twój serwer 
 - Linux
 - Windows 10/11
 
-**Silnik** - [Purpur 1.17.1](https://purpur.pl3x.net/)
+**Silnik** - [Purpur 1.18.2](https://purpur.pl3x.net/)
 
 **Pluginy** :
 

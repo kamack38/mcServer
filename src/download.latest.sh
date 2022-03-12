@@ -7,7 +7,7 @@ rm -f purpur.jar
 rm -rf plugins/*.jar
 
 # Download purpur
-wget -qLO purpur.jar "https://api.purpurmc.org/v2/purpur/1.17.1/latest/download"
+wget -qLO purpur.jar "https://api.purpurmc.org/v2/purpur/1.18.2/latest/download"
 
 # Download WorldEdit
 wget -qLO plugins/WorldEdit.jar "https://dev.bukkit.org/projects/worldedit/files/latest"

@@ -23,6 +23,7 @@ scoreboard-teams:
     - another
     static-lines:
       myCustomLine: 0.66
+    disable-in-servers: []
 tablist-name-formatting:
   enabled: true
   align-tabsuffix-on-the-right: false
