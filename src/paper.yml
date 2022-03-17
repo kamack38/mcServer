@@ -78,6 +78,7 @@ settings:
       page: 16384
   use-display-name-in-quit-message: false
   loggers:
+    use-rgb-for-named-text-colors: true
     deobfuscate-stacktraces: true
   chunk-loading:
     min-load-radius: 2

@@ -504,6 +504,8 @@ world-settings:
           damage-amount: 4.0
       cauldron:
         fill-chances:
+          dripstone-water: 0.17578125
+          dripstone-lava: 0.05859375
           rain: 0.05000000074505806
           powder-snow: 0.10000000149011612
       budding_amethyst:
