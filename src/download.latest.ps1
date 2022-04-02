@@ -118,7 +118,7 @@ foreach ($item in $pluginsList) {
 }
 
 # Download graves
-Invoke-WebRequest "https://repo.ranull.com/maven/ranull/com/ranull/Graves/DEV/Graves-DEV.jar" -Out "plugins\Graves-DEV.jar"
+Invoke-WebRequest "https://repo.ranull.com/ranull/com/ranull/graves/DEV/Graves-DEV.jar" -Out "plugins\Graves-DEV.jar"
 
 $errors = $error.count
 
