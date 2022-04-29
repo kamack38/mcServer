@@ -27,3 +27,6 @@ dab:
   activation-dist-mod: 8
   blacklisted-entities: []
 enable-suffocation-optimization: true
+# Settings for things that don't belong elsewhere
+misc:
+  disable-method-profiler: true

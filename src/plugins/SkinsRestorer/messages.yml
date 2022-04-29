@@ -83,3 +83,5 @@ COMPLETIONS_SKIN: <Skin>
 COMPLETIONS_SKINNAME: <SkinName>
 COMPLETIONS_SKINURL: <SkinUrl>
 SKINSMENU_CLEAR_SKIN: '&c&l[ &7Usuń Skina&c&l ]'
+ADMIN_APPLYSKIN_SUCCES: '&2Skin został odświeżony!'
+ADMIN_APPLYSKIN_ERROR: '&4ERROR&8: skin &cgracza nie został odświeżony!'
