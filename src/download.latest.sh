@@ -1,6 +1,7 @@
 #!/usr/bin/bash
 cd "$(dirname "$0")"
 
+NC='\033[0m'
 Yellow='\033[1;33m'
 
 rm -f purpur.jar
@@ -27,7 +28,7 @@ wget -qLO plugins/Graves.jar "https://repo.ranull.com/maven/ranull/com/ranull/Gr
 function donwloadLatestReleases() {
     # Split path
     pluginName=$(echo "${2##*/}")
-    echo -e "${Yellow}Downloading ${pluginName}..."
+    echo -e "${Yellow}Downloading ${pluginName}...${NC}"
     curl -s $1 |
         grep browser_download_url |
         cut -d : -f 2,3 |
