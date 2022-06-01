@@ -25,7 +25,7 @@ wget -qLO plugins/CoreProtect.jar "https://dev.bukkit.org/projects/coreprotect/f
 # Download Graves
 wget -qLO plugins/Graves.jar "https://repo.ranull.com/maven/ranull/com/ranull/Graves/DEV/Graves-DEV.jar"
 
-function donwloadLatestReleases() {
+function downloadLatestReleases() {
     # Split path
     pluginName=$(echo "${2##*/}")
     echo -e "${Yellow}Downloading ${pluginName}...${NC}"
