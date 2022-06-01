@@ -68,3 +68,7 @@ data.db
 .license
 
 *.db-*
+cache
+.archive-unpack
+src/plugins/Graves/readme.txt
+src/plugins/Graves/placeholders.txt

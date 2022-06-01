@@ -106,6 +106,7 @@ settings:
       remove-name-and-lore: false
       ignore-curses: true
   enchantment:
+    clamp-levels: true
     allow-unsafe-enchant-command: false
     allow-looting-on-shears: false
     allow-infinity-on-crossbow: false
@@ -420,6 +421,7 @@ world-settings:
       stonecutter:
         damage: 0.0
       turtle_egg:
+        feather-fall-distance-affects-trampling: false
         random-tick-crack-chance: 500
         bypass-mob-griefing: false
         break-from-exp-orbs: true
@@ -816,6 +818,7 @@ world-settings:
         attributes:
           max_health: 40.0
       horse:
+        stand-when-hurt: true
         always-drop-exp: false
         takes-damage-from-water: false
         tempted-by-gold: false

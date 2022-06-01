@@ -12,8 +12,9 @@
 
 use-display-name-in-quit-message: false
 verbose: false
-config-version: 25
+config-version: 27
 settings:
+  proxy-protocol: false
   use-dimension-type-for-custom-spawners: false
   time-command-affects-all-worlds: false
   fix-target-selector-tag-completion: true
@@ -183,7 +184,6 @@ world-settings:
     seed-based-feature-search: true
     water-over-lava-flow-speed: 5
     grass-spread-tick-rate: 4
-    use-faster-eigencraft-redstone: true
     nether-ceiling-void-damage-height: 0
     only-players-collide: false
     allow-vehicle-collisions: true
@@ -296,7 +296,7 @@ world-settings:
     alt-item-despawn-rate:
       enabled: true
       items:
-        COBBLESTONE: 300
+        cobblestone: 300
     hopper:
       ignore-occluding-blocks: true
       cooldown-when-full: true
@@ -312,6 +312,12 @@ world-settings:
       spawn-chance-min: 25
       spawn-chance-max: 75
     door-breaking-difficulty:
+      zombie_villager:
+      - HARD
+      husk:
+      - HARD
+      zombified_piglin:
+      - HARD
       zombie:
       - HARD
       vindicator:
@@ -379,6 +385,7 @@ world-settings:
         wither-skeleton: true
     feature-seeds:
       generate-random-seeds-for-all: false
+    redstone-implementation: eigencraft
 world_nether:
   anti-xray:
     enabled: false
