@@ -72,3 +72,4 @@ cache
 .archive-unpack
 src/plugins/Graves/readme.txt
 src/plugins/Graves/placeholders.txt
+src/plugins/Graves/schematics
