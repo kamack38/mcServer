@@ -14,6 +14,7 @@ use-display-name-in-quit-message: false
 verbose: false
 config-version: 27
 settings:
+  resolve-selectors-in-books: false
   proxy-protocol: false
   use-dimension-type-for-custom-spawners: false
   time-command-affects-all-worlds: false
@@ -131,6 +132,9 @@ timings:
   url: https://timings.aikar.co/
 world-settings:
   default:
+    treasure-maps-find-already-discovered:
+      villager-trade: false
+      loot-tables: default
     wateranimal-spawn-height:
       maximum: default
       minimum: default
@@ -215,7 +219,6 @@ world-settings:
     light-queue-size: 20
     auto-save-interval: -1
     enable-treasure-maps: false
-    treasure-maps-return-already-discovered: false
     game-mechanics:
       scan-for-legacy-ender-dragon: true
       disable-pillager-patrols: false
