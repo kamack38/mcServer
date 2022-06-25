@@ -25,7 +25,7 @@ To repozytorium zawiera wszelkie potrzebne pliki konfiguracyjne na twój serwer 
 - Linux
 - Windows 10/11
 
-**Silnik** - [Purpur 1.18.2](https://purpur.pl3x.net/)
+**Silnik** - [Purpur 1.18.2](https://purpurmc.org/)
 
 **Pluginy** :
 
@@ -105,6 +105,8 @@ java -Xmx4096M -Xms4096M -jar purpur.jar nogui
 ./ngrok tcp -region eu 25565
 ```
 
+<!-- markdownlint-disable ol-prefix -->
+
 3. Jeśli chcesz by ip twojego serwera wysyłało się na Discord automatycznie (niedostępne na Linuxie 🐧):
 
    - Utwórz webhook na wybranym serwerze Discord
@@ -118,6 +120,8 @@ Jeśli posiadasz program _ngrok_ w tzw. _PATH_ to możesz uruchomić serwer bez 
 ```powershell
 .\run.ps1 -ngrok
 ```
+
+<!-- markdownlint-restore ol-prefix -->
 
 ## Przypisy
 
