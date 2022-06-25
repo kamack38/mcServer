@@ -8,6 +8,11 @@ $error.clear()
 
 $MEM = $RAM.toString() + 'G'
 
+$PluginPath = "$PSScriptRoot\..\src\plugins"
+$SrcPath = "$PSScriptRoot\..\src"
+
+Set-Location $SrcPath
+
 function Send-WebhookMessage {
 
     param (
@@ -85,7 +90,7 @@ if ($ngrok) {
 }
 
 if ($nonpremium) {
-    if (!(Get-ChildItem .\plugins -Filter *AuthMe*.jar)) {
+    if (!(Get-ChildItem $PluginPath -Filter *AuthMe*.jar)) {
         Write-Host "AutheMe plugin isn't present. Check your plugins folder." -ForegroundColor Red
     }
     else {

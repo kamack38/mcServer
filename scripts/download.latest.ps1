@@ -6,8 +6,12 @@ param (
 $error.clear()
 
 # Delete Old plugins
-Remove-Item .\purpur.jar
-Remove-Item .\plugins\*.jar
+
+$PluginPath = "$PSScriptRoot\..\src\plugins"
+$SrcPath = "$PSScriptRoot\..\src"
+
+Remove-Item "$SrcPath\purpur.jar"
+Remove-Item "$PluginPath\*.jar"
 
 # Speed up download
 $ProgressPreference = 'SilentlyContinue'
@@ -30,7 +34,7 @@ function Get-LatestGitHubRelease($repo, $file, $noV) {
     
     $download = "https://github.com/$repo/releases/download/$tag/$file"
     $name = $file.Split(".")[0]
-    $jar = "plugins\$name-$tag.jar"
+    $jar = "$PluginPath\$name-$tag.jar"
     
     Write-Output "Downloading $file from $repo..."
     [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
@@ -67,7 +71,7 @@ $file = $download.downloads.bukkit.Split('/')[-1]
 $repo = 'ci.lucko.me'
 Write-Output "Downloading $file from $repo"
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-Invoke-WebRequest $download.downloads.bukkit -Out "plugins\$file"
+Invoke-WebRequest $download.downloads.bukkit -Out "$PluginPath\$file"
 
 if ($?) {
     Write-Host  "File $file has been successfully downloaded from $repo" -Foreground green
@@ -84,7 +88,7 @@ function Get-LatestPlugin($url, $file) {
     $domain = $url.Split('/')[2]
     Write-Output "Downloading $file from $domain"
     [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-    Invoke-WebRequest ($url + $file) -Out "plugins\$file" -ErrorAction SilentlyContinue
+    Invoke-WebRequest ($url + $file) -Out "$PluginPath\$file" -ErrorAction SilentlyContinue
     if ($?) {
         Write-Host  "File $file has been successfully downloaded from $domain" -Foreground green
     }
@@ -108,9 +112,9 @@ if ($nightly) {
     )
 }
 else {
-    Invoke-WebRequest "https://dev.bukkit.org/projects/worldedit/files/latest" -Out plugins\WorldEdit.jar
-    Invoke-WebRequest "https://dev.bukkit.org/projects/worldguard/files/latest" -Out plugins\WorldGuard.jar
-    Invoke-WebRequest "https://dev.bukkit.org/projects/player-heads/files/latest" -Out "plugins\PlayerHeads.jar"
+    Invoke-WebRequest "https://dev.bukkit.org/projects/worldedit/files/latest" -Out $PluginPath\WorldEdit.jar
+    Invoke-WebRequest "https://dev.bukkit.org/projects/worldguard/files/latest" -Out $PluginPath\WorldGuard.jar
+    Invoke-WebRequest "https://dev.bukkit.org/projects/player-heads/files/latest" -Out "$PluginPath\PlayerHeads.jar"
 }
 
 foreach ($item in $pluginsList) {
@@ -118,7 +122,7 @@ foreach ($item in $pluginsList) {
 }
 
 # Download graves
-Invoke-WebRequest "https://repo.ranull.com/ranull/com/ranull/graves/DEV/Graves-DEV.jar" -Out "plugins\Graves-DEV.jar"
+Invoke-WebRequest "https://repo.ranull.com/ranull/com/ranull/graves/DEV/Graves-DEV.jar" -Out "$PluginPath\Graves-DEV.jar"
 
 $errors = $error.count
 
