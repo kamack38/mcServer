@@ -28,7 +28,7 @@ FILE_PLUGINS=(
     "https://dev.bukkit.org/projects/worldguard/files/latest;WorldGuard"
     "https://dev.bukkit.org/projects/player-heads/files/latest;PlayerHeads"
     "https://dev.bukkit.org/projects/coreprotect/files/latest;CoreProtect"
-    "https://repo.ranull.com/maven/ranull/com/ranull/graves/DEV/Graves-DEV.jar;Graves"
+    "https://repo.ranull.com/minecraft/plugins/released/Graves/Graves-DEV.jar;Graves"
 )
 
 rm -f ../src/purpur.jar
