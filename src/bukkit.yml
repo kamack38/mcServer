@@ -16,6 +16,7 @@ aliases: now-in-commands.yml
 chunk-gc:
   period-in-ticks: 400
 settings:
+  use-map-color-cache: true
   allow-end: true
   connection-throttle: 4000
   deprecated-verbose: default

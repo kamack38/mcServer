@@ -16,96 +16,95 @@ PLUGIN_PATH="../src/plugins"
 ENGINE_PATH="../src/purpur.jar"
 
 GITHUB_PLUGINS=(
-    "MilkBowl/Vault"
-    "SkinsRestorer/SkinsRestorerX"
-    "Nuytemans-Dieter/BetterSleeping"
-    "NEZNAMY/TAB"
-    "AuthMe/AuthMeReloaded"
+	"MilkBowl/Vault"
+	"SkinsRestorer/SkinsRestorerX"
+	"Nuytemans-Dieter/BetterSleeping"
+	"NEZNAMY/TAB"
+	"AuthMe/AuthMeReloaded"
 )
 
 FILE_PLUGINS=(
-    "https://dev.bukkit.org/projects/worldedit/files/latest;WorldEdit"
-    "https://dev.bukkit.org/projects/worldguard/files/latest;WorldGuard"
-    "https://dev.bukkit.org/projects/player-heads/files/latest;PlayerHeads"
-    "https://dev.bukkit.org/projects/coreprotect/files/latest;CoreProtect"
-    "https://repo.ranull.com/minecraft/plugins/released/Graves/Graves-DEV.jar;Graves"
+	"https://dev.bukkit.org/projects/worldedit/files/latest;WorldEdit"
+	"https://dev.bukkit.org/projects/worldguard/files/latest;WorldGuard"
+	"https://dev.bukkit.org/projects/player-heads/files/latest;PlayerHeads"
+	"https://dev.bukkit.org/projects/coreprotect/files/latest;CoreProtect"
+	"https://repo.ranull.com/minecraft/plugins/released/Graves/Graves-DEV.jar;Graves"
 )
 
 rm -f ../src/purpur.jar
 rm -rf ../src/plugins/*.jar
 
 i=1
-maxi=$(expr ${#GITHUB_PLUGINS[@]} + 1 + 2 + 1 + ${#FILE_PLUGINS[@]}) # GitHub plugins + LuckPerms + EssentialsX and EssentialsXChat + Chunky + File plugins
+maxi=$((${#GITHUB_PLUGINS[@]} + 1 + 2 + 1 + ${#FILE_PLUGINS[@]})) # GitHub plugins + LuckPerms + EssentialsX and EssentialsXChat + Chunky + File plugins
+
+print_downloading() {
+	printf "\r${BLUE}:: ${BWHITE}Downloading ${BLUE}${1}${BWHITE}...${NC}"
+}
+
+print_downloaded() {
+	printf "\r${GREEN}:: ${NC}[$i/$maxi] ${BWHITE}Succesfully downloaded ${BLUE}${1}${BWHITE}!${NC}\n"
+	((i += 1))
+}
 
 # Download purpur
-printf "\r${BLUE}:: ${BWHITE}Downloading ${BLUE}purpur engine${BWHITE}...${NC}"
-wget -qLO "${ENGINE_PATH}" "https://api.purpurmc.org/v2/purpur/1.18.2/latest/download"
+print_downloading "purpur engine"
+wget -qLO "${ENGINE_PATH}" "https://api.purpurmc.org/v2/purpur/1.20.1/latest/download"
 printf "\r${GREEN}:: ${BWHITE}Succesfully downloaded ${BLUE}purpur${BWHITE}!${NC}\n"
 
 function downloadLatestReleases() {
-    PLUGIN_SPLIT=(${1//\// })
-    PLUGIN_NAME=${PLUGIN_SPLIT[1]}
-    printf "\r${BLUE}:: ${BWHITE}Downloading ${BLUE}${PLUGIN_NAME}${BWHITE}...${NC}"
-    curl -s "https://api.github.com/repos/$1/releases/latest" |
-        grep browser_download_url |
-        cut -d : -f 2,3 |
-        tr -d \" |
-        wget -O "${PLUGIN_PATH}/${PLUGIN_NAME}.jar" -qLi -
-    printf "\r${GREEN}:: ${NC}[$i/$maxi] ${BWHITE}Succesfully downloaded ${BLUE}${PLUGIN_NAME}${BWHITE}!${NC}\n"
-    ((i += 1))
-
+	PLUGIN_NAME=${1//*\//}
+	print_downloading "$PLUGIN_NAME"
+	curl -s "https://api.github.com/repos/$1/releases/latest" |
+		grep browser_download_url |
+		cut -d : -f 2,3 |
+		tr -d \" |
+		wget -O "${PLUGIN_PATH}/${PLUGIN_NAME}.jar" -qLi -
+	print_downloaded "$PLUGIN_NAME"
 }
 
 function downloadLatestBuild() {
-    printf "\r${BLUE}:: ${BWHITE}Downloading ${BLUE}${2}${BWHITE}...${NC}"
-    curl -s $1 |
-        grep -Po "$2-.*?\.jar" |
-        head -n 1 |
-        sed "s#^#${1}#" |
-        wget -O "${PLUGIN_PATH}/${2}.jar" -qi -
-    printf "\r${GREEN}:: ${NC}[$i/$maxi] ${BWHITE}Succesfully downloaded ${BLUE}${2}${BWHITE}!${NC}\n"
-    ((i += 1))
-}
-
-function downloadLatestFile() {
-    printf "\r${BLUE}:: ${BWHITE}Downloading ${BLUE}${2}${BWHITE}...${NC}"
-    wget -qLO "${PLUGIN_PATH}/${2}.jar" "${1}"
-    printf "\r${GREEN}:: ${NC}[$i/$maxi] ${BWHITE}Succesfully downloaded ${BLUE}${2}${BWHITE}!${NC}\n"
-    ((i += 1))
+	PLUGIN_NAME="$2"
+	PLUGIN_URL="$1"
+	print_downloading "$PLUGIN_NAME"
+	curl -s "$PLUGIN_URL" |
+		grep -Po "$PLUGIN_NAME-.*?\.jar" |
+		head -n 1 |
+		sed "s#^#${PLUGIN_URL}#" |
+		wget -O "${PLUGIN_PATH}/${PLUGIN_NAME}.jar" -qi -
+	print_downloaded "$PLUGIN_NAME"
 }
 
 function downloadEssentialsX() {
-    res=$(curl -s "https://ci-api.essentialsx.net/job/EssentialsX/lastSuccessfulBuild/api/json")
-    url=$(echo $res | jq '.url' -r)
-    path1=$(echo $res | jq '.artifacts[0].relativePath' -r) # Get EssentialX
-    path2=$(echo $res | jq '.artifacts[2].relativePath' -r) # Get EssentialXChat
-    printf "\r${BLUE}:: ${BWHITE}Downloading ${BLUE}EssentialsX${BWHITE}...${NC}"
-    wget -qO "${PLUGIN_PATH}/EssentialsX.jar" "${url}artifact/${path1}"
-    printf "\r${GREEN}:: ${NC}[$i/$maxi] ${BWHITE}Succesfully downloaded ${BLUE}EssentialsX${BWHITE}!${NC}\n"
-    ((i += 1))
-    printf "\r${BLUE}:: ${BWHITE}Downloading ${BLUE}EssenstialsXChat${BWHITE}...${NC}"
-    wget -qO "${PLUGIN_PATH}/EssenstialsXChat.jar" "${url}artifact/${path2}"
-    printf "\r${GREEN}:: ${NC}[$i/$maxi] ${BWHITE}Succesfully downloaded ${BLUE}EssenstialsXChat${BWHITE}!${NC}\n"
-    ((i += 1))
+	res=$(curl -s "https://ci-api.essentialsx.net/job/EssentialsX/lastSuccessfulBuild/api/json")
+	url=$(echo "$res" | jq '.url' -r)
+	path1=$(echo "$res" | jq '.artifacts[0].relativePath' -r) # Get EssentialX
+	path2=$(echo "$res" | jq '.artifacts[2].relativePath' -r) # Get EssentialXChat
+	print_downloading "EssentialsX"
+	wget -qO "${PLUGIN_PATH}/EssentialsX.jar" "${url}artifact/${path1}"
+	print_downloaded "EssentialsX"
+
+	print_downloading "EssentialsXChat"
+	wget -qO "${PLUGIN_PATH}/EssenstialsXChat.jar" "${url}artifact/${path2}"
+	print_downloaded "EssentialsXChat"
 }
 
 function downloadLatestFile() {
-    printf "\r${BLUE}:: ${BWHITE}Downloading ${BLUE}${2}${BWHITE}...${NC}"
-    wget -qLO "${PLUGIN_PATH}/${2}.jar" "${1}"
-    printf "\r${GREEN}:: ${NC}[$i/$maxi] ${BWHITE}Succesfully downloaded ${BLUE}${2}${BWHITE}!${NC}\n"
-    ((i += 1))
+	PLUGIN_NAME="$2"
+	PLUGIN_URL="$1"
+	print_downloading "$PLUGIN_NAME"
+	wget -qLO "${PLUGIN_PATH}/${PLUGIN_NAME}.jar" "${PLUGIN_URL}"
+	print_downloaded "$PLUGIN_NAME"
 }
 
 for PLUGIN in "${GITHUB_PLUGINS[@]}"; do
-    downloadLatestReleases $PLUGIN
+	downloadLatestReleases "$PLUGIN"
 done
 
 # Download latest LuckPerms
-printf "\r${BLUE}:: ${BWHITE}Downloading ${BLUE}LuckPerms${BWHITE}...${NC}"
+print_downloading "LuckPerms"
 LP_URL=$(curl -s https://metadata.luckperms.net/data/downloads | jq '.downloads.bukkit' -r)
-wget -qO "${PLUGIN_PATH}/LuckPerms.jar" $LP_URL
-printf "\r${GREEN}:: ${NC}[$i/$maxi] ${BWHITE}Succesfully downloaded ${BLUE}LuckPerms${BWHITE}!${NC}\n"
-((i += 1))
+wget -qO "${PLUGIN_PATH}/LuckPerms.jar" "$LP_URL"
+print_downloaded "LuckPerms"
 
 # Download EssentialsX and EssentialsXChat
 downloadEssentialsX
@@ -114,5 +113,7 @@ downloadEssentialsX
 downloadLatestBuild "https://ci.codemc.io/view/Author/job/pop4959/job/Chunky/lastSuccessfulBuild/artifact/bukkit/build/libs/" "Chunky"
 
 for PLUGIN_PAIR in "${FILE_PLUGINS[@]}"; do
-    downloadLatestFile ${PLUGIN_PAIR//;/ }
+	IFS=";"
+	read -r PLUGIN_URL PLUGIN_NAME <<<"$PLUGIN_PAIR"
+	downloadLatestFile "$PLUGIN_URL" "$PLUGIN_NAME"
 done

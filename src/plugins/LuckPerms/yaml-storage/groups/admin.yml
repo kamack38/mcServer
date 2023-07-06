@@ -1,12 +1,13 @@
 name: admin
 permissions:
-- essentials.ban
-- essentials.invsee
-- essentials.kick
-- essentials.mute
-- weight.4
+  - essentials.ban
+  - essentials.invsee
+  - essentials.kick
+  - essentials.mute
+  - tab.staff
+  - weight.4
 parents:
-- vip
+  - vip
 prefixes:
-- '&c[&4&lAdmin&c] ':
-    priority: 1
+  - '&c[&4&lAdmin&c] ':
+      priority: 1

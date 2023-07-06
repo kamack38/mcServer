@@ -70,6 +70,11 @@ stats:
   forced-stats: {}
 world-settings:
   default:
+    hopper-can-load-chunks: false
+    seed-ancientcity: 20083232
+    seed-trailruins: 83469867
+    seed-buriedtreasure: 10387320
+    seed-mineshaft: default
     seed-nether: 30084232
     seed-stronghold: default
     below-zero-generation-in-existing-chunks: true
@@ -106,12 +111,15 @@ world-settings:
         villagers-max-per-tick: 1
       water: 12
     entity-tracking-range:
+      display: 128
       animals: 48
       misc: 32
       monsters: 48
       other: 64
       players: 48
     growth:
+      torchflower-modifier: 100
+      pitcherplant-modifier: 100
       twistingvines-modifier: 100
       weepingvines-modifier: 100
       cavevines-modifier: 100
