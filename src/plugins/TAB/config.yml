@@ -128,9 +128,9 @@ placeholders:
   register-tab-expansion: false
 placeholder-output-replacements:
   '%essentials_vanished%':
-    'yes': '&7| Vanished'
+    'yes': ' &7| Vanished'
     'no': ''
-  '%afk%':
+  '%essentials_afk%':
     'true': ' &4*&4&lAFK&4*&r'
     'false': ''
 conditions: {}

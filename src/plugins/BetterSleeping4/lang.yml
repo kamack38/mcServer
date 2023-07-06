@@ -6,6 +6,7 @@
 #|____/ \___|\__|\__\___|_|  |____/|_____\___|\___| .__/|_|_| |_|\__, |     \_/    |_|
 #                                                 |_|            |___/
 
+
 # Want to add new translations or fix existing ones? Please let us know on Discord (https://discord.gg/AS46VGT) or GitHub!
 # All supported languages: https://github.com/Nuytemans-Dieter/BetterSleeping/tree/BetterSleeping-v4/src/main/resources/lang
 
@@ -33,6 +34,7 @@
 # BetterSleeping uses those to distinguish singular and plural words so you cannot directly use [ and ].
 # However, you can use |( and )| instead, they will be replaced by [ and ] respectively
 # |( This )| will become [ This ].
+
 
 # PLACEHOLDERS
 # <user>
@@ -64,44 +66,46 @@
 #     Can be used in:   no_permission, buff_received, debuff_received, some commands
 #     Example:          User executes /bs reload but has no access. <var> will be replaced by '/bs reload'
 
+
 # ----------------- #
 # Sleeping messages |
 # ----------------- #
 
 # A player receives this message when entering their bed
-bed_enter_message: '&6Dobrej nocy, &2<user>! &3(<num_sleeping>/<needed_sleeping>)'
+bed_enter_message: "&6Dobrej nocy, &2<user>! &3(<num_sleeping>/<needed_sleeping>)"
 
 # All players in the same world get this message when someone enters their bed
 bed_enter_broadcast: "<player> już\_śpi, [<num_sleeping>.gracz jest.<num_sleeping> gracze są] już w łóżku. <remaining_sleeping> [<remaining_sleeping>.gracz musi.gracze muszą] się jeszcze położyć.."
 
 # This message is sent to all players in a world where enough players are sleeping
-enough_sleeping: '&6Wszyscy już śpią! Noc niedługo minie...'
+enough_sleeping: "&6Wszyscy już śpią! Noc niedługo minie..."
 
 # Players receive this message in the morning
 # Placeholders: <num>: Amount of sleepers
-morning_message: '&6Dzień dobry &2<user>. &6Miłego dnia!'
+morning_message: "&6Dzień dobry &2<user>. &6Miłego dnia!"
 
 # Players that try to enter their bed too quickly after getting out of it
-sleep_spam: '&cMusisz poczekać jeszcze &3<time> [<time>.sekundę.sekund] &czanim będziesz mógł ponownie iść spać.'
+sleep_spam: "&cMusisz poczekać jeszcze &3<time> [<time>.sekundę.sekund] &czanim będziesz mógł ponownie iść spać."
 
 # This message is sent one minute before players can go to bed due to nighttime (disabled by default)
-sleep_possible_soon: '&6Niedługo nastanie noc, więc nie zapomnij o śnie.'
+sleep_possible_soon: "&6Niedługo nastanie noc, więc nie zapomnij o śnie."
 
 # This message is sent when sleeping is possible due to a thunderstorm or nighttime (disabled by default)
-sleep_possible_now: '&6Noc się zaczęła! &cO tej godzinie już wszystkie dzieci śpią!'
+sleep_possible_now: "&6Noc się zaczęła! &cO tej godzinie już wszystkie dzieci śpią!"
 
 # Used as title above the bossbar
-bossbar_title: 'Śpiący: <num_sleeping>/<needed_sleeping>'
+bossbar_title: "Śpiący: <num_sleeping>/<needed_sleeping>"
 
 # --------------- #
 # Buffs & debuffs |
 # --------------- #
 
 # Players who slept AND receive buffs will get this message
-buff_received: '&6Czujesz się wypoczęty. Dobry sen przyprawił cię o &3[<var>.a buffa.<var> buffy].'
+buff_received: "&6Czujesz się wypoczęty. Dobry sen przyprawił cię o &3[<var>.a buffa.<var> buffy]."
 
 # Players who did not sleep AND receive debuffs will get this message
-debuff_received: '&cTej nocy nie spałeś. Czujesz się zmęczony przez co otrzymujesz &3[<var>.a debuffa.<var> debuffy].'
+debuff_received: "&cTej nocy nie spałeś. Czujesz się zmęczony przez co otrzymujesz &3[<var>.a debuffa.<var> debuffy]."
+
 
 # ----------- #
 # Permissions |
@@ -112,7 +116,7 @@ debuff_received: '&cTej nocy nie spałeś. Czujesz się zmęczony przez co otrzy
 unknown_command: "&cKomenda '<command>' jest nieznana! Użyj &4&l/bs4 help &cby zobaczyć listę komend"
 
 # The message a player gets when they don't have access to a command
-no_permission: '&cNie masz wystarczających uprawnień, by użyć <var>!'
+no_permission: "&cNie masz wystarczających uprawnień, by użyć <var>!"
 
 # Sent when the console tries executing a player command, and when a player executes a console-only command
 wrong_executor: "&cNie możesz użyć '<command>'!"
@@ -122,53 +126,53 @@ wrong_executor: "&cNie możesz użyć '<command>'!"
 #     - Having the node bettersleeping.bypass
 #     - Being in a bypassed gamemode
 #     - Being afk / vanished
-bypass_message: '&cZostajesz pominięty, więc nie musisz iść spać <user>.'
+bypass_message: "&cZostajesz pominięty, więc nie musisz iść spać <user>."
 
 # -------- #
 # Commands |
 # -------- #
 
 # Sent to all players in a world when someone asks for players to sleep
-command_shout: '&cKtoś prosi ciebie o przespanie się i pominięcie nocy &3(<num_sleeping>/<needed_sleeping>)'
-command_shout_cooldown: '&cSomeone recently shouted in this world, please wait <time> more [<time>.second.seconds]!'
+command_shout: "&cKtoś prosi ciebie o przespanie się i pominięcie nocy &3(<num_sleeping>/<needed_sleeping>)"
+command_shout_cooldown: "&cSomeone recently shouted in this world, please wait <time> more [<time>.second.seconds]!"
 
 # Sent when someone tries to perform /bs4 sleep during the day
-command_sleep_notnight: '&cNie jesetś jeszcze zmęczony, poczekaj do nocy.'
+command_sleep_notnight: "&cNie jesetś jeszcze zmęczony, poczekaj do nocy."
 
 # Sent when someone attempts to get info on a disabled world
-world_disabled: '&cPlugin BetterSleeping nie jest włączony w twoim świecie.'
+world_disabled: "&cPlugin BetterSleeping nie jest włączony w twoim świecie."
 
 # These are shown when performing /bs4 help
 # Set one or more of these to "" to disable them from showing up
-command_help_header: '&3--=={BetterSleeping4 Help}==--'
-command_help_buffs: '/bs4 buffs: &fPokaż listę (de)buffów, które możesz otrzymać'
-command_help_reload: '/bs4 reload: &fPrzeładuj konfigurację pluginu'
-command_help_shout: '/bs4 shout: &fAnonimowo zapytaj graczy w twoim świecie o przespanie się'
-command_help_sleep: '/bs4 sleep: &fLicz się jako śpiący bez chodzenia do łóżka'
-command_help_status: '/bs4 status: &fPokaż status w swoim świecie'
-command_help_version: '/bs4 version: &fPokaż informacje o wersji pluginu'
-command_help_footer: '&3---==<>==---'
+command_help_header: "&3--=={BetterSleeping4 Help}==--"
+command_help_buffs: "/bs4 buffs: &fPokaż listę (de)buffów, które możesz otrzymać"
+command_help_reload: "/bs4 reload: &fPrzeładuj konfigurację pluginu"
+command_help_shout: "/bs4 shout: &fAnonimowo zapytaj graczy w twoim świecie o przespanie się"
+command_help_sleep: "/bs4 sleep: &fLicz się jako śpiący bez chodzenia do łóżka"
+command_help_status: "/bs4 status: &fPokaż status w swoim świecie"
+command_help_version: "/bs4 version: &fPokaż informacje o wersji pluginu"
+command_help_footer: "&3---==<>==---"
 
 # Shown when performing /bs4 status
 # Set one or more of these to "" to disable them from showing up
-command_status_header: '&3--=={BetterSleeping4 Status}==--'
-command_status_world: 'Pokazywanie statusu świata: &f<worldname>'
+command_status_header: "&3--=={BetterSleeping4 Status}==--"
+command_status_world: "Pokazywanie statusu świata: &f<worldname>"
 # Placeholders: <num_sleeping> and <needed_sleeping>
-command_status_sleeping: 'Śpiący: &f<num_sleeping>/<needed_sleeping>'
+command_status_sleeping: "Śpiący: &f<num_sleeping>/<needed_sleeping>"
 # Placeholder: <var>
-command_status_dayspeed: 'Prędkość dnia: &fx<var>'
+command_status_dayspeed: "Prędkość dnia: &fx<var>"
 # Placeholder: <var>
-command_status_nightspeed: 'Prędkość nocy: &fx<var>'
+command_status_nightspeed: "Prędkość nocy: &fx<var>"
 # Placeholder: <var>
-command_status_sleepingspeed: 'Prędkość snu: &fx<var>'
-command_status_footer: '&3---==<>==---'
+command_status_sleepingspeed: "Prędkość snu: &fx<var>"
+command_status_footer: "&3---==<>==---"
 
 # Shown when performing /bs4 buffs
-command_buffs_header: '&3--=={BetterSleeping4 Buffs}==--'
-command_buffs_nobuffs: '&cNie ma żadnych włączonych buffów!'
-command_buffs_buffs: '&6Gdy się prześpisz, otrzymasz:'
-command_buffs_separator: '&3---===---'
-command_buffs_nodebuffs: '&cNie ma żadnych włączonych debuffów!'
-command_buffs_bypassed: 'Jesteś pomijany, więc nigdy nie otzrymasz buffów'
-command_buffs_debuffs: '&cJeśli się nie prześpisz, otrzymasz:'
-command_buffs_footer: '&3---==<>==---'
+command_buffs_header: "&3--=={BetterSleeping4 Buffs}==--"
+command_buffs_nobuffs: "&cNie ma żadnych włączonych buffów!"
+command_buffs_buffs: "&6Gdy się prześpisz, otrzymasz:"
+command_buffs_separator: "&3---===---"
+command_buffs_nodebuffs: "&cNie ma żadnych włączonych debuffów!"
+command_buffs_bypassed: "Jesteś pomijany, więc nigdy nie otzrymasz buffów"
+command_buffs_debuffs: "&cJeśli się nie prześpisz, otrzymasz:"
+command_buffs_footer: "&3---==<>==---"

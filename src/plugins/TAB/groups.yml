@@ -1,8 +1,8 @@
 _DEFAULT_:
   tabprefix: ''
   tagprefix: ''
-  tabsuffix: '%afk%'
-  tagsuffix: '%afk%'
+  tabsuffix: '%essentials_afk%%essentials_vanished%'
+  tagsuffix: '%essentials_afk%%essentials_vanished%'
   customtabname: '%displayname%'
   customtagname: '%displayname%'
   belowname: '%health% &c❤'
