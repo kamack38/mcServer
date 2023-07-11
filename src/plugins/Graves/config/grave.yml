@@ -9,7 +9,7 @@ settings:
       # Grave #
       #########
       grave:
-        time: 300 # (Second) How long graves should stay alive for, 300 = 5 minutes, 10800 = 3 hours, -1 lasts forever.
+        time: 720 # (Second) How long graves should stay alive for, 300 = 5 minutes, 10800 = 3 hours, -1 lasts forever.
         max: 18 # The max amount of graves an entity can have.
         break: true # Can graves be broken.
         explode: false # Can graves be blown up.
@@ -64,8 +64,8 @@ settings:
           z: 0 # Block offset Z.
         head:
           type: 1 # 0 = Player/Entity head, (1 = Custom texture or 2 = Player username set under name).
-          base64: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjdjYWI1NmM4MmNiODFiZGI5OTc5YTQ2NGJjOWQzYmEzZTY3MjJiYTEyMmNmNmM1Mjg3MzAxMGEyYjU5YWVmZSJ9fX0="
-          name: "MHF_Chest" # If type is set to 2.
+          base64: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjdjYWI1NmM4MmNiODFiZGI5OTc5YTQ2NGJjOWQzYmEzZTY3MjJiYTEyMmNmNmM1Mjg3MzAxMGEyYjU5YWVmZSJ9fX0='
+          name: 'MHF_Chest' # If type is set to 2.
 
       ############
       # Hologram #
@@ -80,11 +80,11 @@ settings:
           y: -0.28 # Hologram offset Y.
           z: 0 # Hologram offset Z.
         line:
-          - "&bNagrobek &3%owner_name%"
-          - "&c%killer_name% &c☠"
-          - "&c%item% &4przedmioty/ów"
-          - "&a%level% &2poziomy/ów: "
-          - "&5Pozostało &f%time_alive_remaining_formatted%"
+          - '&bNagrobek &3%owner_name%'
+          - '&c%killer_name% &c☠'
+          - '&c%item% &4przedmioty/ów'
+          - '&a%level% &2poziomy/ów: '
+          - '&5Pozostało &f%time_alive_remaining_formatted%'
 
       ##############
       # Protection #
@@ -101,8 +101,8 @@ settings:
             owner: true # If a killer can't be found should the owner be allowed to open the grave.
             other: false # If a killer can't be found should everyone be allowed to open the grave.
         state:
-          protected: "&c✘"
-          unprotected: "&a✔"
+          protected: '&c✘'
+          unprotected: '&a✔'
 
       ###########
       # Storage #
@@ -124,17 +124,17 @@ settings:
       respawn:
         compass: true # Should entities be given a compass to their last grave when they respawn. (Only works for players)
         compass-time: 10 # How long should the entity be given a compass on respawn after the grave was first created.
-        function: "none" # Should we run a function after respawning, you can use menu and list among the other functions.
+        function: 'none' # Should we run a function after respawning, you can use menu and list among the other functions.
 
       ############
       # Particle #
       ############
       particle:
         enabled: false # Enable the particles feature.
-        type: "REDSTONE" # https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Particle.html
+        type: 'REDSTONE' # https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Particle.html
         count: 4 # Amount of particles.
         dust-size: 4 # Only applies to REDSTONE.
-        dust-color: "RED" # only applies to REDSTONE, https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Color.html
+        dust-color: 'RED' # only applies to REDSTONE, https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Color.html
         offset:
           x: 0 # Particle offset X.
           y: 0 # Particle offset Y.
@@ -145,12 +145,12 @@ settings:
       ###########
       # Compass that points towards the closest location belonging to a grave, only supported on 1.16.2+.
       compass:
-        function: "distance" # The function that gets run on right click.
+        function: 'distance' # The function that gets run on right click.
         ignore: true # Ignore the compass if an entity dies with it, drop it normally.
         destroy: true # Should a previous compass be destroyed when creating a new grave.
-        name: "Nagrobek gracza %owner_name%"
+        name: 'Nagrobek gracza %owner_name%'
         lore:
-          - "%world_formatted%, %x%x, %y%y, %z%z"
+          - '%world_formatted%, %x%x, %y%y, %z%z'
 
       ############
       # Teleport #
@@ -169,7 +169,7 @@ settings:
       ##########
       zombie:
         type: ZOMBIE # https://hub.spigotmc.org/javadocs/spigot/org/bukkit/entity/LivingEntity.html
-        name: "Zombie gracza %owner_name%"
+        name: 'Zombie gracza %owner_name%'
         spawn-owner: false # Should a grave spawn a zombie when it is looted by its owner.
         spawn-other: true # Should a grave spawn a zombie if it is looted by another player.
         only-break: false # Should a zombie only spawn if the player broke the grave not open it.
@@ -192,7 +192,7 @@ settings:
       # Schematic options, this feature is in beta. Schematics don't get cleaned up when the grave is removed.
       schematic:
         enabled: false # Should schematics be enabled.
-        name: "grave_default" # Schematic file name.
+        name: 'grave_default' # Schematic file name.
         offset:
           x: 0 # Schematic offset X.
           y: 0 # Schematic offset Y.
@@ -204,7 +204,7 @@ settings:
       # This option requires FurnitureLib, you must have this installed to use models.
       furniturelib:
         enabled: true # Should FurnitureLib furniture be used.
-        name: "Grave1" # Object ID.
+        name: 'Grave1' # Object ID.
         head:
           replace: true
           material:
@@ -213,8 +213,8 @@ settings:
             - SKELETON_SKULL
             - ZOMBIE_HEAD
         line: # If the model contains a sign, this is the text we will apply to it.
-          - "%owner_name% Died"
-          - "By %killer_name%"
+          - '%owner_name% Died'
+          - 'By %killer_name%'
 
       ###################
       # FurnitureEngine #
@@ -222,7 +222,7 @@ settings:
       # This option requires FurnitureEngine, you must have this installed to use models.
       furnitureengine:
         enabled: true # Should FurnitureEngine furniture be used.
-        name: "grave" # Furniture name.
+        name: 'grave' # Furniture name.
 
       ##############
       # ItemsAdder #
@@ -232,10 +232,10 @@ settings:
       itemsadder:
         furniture:
           enabled: true # Should we use ItemsAdder furniture?
-          name: "itemsadder:mysterious_stone" # Furniture name.
+          name: 'itemsadder:mysterious_stone' # Furniture name.
         block:
           enabled: false # Should we use ItemsAdder blocks?
-          name: "itemsadder:nice_stone" # Block name.
+          name: 'itemsadder:nice_stone' # Block name.
 
       ##########
       # Oraxen #
@@ -245,17 +245,17 @@ settings:
       oraxen:
         furniture:
           enabled: true # Should we use Oraxen furniture?
-          name: "grave" # Block name.
+          name: 'grave' # Block name.
         block:
           enabled: false # Should we use Oraxen blocks?
-          name: "caveblock" # Block name.
+          name: 'caveblock' # Block name.
 
       #########
       # Token #
       #########
       token: # You have to define a token to be used in the token.yml file.
         enabled: false # Should graves require tokens for their creation.
-        name: "basic" # Name of the token defined in token.yml file.
+        name: 'basic' # Name of the token defined in token.yml file.
 
       #########
       # Sound #
@@ -281,22 +281,22 @@ settings:
       event:
         command: # Run commands on grave events.
           loot:
-            - ""
+            - ''
             #- "say %interact_name% looted %owner_name%'s grave"
           create:
-            - ""
+            - ''
             #- "say %owner_name% was killed by %killer_name% at %x%x %y%y %z%z, grave lasts for %time_alive_remaining_formatted%."
           open:
-            - ""
+            - ''
             #- "say %interact_name% is looting %owner_name%'s grave."
           break:
-            - ""
+            - ''
             #- "say %interact_name% broke %owner_name%'s grave."
           explode:
-            - ""
+            - ''
             #- "say %interact_name% exploded %owner_name%'s grave."
           teleport:
-            - ""
+            - ''
             #- "say %interact_name% teleported to %owner_name%'s grave."
 
       ##########
@@ -305,23 +305,23 @@ settings:
       ignore:
         item: # Items that graves will ignore from the inventory, these items will be handled normally.
           material:
-            - ""
+            - ''
             #- BEDROCK  # https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Material.html
           name: # If an item has this exact name it will be handled normally.
-            - ""
+            - ''
             #- "&4Admin Sword"
           lore: # If an item has this exact line of lore it will be handled normally.
-            - ""
+            - ''
             #- "Soulbound"
           name-contains: # If an item contains this string in the name it will be handled normally.
-            - ""
+            - ''
             #- "Super Pickaxe"
           lore-contains: # If an item contains this string in the lore it will be handled normally.
-            - ""
+            - ''
             #- "Ignore Lore"
         block: # Blocks that graves will not spawn in.
           material:
-            - ""
+            - ''
             #- LAVA
 
       #########
@@ -411,74 +411,74 @@ settings:
       # Message #
       ###########
       message:
-        prefix: "&c☠ &8» &r"
-        loot: "&7Nagrobek złupiony!"
-        experience: "Złupiono &7%level% &rpoziomów z nagrobka."
-        empty: "&7Nie posiadasz żadnych nagrobków."
-        death: "&7Masz nagrobek na &4%x%&6x, &4%y%&6y, &4%z%&6z&7, który zniknie za &4%time_alive_remaining_formatted%&7!"
-        ignore: "&7Nagrobek nie został stworzony, ponieważ umarłeś w &6%name%&r."
-        max: "&7Nagrobek nie został utworzony! Masz ich zbyt wiele!"
-        failure: "&7Nie udało się postawić nagrobka! Przedmioty zostały wyrzucone na ziemię."
+        prefix: '&c☠ &8» &r'
+        loot: '&7Nagrobek złupiony!'
+        experience: 'Złupiono &7%level% &rpoziomów z nagrobka.'
+        empty: '&7Nie posiadasz żadnych nagrobków.'
+        death: '&7Masz nagrobek na &4%x%&6x, &4%y%&6y, &4%z%&6z&7, który zniknie za &4%time_alive_remaining_formatted%&7!'
+        ignore: '&7Nagrobek nie został stworzony, ponieważ umarłeś w &6%name%&r.'
+        max: '&7Nagrobek nie został utworzony! Masz ich zbyt wiele!'
+        failure: '&7Nie udało się postawić nagrobka! Przedmioty zostały wyrzucone na ziemię.'
         no-money: "You don't have enough money, you need &7%teleport_cost%&r."
         no-token: "A grave was not created because you didn't have a grave token."
-        give-token: "You were given a Grave Token."
-        distance: "&7Twój nagrobek znajduje się &6%distance% &7bloki/ów dalej."
-        distance-world: "&4Nie można zmierzyć odległości, zły świat!"
-        teleport: "You teleported to your grave."
-        teleport-top: "Grave is in an unsafe location, you have been teleported nearby."
-        teleport-failure: "&7Teleport failed! Teleport location is unsafe!"
-        teleport-disabled: "&4Teleportacja do nagrobków jest wyłączona."
-        build-denied: "&7Nagrobek nie został utworzony, ponieważ nie możesz tam budować!"
-        distance-virtual: "&cZnajdujesz się zbyt daleko, żeby wirtualnie otworzyć ten nagrobek."
-        permission-denied: "&7Brak uprawnień!"
-        protection: "&7Ten nagrobek jest chroniony jeszcze przez %time_protection_remaining_formatted%."
-        region-create-deny: "&cNagrobek nie został utworzony&7, ponieważ tworzenie nagrobków, zostało zablokowane w tym regionie."
-        region-teleport-deny: "Grave teleportation is disabled in this region."
+        give-token: 'You were given a Grave Token.'
+        distance: '&7Twój nagrobek znajduje się &6%distance% &7bloki/ów dalej.'
+        distance-world: '&4Nie można zmierzyć odległości, zły świat!'
+        teleport: 'You teleported to your grave.'
+        teleport-top: 'Grave is in an unsafe location, you have been teleported nearby.'
+        teleport-failure: '&7Teleport failed! Teleport location is unsafe!'
+        teleport-disabled: '&4Teleportacja do nagrobków jest wyłączona.'
+        build-denied: '&7Nagrobek nie został utworzony, ponieważ nie możesz tam budować!'
+        distance-virtual: '&cZnajdujesz się zbyt daleko, żeby wirtualnie otworzyć ten nagrobek.'
+        permission-denied: '&7Brak uprawnień!'
+        protection: '&7Ten nagrobek jest chroniony jeszcze przez %time_protection_remaining_formatted%.'
+        region-create-deny: '&cNagrobek nie został utworzony&7, ponieważ tworzenie nagrobków, zostało zablokowane w tym regionie.'
+        region-teleport-deny: 'Grave teleportation is disabled in this region.'
 
         world: # Change the world name is %world_formatted%, if a world is not defined below it will try to format it itself.
-          world: "Overworld"
-          world_nether: "Nether"
-          world_the_end: "The End"
+          world: 'Overworld'
+          world_nether: 'Nether'
+          world_the_end: 'The End'
 
         death-reason: # https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/entity/EntityDamageEvent.DamageCause.html
-          ENTITY_ATTACK: "Zaatakowany"
-          ENTITY_SWEEP_ATTACK: "Zaatakowany"
-          PROJECTILE: "Projectile Struck"
-          SUFFOCATION: "Suffocated"
-          FALL: "Upadek"
-          FIRE: "Spalenie"
-          FIRE_TICK: "Spalenie"
-          MELTING: "Roztopienie"
-          LAVA: "Spłonięcie"
-          DROWNING: "Utonięcie"
-          BLOCK_EXPLOSION: "Wybuchnięcie"
-          ENTITY_EXPLOSION: "Creeper! Aw mann..."
-          VOID: "Voided"
-          LIGHTNING: "Zeus"
-          SUICIDE: "Samobójstwo"
-          STARVATION: "Zagłodzenie"
-          POISON: "Zatrucie"
-          MAGIC: "Magic Missile"
-          WITHER: "Withered Away"
-          FALLING_BLOCK: "Zgnieciony"
-          THORNS: "Thorned"
-          DRAGON_BREATH: "Oddech Smoka"
-          CUSTOM: "Dark Magic"
-          FLY_INTO_WALL: "Szybki Lot"
-          HOT_FLOOR: "Burned Feet"
-          CRAMMING: "Przytulenie"
-          DRYOUT: "Suffocated"
-          FREEZE: "Zamrożenie"
+          ENTITY_ATTACK: 'Zaatakowany'
+          ENTITY_SWEEP_ATTACK: 'Zaatakowany'
+          PROJECTILE: 'Projectile Struck'
+          SUFFOCATION: 'Suffocated'
+          FALL: 'Upadek'
+          FIRE: 'Spalenie'
+          FIRE_TICK: 'Spalenie'
+          MELTING: 'Roztopienie'
+          LAVA: 'Spłonięcie'
+          DROWNING: 'Utonięcie'
+          BLOCK_EXPLOSION: 'Wybuchnięcie'
+          ENTITY_EXPLOSION: 'Creeper! Aw mann...'
+          VOID: 'Voided'
+          LIGHTNING: 'Zeus'
+          SUICIDE: 'Samobójstwo'
+          STARVATION: 'Zagłodzenie'
+          POISON: 'Zatrucie'
+          MAGIC: 'Magic Missile'
+          WITHER: 'Withered Away'
+          FALLING_BLOCK: 'Zgnieciony'
+          THORNS: 'Thorned'
+          DRAGON_BREATH: 'Oddech Smoka'
+          CUSTOM: 'Dark Magic'
+          FLY_INTO_WALL: 'Szybki Lot'
+          HOT_FLOOR: 'Burned Feet'
+          CRAMMING: 'Przytulenie'
+          DRYOUT: 'Suffocated'
+          FREEZE: 'Zamrożenie'
 
       ########
       # Time #
       ########
       time:
-        second: "&c%second%&fs "
-        minute: "&c%minute%&fm "
-        hour: "&c%hour%&fh "
-        day: "&c%day%&fd "
-        infinite: "&cForever"
+        second: '&c%second%&fs '
+        minute: '&c%minute%&fm '
+        hour: '&c%hour%&fh '
+        day: '&c%day%&fd '
+        infinite: '&cForever'
 
       #######
       # GUI #
@@ -486,45 +486,45 @@ settings:
       # Functions: none, list, menu, teleportation, protection
       gui:
         grave:
-          title: "Nagrobek %owner_name%"
+          title: 'Nagrobek %owner_name%'
 
         menu:
           list:
             item:
               block: true # Should we use options under block for the menu item?
               material: CHEST # Item if block is false or can't be found.
-            title: "Lista Nagrobków"
-            function: "menu" # Open the menu by default, if you don't want to use the menu you can change this to none or any other valid function.
-            name: "Nagrobek"
+            title: 'Lista Nagrobków'
+            function: 'menu' # Open the menu by default, if you don't want to use the menu you can change this to none or any other valid function.
+            name: 'Nagrobek'
             glow: false
             model-data: -1
-            empty: "Nie masz żadnych nagrobków"
+            empty: 'Nie masz żadnych nagrobków'
             lore:
-              - "Utworzono &f%time_lived_formatted% &7temu"
+              - 'Utworzono &f%time_lived_formatted% &7temu'
 
           grave:
-            title: "Menu Nagrobków"
+            title: 'Menu Nagrobków'
             slot:
               0:
-                material: "PAPER"
-                function: "distance"
-                name: "Informacje"
+                material: 'PAPER'
+                function: 'distance'
+                name: 'Informacje'
                 glow: false
                 model-data: -1
                 lore:
-                  - "&4Przedmioty/ów: &f&c%item%"
-                  - "&2Poziomy/ów: &f&a%level%"
-                  - "&3Miejsce śmierci: &f&b%world%, &4%x%&6x &4%y%&6y &4%z%&6z"
-                  - "&5Pozostało: &f%time_alive_remaining_formatted%"
+                  - '&4Przedmioty/ów: &f&c%item%'
+                  - '&2Poziomy/ów: &f&a%level%'
+                  - '&3Miejsce śmierci: &f&b%world%, &4%x%&6x &4%y%&6y &4%z%&6z'
+                  - '&5Pozostało: &f%time_alive_remaining_formatted%'
 
               1:
-                material: "TRIPWIRE_HOOK"
-                function: "protection"
-                name: "Toggle Protection %state_protection%"
+                material: 'TRIPWIRE_HOOK'
+                function: 'protection'
+                name: 'Toggle Protection %state_protection%'
                 glow: false
                 model-data: -1
                 lore:
-                  - "Toggle grave protection"
+                  - 'Toggle grave protection'
 
               #2: # Toggle protection on and off, you can uncomment this if you want.
               #  material: "TRIPWIRE_HOOK"
