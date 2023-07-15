@@ -101,6 +101,7 @@ $pluginsList = @(
     [pscustomobject]@{url = "https://ci.ender.zone/job/EssentialsX/lastSuccessfulBuild/artifact/jars/"; file = "^EssentialsX-.*" }
     [pscustomobject]@{url = "https://ci.ender.zone/job/EssentialsX/lastSuccessfulBuild/artifact/jars/"; file = "^EssentialsXChat-.*" }
     [pscustomobject]@{url = "https://ci.codemc.io/view/Author/job/pop4959/job/Chunky/lastSuccessfulBuild/artifact/bukkit/build/libs/"; file = "^Chunky-.*" }
+    [pscustomobject]@{url = "https://ci.extendedclip.com/job/PlaceholderAPI/lastSuccessfulBuild/artifact/build/libs/"; file = "^PlaceholderAPI-.*" }
 )
 
 if ($nightly) {

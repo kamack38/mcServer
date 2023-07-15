@@ -112,6 +112,9 @@ downloadEssentialsX
 # Download Chunky
 downloadLatestBuild "https://ci.codemc.io/view/Author/job/pop4959/job/Chunky/lastSuccessfulBuild/artifact/bukkit/build/libs/" "Chunky"
 
+# Download PAPI
+downloadLatestBuild "https://ci.extendedclip.com/job/PlaceholderAPI/lastSuccessfulBuild/artifact/build/libs/" "PlaceholderAPI"
+
 for PLUGIN_PAIR in "${FILE_PLUGINS[@]}"; do
 	IFS=";"
 	read -r PLUGIN_URL PLUGIN_NAME <<<"$PLUGIN_PAIR"

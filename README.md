@@ -11,6 +11,7 @@
     - [3.1 Uruchamianie Serwera](#31-uruchamianie-serwera)
     - [3.2 Serwer w trybie Online](#32-serwer-w-trybie-online)
   - [Dodatkowa konfiguracja](#dodatkowa-konfiguracja)
+  - [Dodatkowe informacje](#dodatkowe-informacje)
 
 <!-- /TOC -->
 
@@ -37,6 +38,7 @@ To repozytorium zawiera wszelkie potrzebne pliki konfiguracyjne na twój serwer 
 - [EssentialX Chat](https://essentialsx.net/downloads.html)
 - [Graves](https://www.spigotmc.org/resources/graves.74208/)
 - [LuckPerms](https://luckperms.net/)
+- [PlaceholderAPI](https://github.com/PlaceholderAPI/PlaceholderAPI)
 - [PlayerHeads](https://dev.bukkit.org/projects/player-heads)
 - [SkinRestorer](https://github.com/SkinsRestorer/SkinsRestorerX)
 - [TAB](https://github.com/NEZNAMY/TAB)
@@ -126,3 +128,17 @@ Jeśli posiadasz program _ngrok_ w tzw. _PATH_ to możesz uruchomić serwer bez 
 ## Dodatkowa konfiguracja
 
 Konfigurację anti-xray znajdziesz pod [tym linkiem](https://docs.papermc.io/paper/anti-xray).
+
+## Dodatkowe informacje
+
+### Silnik
+
+[Dokumentacja purpurmc](https://purpurmc.org/docs/)
+[Dokumentacja papermc](https://docs.papermc.io/paper)
+[Wiki CraftBukkit](https://bukkit.fandom.com/wiki/Main_Page)
+
+### Pluginy
+
+[Wiki BetterSleeping](https://github.com/Nuytemans-Dieter/BetterSleeping/wiki)
+[Wiki EssentialX](https://essentialsx.net/wiki/Home.html)
+[Wiki PlaceholderAPI](https://github.com/PlaceholderAPI/PlaceholderAPI/wiki)
