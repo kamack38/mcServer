@@ -10,7 +10,7 @@
     - [2. Instalowanie silnika oraz pluginów](#2-instalowanie-silnika-oraz-pluginów)
     - [3.1 Uruchamianie Serwera](#31-uruchamianie-serwera)
     - [3.2 Serwer w trybie Online](#32-serwer-w-trybie-online)
-  - [Przypisy](#przypisy)
+  - [Dodatkowa konfiguracja](#dodatkowa-konfiguracja)
 
 <!-- /TOC -->
 
@@ -25,7 +25,7 @@ To repozytorium zawiera wszelkie potrzebne pliki konfiguracyjne na twój serwer 
 - Linux
 - Windows 10/11
 
-**Silnik** - [Purpur 1.18.2](https://purpurmc.org/)
+**Silnik** - [Purpur 1.20.1](https://purpurmc.org/)
 
 **Pluginy** :
 
@@ -123,6 +123,6 @@ Jeśli posiadasz program _ngrok_ w tzw. _PATH_ to możesz uruchomić serwer bez 
 
 <!-- markdownlint-restore ol-prefix -->
 
-## Przypisy
+## Dodatkowa konfiguracja
 
-[Paper Anti-Xray settings by stonar96](https://gist.github.com/stonar96/ba18568bd91e5afd590e8038d14e245e)
+Konfigurację anti-xray znajdziesz pod [tym linkiem](https://docs.papermc.io/paper/anti-xray).
