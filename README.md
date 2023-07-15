@@ -133,12 +133,12 @@ Konfigurację anti-xray znajdziesz pod [tym linkiem](https://docs.papermc.io/pap
 
 ### Silnik
 
-[Dokumentacja purpurmc](https://purpurmc.org/docs/)
-[Dokumentacja papermc](https://docs.papermc.io/paper)
-[Wiki CraftBukkit](https://bukkit.fandom.com/wiki/Main_Page)
+- [Dokumentacja purpurmc](https://purpurmc.org/docs/)
+- [Dokumentacja papermc](https://docs.papermc.io/paper)
+- [Wiki CraftBukkit](https://bukkit.fandom.com/wiki/Main_Page)
 
 ### Pluginy
 
-[Wiki BetterSleeping](https://github.com/Nuytemans-Dieter/BetterSleeping/wiki)
-[Wiki EssentialX](https://essentialsx.net/wiki/Home.html)
-[Wiki PlaceholderAPI](https://github.com/PlaceholderAPI/PlaceholderAPI/wiki)
+- [Wiki BetterSleeping](https://github.com/Nuytemans-Dieter/BetterSleeping/wiki)
+- [Wiki EssentialX](https://essentialsx.net/wiki/Home.html)
+- [Wiki PlaceholderAPI](https://github.com/PlaceholderAPI/PlaceholderAPI/wiki)
