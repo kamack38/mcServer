@@ -94,7 +94,7 @@ java -Xmx4096M -Xms4096M -jar purpur.jar nogui
 
 **UWAGA!** Powyższa opcja nie jest zalecana, ponieważ nie używa ona wszystkich optymalizacji. Korzystając z niej pamiętaj, żeby znajdować się w odpowiedniej ścieżce, by plik `purpur.jar` mógł zostać znaleziony.
 
-**Jeśli chcesz by inne osoby z twojej śeci mogły dołączyć do twojego serwera to pamiętaj, aby mieć otworzony port `25565`!**
+**Jeśli chcesz by inne osoby z twojej śeci mogły dołączyć do twojego serwera to pamiętaj, aby mieć otworzony port `25565`**(jest to domyślny port, którego używa serwer jeśli go wcześniej nie zmieniłeś)**!**
 
 > Jeśli nie wiesz jak to zrobić kliknij [tutaj](https://github.com/kamack38/mcServer/wiki/Ustawienia-Zapory-w-systemie-Windows)
 
