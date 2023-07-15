@@ -92,7 +92,7 @@ Korzystając z Windowsa możesz dodać parametr `-nonpremium` by włączyć serw
 java -Xmx4096M -Xms4096M -jar purpur.jar nogui
 ```
 
-**UWAGA!** Powyższa opcja nie jest zalecana, ponieważ nie używa ona wszystkich optymalizacji. Korzystając z niej pamiętaj, żeby znajdować się w odpowiedniej ścieżce by plik `purpur.jar` mógł zostać znaleziony.
+**UWAGA!** Powyższa opcja nie jest zalecana, ponieważ nie używa ona wszystkich optymalizacji. Korzystając z niej pamiętaj, żeby znajdować się w odpowiedniej ścieżce, by plik `purpur.jar` mógł zostać znaleziony.
 
 **Jeśli chcesz by inne osoby z twojej śeci mogły dołączyć do twojego serwera to pamiętaj, aby mieć otworzony port `25565`!**
 
