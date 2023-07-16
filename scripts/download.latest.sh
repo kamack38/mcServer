@@ -31,6 +31,16 @@ FILE_PLUGINS=(
 	"https://repo.ranull.com/minecraft/plugins/released/Graves/Graves-DEV.jar;Graves"
 )
 
+if ! command -v jq &>/dev/null; then
+	echo "${RED}:: jq is missing! ${BWHITE}Install it and run the script again."
+	exit 1
+fi
+
+if ! command -v wget &>/dev/null; then
+	echo "${RED}:: wget is missing! ${BWHITE}Install it and run the script again."
+	exit 1
+fi
+
 rm -f ../src/purpur.jar
 rm -rf ../src/plugins/*.jar
 
