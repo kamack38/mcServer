@@ -13,6 +13,7 @@ YELLOW=$'\e[0;33m'
 NC=$'\e[0m' # No Colour
 
 PLUGIN_PATH="../src/plugins"
+EXPANSIONS_PATH="../src/plugins/PlaceholderAPI/expansions"
 ENGINE_PATH="../src/purpur.jar"
 
 GITHUB_PLUGINS=(
@@ -31,6 +32,10 @@ FILE_PLUGINS=(
 	"https://repo.ranull.com/minecraft/plugins/released/Graves/Graves-DEV.jar;Graves"
 )
 
+PAPI_EXPANSIONS=(
+	"Essentials"
+)
+
 if ! command -v jq &>/dev/null; then
 	echo "${RED}:: jq is missing! ${BWHITE}Install it and run the script again."
 	exit 1
@@ -42,10 +47,11 @@ if ! command -v wget &>/dev/null; then
 fi
 
 rm -f ../src/purpur.jar
-rm -rf ../src/plugins/*.jar
+rm -rf $PLUGIN_PATH/*.jar
+rm -rf $EXPANSIONS_PATH/*.jar
 
 i=1
-maxi=$((${#GITHUB_PLUGINS[@]} + 1 + 2 + 1 + ${#FILE_PLUGINS[@]})) # GitHub plugins + LuckPerms + EssentialsX and EssentialsXChat + Chunky + File plugins
+maxi=$((${#GITHUB_PLUGINS[@]} + 1 + 2 + 1 + 1 + ${#FILE_PLUGINS[@]} + ${#PAPI_EXPANSIONS[@]})) # GitHub plugins + LuckPerms + EssentialsX and EssentialsXChat + Chunky + PAPI + File plugins + PAPI Expansions
 
 print_downloading() {
 	printf "\r${BLUE}:: ${BWHITE}Downloading ${BLUE}${1}${BWHITE}...${NC}"
@@ -106,6 +112,13 @@ function downloadLatestFile() {
 	print_downloaded "$PLUGIN_NAME"
 }
 
+function downloadPAPIExpansion() {
+	EXPANSION_NAME="$1"
+	print_downloading "$EXPANSION_NAME PAPI expansion"
+	curl -s 'https://api.extendedclip.com/v2/' | jq ".$EXPANSION_NAME.versions[-1].url" -r | wget -O "$EXPANSIONS_PATH/$EXPANSION_NAME.jar" -qi -
+	print_downloaded "$EXPANSION_NAME PAPI expansion"
+}
+
 for PLUGIN in "${GITHUB_PLUGINS[@]}"; do
 	downloadLatestReleases "$PLUGIN"
 done
@@ -124,6 +137,11 @@ downloadLatestBuild "https://ci.codemc.io/view/Author/job/pop4959/job/Chunky/las
 
 # Download PAPI
 downloadLatestBuild "https://ci.extendedclip.com/job/PlaceholderAPI/lastSuccessfulBuild/artifact/build/libs/" "PlaceholderAPI"
+
+# Download PAPI expansions
+for EXPANSION in "${PAPI_EXPANSIONS[@]}"; do
+	downloadPAPIExpansion "$EXPANSION"
+done
 
 for PLUGIN_PAIR in "${FILE_PLUGINS[@]}"; do
 	IFS=";"
