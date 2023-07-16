@@ -1,0 +1,9 @@
+Vanilla Tweaks Crafting Tweaks
+Version: 1.20
+Packs:
+	unpackable ice
+	unpackable nether wart
+	unpackable wool
+	rotten flesh to leather
+	back to blocks
+	coal to black dye
