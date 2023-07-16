@@ -138,8 +138,9 @@ Konfigurację anti-xray znajdziesz pod [tym linkiem](https://docs.papermc.io/pap
 
 ### Silnik
 
-- [Dokumentacja purpurmc](https://purpurmc.org/docs/)
-- [Dokumentacja papermc](https://docs.papermc.io/paper)
+- [Dokumentacja Purpur](https://purpurmc.org/docs/)
+- [Dokumentacja PaperMC](https://docs.papermc.io/paper)
+- [Dokumentacja Pufferfish](https://docs.pufferfish.host/)
 - [Wiki CraftBukkit](https://bukkit.fandom.com/wiki/Main_Page)
 
 ### Pluginy
