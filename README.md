@@ -54,6 +54,11 @@ To repozytorium zawiera wszelkie potrzebne pliki konfiguracyjne na twój serwer 
 - [Java](https://www.java.com/pl/download/) (min 8) / [OpenJDK](https://adoptium.net/?variant=openjdk17&jvmVariant=hotspot)
 - [git](https://git-scm.com/) (opcjonalne)
 
+**Wymagania Linux :**
+
+- [jq](https://github.com/jqlang/jq)
+- [wget](https://command-not-found.com/wget)
+
 ### 1. Pobieranie plików
 
 Pobierz pliki:
