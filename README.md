@@ -10,6 +10,7 @@
     - [2. Instalowanie silnika oraz pluginów](#2-instalowanie-silnika-oraz-pluginów)
     - [3.1 Uruchamianie Serwera](#31-uruchamianie-serwera)
     - [3.2 Serwer w trybie Online](#32-serwer-w-trybie-online)
+    - [3.3 Uruchamianie za pomocą dockera](#33-uruchamianie-za-pomocą-dockera)
   - [Dodatkowa konfiguracja](#dodatkowa-konfiguracja)
   - [Dodatkowe informacje](#dodatkowe-informacje)
 
@@ -127,6 +128,28 @@ Jeśli posiadasz program _ngrok_ w tzw. _PATH_ to możesz uruchomić serwer bez 
 ```powershell
 .\run.ps1 -ngrok
 ```
+
+### 3.3 Uruchamianie za pomocą dockera
+
+Uruchamianie serwera za pomocą dockera jest oparte o [to](https://github.com/itzg/docker-minecraft-server) repozytorium
+
+```
+docker compose up -d
+```
+
+Żeby zobaczyć logi użyj:
+
+```
+docker compose logs -f
+```
+
+Aby zatrzymać kontener użyj:
+
+```
+docker compose stop
+```
+
+Pełną dokumentacje można znaleźć [tutaj](https://docker-minecraft-server.readthedocs.io/en/latest/).
 
 <!-- markdownlint-restore ol-prefix -->
 
