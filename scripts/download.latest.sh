@@ -70,11 +70,10 @@ printf "\r${GREEN}:: ${BWHITE}Succesfully downloaded ${BLUE}purpur${BWHITE}!${NC
 function downloadLatestReleases() {
 	PLUGIN_NAME=${1//*\//}
 	print_downloading "$PLUGIN_NAME"
-	curl -s "https://api.github.com/repos/$1/releases/latest" |
-		grep browser_download_url |
-		cut -d : -f 2,3 |
-		tr -d \" |
-		wget -O "${PLUGIN_PATH}/${PLUGIN_NAME}.jar" -qLi -
+	res=$(curl -s "https://api.github.com/repos/$1/releases/latest")
+	TAG=$(echo "$res" | jq '.tag_name' -r)
+	URL=$(echo "$res" | jq '.assets[0].browser_download_url' -r)
+	wget -O "${PLUGIN_PATH}/${PLUGIN_NAME}-${TAG}.jar" -qL "$URL"
 	print_downloaded "$PLUGIN_NAME"
 }
 
