@@ -5,6 +5,8 @@
 - [mcServer](#mcserver)
   - [Opis](#opis)
   - [Informacje](#informacje)
+    - [Pluginy](#pluginy)
+    - [Datapacki](#datapacki)
   - [Instalacja](#instalacja)
     - [1. Pobieranie plików](#1-pobieranie-plików)
     - [2. Instalowanie silnika oraz pluginów](#2-instalowanie-silnika-oraz-pluginów)
@@ -13,6 +15,7 @@
     - [3.3 Uruchamianie za pomocą dockera](#33-uruchamianie-za-pomocą-dockera)
   - [Dodatkowa konfiguracja](#dodatkowa-konfiguracja)
   - [Dodatkowe informacje](#dodatkowe-informacje)
+  - [Credits](#credits)
 
 <!-- /TOC -->
 
@@ -29,7 +32,7 @@ To repozytorium zawiera wszelkie potrzebne pliki konfiguracyjne na twój serwer 
 
 **Silnik** - [Purpur 1.20.1](https://purpurmc.org/)
 
-**Pluginy** :
+### Pluginy
 
 - [AuthMe](https://github.com/AuthMe/AuthMeReloaded) (non-premium)
 - [BetterSleeping](https://github.com/Nuytemans-Dieter/BetterSleeping)
@@ -46,6 +49,15 @@ To repozytorium zawiera wszelkie potrzebne pliki konfiguracyjne na twój serwer 
 - [Vault](https://www.spigotmc.org/resources/vault.34315/)
 - [WorldEdit](https://dev.bukkit.org/projects/worldedit)
 - [WorldGuard](https://dev.bukkit.org/projects/worldguard)
+
+### Datapacki
+
+- Węgiel -> czarny barwnik
+- Zapakowany lód -> zwykły lód
+- Blok netherowej brodawki -> netherowa brodawka
+- Wełna -> nici
+- Schodki i półpłytki -> pełne bloki
+- Przepalanie zgniłego mięsa do surowej wołowiny
 
 ## Instalacja
 
@@ -171,3 +183,7 @@ Konfigurację anti-xray znajdziesz pod [tym linkiem](https://docs.papermc.io/pap
 - [Wiki BetterSleeping](https://github.com/Nuytemans-Dieter/BetterSleeping/wiki)
 - [Wiki EssentialX](https://essentialsx.net/wiki/Home.html)
 - [Wiki PlaceholderAPI](https://github.com/PlaceholderAPI/PlaceholderAPI/wiki)
+
+## Credits
+
+- Crafting tweaks - [Vanilla Tweaks](https://vanillatweaks.net/)
