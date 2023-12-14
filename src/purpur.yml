@@ -9,8 +9,9 @@
 # Docs: https://purpurmc.org/docs 
 
 verbose: false
-config-version: 32
+config-version: 33
 settings:
+  player-deaths-always-show-item: false
   clamp-attributes: true
   fix-projectile-looting-transfer: false
   limit-armor: true
@@ -160,6 +161,7 @@ settings:
     allow-infinity-on-crossbow: false
     allow-infinity-and-mending-together: false
     anvil:
+      replace-incompatible-enchants: false
       allow-unsafe-enchants: false
       allow-inapplicable-enchants: true
       allow-incompatible-enchants: true
@@ -175,6 +177,7 @@ settings:
     suppress-ignored-advancement-warnings: false
     hex-color-support-in-console: true
   messages:
+    sleep-not-possible: default
     afk-broadcast-use-display-name: false
     ram-command-output: '<green>Ram Usage: <used>/<xmx> (<percent>)'
     rambar-command-output: <green>Rambar toggled <onoff> for <target>
@@ -259,6 +262,7 @@ world-settings:
       entity:
         shared-random: true
     gameplay-mechanics:
+      disable-oxidation-proximity-penalty: false
       clamp-explosion-radius: true
       arrow:
         movement-resets-despawn-counter: true
@@ -270,8 +274,6 @@ world-settings:
       rain-stops-after-sleep: true
       thunder-stops-after-sleep: true
       tick-fluids: true
-      shovel-turns-block-to-grass-path:
-      - minecraft:grass_block
       entity-blindness-multiplier: 1.0
       void-damage-dealt: 4.0
       always-tame-in-creative: false
@@ -292,6 +294,8 @@ world-settings:
       animal-breeding-cooldown-seconds: 0
       impose-teleport-restrictions-on-gateways: false
       item:
+        end-crystal:
+          place-anywhere: false
         immune:
           lightning: []
           cactus: []
@@ -552,6 +556,7 @@ world-settings:
       slab:
         break-individual-slabs-when-sneaking: false
       sponge:
+        absorbs-water-from-mud: false
         absorbs-lava: false
         absorption:
           area: 64
@@ -1072,6 +1077,7 @@ world-settings:
             min: 0.175
             max: 0.175
       ocelot:
+        spawn-below-sea-level: false
         controllable: true
         always-drop-exp: false
         takes-damage-from-water: false
@@ -1110,6 +1116,7 @@ world-settings:
         attributes:
           max_health: 10.0
       piglin:
+        ignores-armor-with-gold-trim: false
         head-visibility-percent: 0.5
         controllable: true
         always-drop-exp: false
@@ -1231,6 +1238,7 @@ world-settings:
         attributes:
           max_health: 20.0
       skeleton_horse:
+        ridable: false
         always-drop-exp: false
         takes-damage-from-water: false
         can-swim: false
@@ -1449,6 +1457,7 @@ world-settings:
           max_health: 20.0
           spawn_reinforcements: 0.1
       zombie_horse:
+        ridable: false
         always-drop-exp: false
         takes-damage-from-water: false
         can-swim: false
@@ -1700,6 +1709,26 @@ world-settings:
             drops: {}
             into: minecraft:dirt
             condition: air_above
+      shovel:
+        flattenables:
+          minecraft:grass_block:
+            drops: {}
+            into: minecraft:dirt_path
+          minecraft:coarse_dirt:
+            drops: {}
+            into: minecraft:dirt_path
+          minecraft:dirt:
+            drops: {}
+            into: minecraft:dirt_path
+          minecraft:mycelium:
+            drops: {}
+            into: minecraft:dirt_path
+          minecraft:podzol:
+            drops: {}
+            into: minecraft:dirt_path
+          minecraft:rooted_dirt:
+            drops: {}
+            into: minecraft:dirt_path
     hunger:
       starvation-damage: 1.0
 timings:
