@@ -46,6 +46,7 @@ if ! command -v wget &>/dev/null; then
 	exit 1
 fi
 
+# Clean old engine and plugins
 rm -f ../src/purpur.jar
 rm -rf $PLUGIN_PATH/*.jar
 rm -rf $EXPANSIONS_PATH/*.jar
@@ -64,7 +65,7 @@ print_downloaded() {
 
 # Download purpur
 print_downloading "purpur engine"
-wget -qLO "${ENGINE_PATH}" "https://api.purpurmc.org/v2/purpur/1.20.1/latest/download"
+wget -qLO "${ENGINE_PATH}" "https://api.purpurmc.org/v2/purpur/1.20.2/latest/download"
 printf "\r${GREEN}:: ${BWHITE}Succesfully downloaded ${BLUE}purpur${BWHITE}!${NC}\n"
 
 function downloadLatestReleases() {
