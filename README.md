@@ -1,5 +1,10 @@
 # mcServer
 
+<p align="center">
+    <img alt="Wersja Minecraft" src="https://img.shields.io/badge/Wersja%20minecraft-1.20.2-brightgreen?style=for-the-badge">
+    <img alt="Liczba Pluginów" src="https://img.shields.io/badge/Pluginy-16-brightgreen?style=for-the-badge">
+</p>
+
 <!-- TOC -->
 
 - [mcServer](#mcserver)
@@ -32,7 +37,8 @@ To repozytorium zawiera wszelkie potrzebne pliki konfiguracyjne na twój serwer 
 
 **Silnik** - [Purpur 1.20.1](https://purpurmc.org/)
 
-### Pluginy
+<details> 
+  <summary><h3>Pluginy</h3></summary>
 
 - [AuthMe](https://github.com/AuthMe/AuthMeReloaded) (non-premium)
 - [BetterSleeping](https://github.com/Nuytemans-Dieter/BetterSleeping)
@@ -50,7 +56,10 @@ To repozytorium zawiera wszelkie potrzebne pliki konfiguracyjne na twój serwer 
 - [WorldEdit](https://dev.bukkit.org/projects/worldedit)
 - [WorldGuard](https://dev.bukkit.org/projects/worldguard)
 
-### Datapacki
+</details>
+
+<details> 
+  <summary><h3>Datapacki</h3></summary>
 
 - Węgiel -> czarny barwnik
 - Zapakowany lód -> zwykły lód
@@ -58,6 +67,8 @@ To repozytorium zawiera wszelkie potrzebne pliki konfiguracyjne na twój serwer 
 - Wełna -> nici
 - Schodki i półpłytki -> pełne bloki
 - Przepalanie zgniłego mięsa do surowej wołowiny
+
+</details>
 
 ## Instalacja
 
